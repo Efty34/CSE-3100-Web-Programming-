@@ -10,4 +10,9 @@ class LeagueListController extends Controller
     {
         return view('index.league-list-page');
     }
+
+    public function leagueListPagePrev()
+    {
+        return view('index.league-list-page-prev');
+    }
 }

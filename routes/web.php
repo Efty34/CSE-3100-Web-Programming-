@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\PrevSeasonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,10 @@ Route::get('/legend', [LegendController::class, 'legendPage'])->name('index.lege
 
 // Navigate to League List Page
 Route::get('/league-list', [LeagueListController::class, 'leagueListPage'])->name('index.league-list-page');
+Route::get('/league-list-prev', [LeagueListController::class, 'leagueListPagePrev'])->name('index.league-list-page-prev');
+
+// Navigate to Previous Seasons Page
+Route::controller(PrevSeasonController::class)->group(function (){
+    // Previous EPL Seasons
+    Route::get('/previous-epl-seasons', 'previousEplSeasons')->name('index.previous-epl-seasons');
+});

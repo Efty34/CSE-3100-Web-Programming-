@@ -16,11 +16,8 @@
                         <div class="mobile-menu-close" style="color: white;">&times;</div>
                     </div>
                     <ul class="menu-main">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Content <i class='bx bx-chevron-down'></i></a>
+                            <a href="#">Synopsis <i class='bx bx-chevron-down'></i></a>
                             <div class="sub-menu mega-menu mega-menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="#">
@@ -49,11 +46,12 @@
                             </div>
                         </li>
                         
+                        
                         <li class="menu-item-has-children">
                             <a href="#">Up-to-Date<i class='bx bx-chevron-down'></i></a>
                             <div class="sub-menu single-column-menu">
                                 <ul>
-                                    <li><a href="{{ route('index.league-list-page') }}">Previous League Seasons</a></li>
+                                    <li><a href="{{ route('index.league-list-page-prev') }}">Previous League Seasons</a></li>
                                     <li><a href="#">News 2</a></li>
                                     <li><a href="#">News 3</a></li>
                                 </ul>
@@ -69,6 +67,10 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <li>
+                            <a href="#">Username</a>
+                        </li>
                         
                     </ul>
                 </nav>
@@ -76,7 +78,7 @@
 
             <div class="header-item item-right">
 
-                <h4 class="title"><i class='bx bx-align-right' >UserName</i></h4>
+                {{-- <h1><i class='bx bx-align-right' >UserName</i></h1> --}}
 
                <div class="mobile-menu-trigger">
                    <span></span>
