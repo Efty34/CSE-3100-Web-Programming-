@@ -29,9 +29,9 @@
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
-                                    <a href="#">
+                                    <a href="{{ route('index.league-list-page') }}">
                                     <img src="{{asset('homepage_assets/football.png')}}" alt="Club">
-                                    <h4 class="title">Club</h4>
+                                    <h4 class="title">League</h4>
                                     </a>
                                 </div>
                                 <div class="list-item text-center">
@@ -53,7 +53,7 @@
                             <a href="#">Up-to-Date<i class='bx bx-chevron-down'></i></a>
                             <div class="sub-menu single-column-menu">
                                 <ul>
-                                    <li><a href="#">Previous Club Seasons</a></li>
+                                    <li><a href="{{ route('index.league-list-page') }}">Previous League Seasons</a></li>
                                     <li><a href="#">News 2</a></li>
                                     <li><a href="#">News 3</a></li>
                                 </ul>

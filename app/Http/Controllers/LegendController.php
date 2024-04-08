@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class LegendController extends Controller
 {
-    public function legendpage()
+    public function legendPage()
     {
         return view('index.legend-page');
     }

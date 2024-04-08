@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\LegendController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LegendController;
+use App\Http\Controllers\LeagueListController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Navigate to Home Page
-Route::get('/', [LandingPageController::class, 'landingpage'])->name('index.landing-page');
+Route::get('/', [LandingPageController::class, 'landingPage'])->name('index.landing-page');
 
 // Navigate to Legend Page
-Route::get('/legend', [LegendController::class, 'legendpage'])->name('index.legend-page');
+Route::get('/legend', [LegendController::class, 'legendPage'])->name('index.legend-page');
+
+// Navigate to League List Page
+Route::get('/league-list', [LeagueListController::class, 'leagueListPage'])->name('index.league-list-page');
