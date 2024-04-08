@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// Navigate to Home Page
 Route::get('/', [LandingPageController::class, 'landingpage'])->name('index.landing-page');
 
+// Navigate to Legend Page
 Route::get('/legend', [LegendController::class, 'legendpage'])->name('index.legend-page');
