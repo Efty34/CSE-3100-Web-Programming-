@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LegendController;
+use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\LeagueListController;
-use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\PlayerCardController;
 use App\Http\Controllers\PrevSeasonController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +45,13 @@ Route::controller(PrevSeasonController::class)->group(function () {
     Route::get('/previous-bundes-liga-seasons', 'previousBundesSeasons')->name('index.previous-bundes-seasons');
     // Previous Ligue-1 Seasons
     Route::get('/previous-serie-a-seasons', 'previousSerieaSeasons')->name('index.previous-seriea-seasons');
+});
+
+// Navigate to Players
+Route::controller(PlayerController::class)->group(function () {
+    // Players Card Page
+    Route::get('/players', [PlayerController::class, 'playerCardPage'])->name('index.players');
+    // Create Player Form
+    Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player');
+    Route::post('/players/store', [PlayerController::class, 'storePlayer']);
 });

@@ -1,4 +1,4 @@
-<div class="container pt-5 mb-5 bg-gray">
+<div class="containerPREV pt-5 mb-5 bg-gray">
     @include('partials._prev-heading-list')
     <table id="example3" class="table table-striped table-hover" style="width:100%">
         <thead>
