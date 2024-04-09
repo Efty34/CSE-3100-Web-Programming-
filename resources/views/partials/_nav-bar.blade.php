@@ -53,7 +53,7 @@
                                 <ul>
                                     <li><a href="{{ route('index.league-list-page-prev') }}">Previous League Seasons</a></li>
                                     <li><a href="#">News 2</a></li>
-                                    <li><a href="#">News 3</a></li>
+                                    <li><a href="#">Comapre Players</a></li>
                                 </ul>
                             </div>
                         </li>

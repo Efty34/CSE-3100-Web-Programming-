@@ -502,8 +502,11 @@ i {
 	}
 
 	.wrapper {
-		font-size: 6rem;
+		font-size: 7rem;
 		padding-right: 13rem;
+		writing-mode: vertical-lr;
+		text-orientation: upright;
+		letter-spacing: 1rem;
 	}
 
 	.banner-section {

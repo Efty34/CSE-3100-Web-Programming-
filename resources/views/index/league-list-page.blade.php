@@ -26,9 +26,9 @@
             </a>
         </div>
         <div class="card red">
-            <img src="{{ asset('leaguelistpage_assets/liga1.png') }}" alt="" width="50">
+            <img src="{{ asset('leaguelistpage_assets/seriea.png') }}" alt="" width="50">
             <a href="">
-                <p class="tip">Ligue 1</p>
+                <p class="tip">Seria A</p>
             </a>
         </div>
     </div>
