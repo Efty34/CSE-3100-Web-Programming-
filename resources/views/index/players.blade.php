@@ -1,4 +1,5 @@
 <x-outer-template>
+    
 
     <div class="containerPC">
         <div class="card__container">
@@ -14,6 +15,8 @@
                 </article>
             @endforeach
         </div>
+        
+        {{-- {{ $players->links() }} --}}
     </div>
 
 </x-outer-template>

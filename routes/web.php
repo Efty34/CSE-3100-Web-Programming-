@@ -51,7 +51,10 @@ Route::controller(PrevSeasonController::class)->group(function () {
 Route::controller(PlayerController::class)->group(function () {
     // Players Card Page
     Route::get('/players', [PlayerController::class, 'playerCardPage'])->name('index.players');
-    // Create Player Form
+    // Show Create Player Form
     Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player');
-    Route::post('/players/store', [PlayerController::class, 'storePlayer']);
+    // Store Created Player
+    Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player');
+    // Show Player Profile
+    Route::get('/players/{player}', [PlayerController::class, 'showPlayer'])->name('index.show-player');
 });

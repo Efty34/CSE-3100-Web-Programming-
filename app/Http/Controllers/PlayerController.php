@@ -10,6 +10,7 @@ class PlayerController extends Controller
     public function playerCardPage()
     {
         return view('index.players', [
+            // 'players' => Players::oldest()->paginate(1)
             'players' => Players::all()
         ]);
     }
@@ -63,13 +64,12 @@ class PlayerController extends Controller
         $profileImg = time() . '_profile.' . $request->profile_image->extension();
         $request->profile_image->move(public_path('players_storage'), $profileImg);
 
-        // Handle additional images (photo1 to photo5)
         $images = [];
         for ($i = 1; $i <= 5; $i++) {
             if ($request->hasFile('photo' . $i)) {
                 $imageName = time() . '_photo' . $i . '.' . $request->{'photo' . $i}->extension();
                 $request->{'photo' . $i}->move(public_path('players_storage'), $imageName);
-                $images[] = $imageName; 
+                $images['photo' . $i] = $imageName;
             }
         }
 
@@ -104,24 +104,20 @@ class PlayerController extends Controller
         $player->dribbling = $request->dribbling;
         $player->defending = $request->defending;
         $player->physical = $request->physical;
-        if (isset($image1)) {
-            $player->photo1 = $image1;
-        }
-        if (isset($image2)) {
-            $player->photo2 = $image2;
-        }
-        if (isset($image3)) {
-            $player->photo3 = $image3;
-        }
-        if (isset($image4)) {
-            $player->photo4 = $image4;
-        }
-        if (isset($image5)) {
-            $player->photo5 = $image5;
+
+        foreach ($images as $key => $value) {
+            $player->{$key} = $value;
         }
 
         $player->save();
 
         return redirect()->route('index.players')->with('message', 'Player created successfully');
+    }
+
+    public function showPlayer(Players $player)
+    {
+        return view('index.show-player', [
+            'player' => $player
+        ]);
     }
 }
