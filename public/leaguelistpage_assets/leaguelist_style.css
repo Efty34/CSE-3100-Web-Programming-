@@ -2,19 +2,6 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   overflow-x: hidden;
-
-  background: linear-gradient(135deg,
-      #222831 25%,
-      #31363F 25%,
-      #31363F 50%,
-      #222831 50%,
-      #222831 75%,
-      #31363F 75%,
-      #31363F);
-  background-size: 40px 40px;
-
-  animation: move 4s linear infinite;
-
 }
 
 @keyframes move {
