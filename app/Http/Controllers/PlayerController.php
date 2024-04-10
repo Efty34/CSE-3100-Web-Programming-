@@ -120,4 +120,21 @@ class PlayerController extends Controller
             'player' => $player
         ]);
     }
+
+    public function comparePlayers()
+    {
+        $players = Players::all();
+        return view('index.compare-players', compact('players'));
+    }
+    public function compareAction(Request $request)
+    {
+        $players = Players::all();
+        $player1Id = $request->input('player1');
+        $player2Id = $request->input('player2');
+
+        $player1 = Players::findOrFail($player1Id);
+        $player2 = Players::findOrFail($player2Id);
+
+        return view('index.compare-players', compact('players', 'player1', 'player2'));
+    }
 }

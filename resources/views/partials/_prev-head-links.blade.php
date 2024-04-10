@@ -7,3 +7,4 @@
 <script defer src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
 <script defer src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
 <script defer src="{{ asset('prevseason_assets/prev_script.js') }}"></script>
+<script defer src="{{ asset('compare_assets/compare_script.js') }}"></script>

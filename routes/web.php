@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\LeagueListController;
-use App\Http\Controllers\PlayerCardController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
 
@@ -21,7 +20,7 @@ use App\Http\Controllers\LandingPageController;
 // Navigate to Home Page
 Route::get('/', [LandingPageController::class, 'landingPage'])->name('index.landing-page');
 
-// Navigate to Legend Page
+// Navigate to Legend Page --> Static Page
 Route::get('/legend', [LegendController::class, 'legendPage'])->name('index.legend-page');
 
 // Navigate to League List Page
@@ -33,7 +32,7 @@ Route::controller(LeagueListController::class)->group(function () {
 });
 
 
-// Navigate to Previous Seasons Page
+// Navigate to Previous Seasons Page --> JSON Parsing
 Route::controller(PrevSeasonController::class)->group(function () {
     // Previous Champions League
     Route::get('/previous-ucl', 'previousUcl')->name('index.previous-ucl');
@@ -47,7 +46,7 @@ Route::controller(PrevSeasonController::class)->group(function () {
     Route::get('/previous-serie-a-seasons', 'previousSerieaSeasons')->name('index.previous-seriea-seasons');
 });
 
-// Navigate to Players
+// Navigate to Players --> CRUD Operations
 Route::controller(PlayerController::class)->group(function () {
     // Players Card Page
     Route::get('/players', [PlayerController::class, 'playerCardPage'])->name('index.players');
@@ -55,6 +54,10 @@ Route::controller(PlayerController::class)->group(function () {
     Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player');
     // Store Created Player
     Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player');
+    // Show Compare Page
+    Route::get('/players/compare', [PlayerController::class, 'comparePlayers'])->name('index.compare-players');
+    // Compare Action
+    Route::post('/players/compareaction', [PlayerController::class, 'compareAction'])->name('index.compare-action');
     // Show Player Profile
     Route::get('/players/{player}', [PlayerController::class, 'showPlayer'])->name('index.show-player');
 });
