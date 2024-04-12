@@ -15,7 +15,7 @@
         </div>
         <div class="card red">
             <img src="{{ asset('leaguelistpage_assets/laliga.png') }}" alt="" width="50">
-            <a href="">
+            <a href="{{ route('laliga.la-liga-clubs') }}">
                 <p class="tip">La Liga</p>
             </a>
         </div>

@@ -106,38 +106,6 @@ body {
 	border-bottom-left-radius: 10% 50%;
 }
 
-.register .nav-tabs {
-	margin-top: 3%;
-	border: none;
-	background: #203A43;
-	border-radius: 12px;
-	width: 25%;
-	float: right;
-	position: absolute;
-	right: 25px;
-}
-
-.register .nav-tabs .nav-link {
-	padding: 2%;
-	height: 35px;
-	font-weight: 600;
-	color: #fff;
-	border-top-right-radius: 12px;
-	border-bottom-right-radius: 12px;
-}
-
-.register .nav-tabs .nav-link:hover {
-	border: none;
-}
-
-.register .nav-tabs .nav-link.active {
-	width: 100px;
-	color: #2C5364;
-	border: 2px solid #2C5364;
-	border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-}
-
 .register .register-heading {
 	text-align: center;
 	margin-top: 5%;

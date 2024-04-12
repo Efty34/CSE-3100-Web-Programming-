@@ -20,17 +20,6 @@
 
             <div class="col-md-9 register-right">
 
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#player" role="tab"
-                            aria-controls="home" aria-selected="true">Player</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#club" role="tab"
-                            aria-controls="profile" aria-selected="false">Club</a>
-                    </li>
-                </ul>
-
                 <div class="tab-content" id="myTabContent">
 
                     <div class="tab-pane fade show active" id="player" role="tabpanel" aria-labelledby="home-tab">
@@ -322,7 +311,6 @@
                                         @endif
                                     </div>
 
-
                                 </div>
                                 <button type="submit">
                                     <span>
@@ -339,156 +327,6 @@
 
                     </div>
 
-                    {{-- <div class="tab-pane fade show" id="club" role="tabpanel" aria-labelledby="profile-tab">
-                        <h3 class="register-heading">Add Club</h3>
-                        <form action=""> 
-                            <div class="row register-form">
-
-                                <div class="col-md-6 mt-4">
-                                    <h4 id="title">About Club</h4>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Club Name" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="" id="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Founded Year" value="" />
-                                    </div><div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Country" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Laeague" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="World Ranking" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Market Value" value="" />
-                                    </div>
-                                    
-                                </div>
-    
-                                <div class="col-md-6 mt-4">
-                                    <h4 id="title">Trophy</h4>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Champions League" value="" />
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="League Trophy" value="" />
-                                    </div>
-                                    
-                                </div>
-    
-                                <div class="col-md-6 mt-4">
-                                    <h4 id="title">Stadium</h4>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Stadium Name" value="" />
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Capacity" value="" />
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="file" name="" id="">
-                                    </div>
-                                    
-                                </div>
-    
-                                <div class="col-md-6 mt-4">
-                                    <h4 id="title">Staff</h4>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Manager" value="" />
-                                    </div>
-                                </div>
-    
-                                <div class="col-md-6 mt-4">
-                                    <h4 id="title">Squad</h4>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-1" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-2" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-3" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-4" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-5" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-6" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-7" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-8" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-9" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-10" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="PLayer-11" value="" />
-                                        <input type="text" class="form-control" placeholder="Position" value="" />
-                                        <input type="file" name="" id="">
-                                    </div>
-    
-                                    <button type="submit">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                                                height="24">
-                                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                                <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
-                                            </svg> Create
-                                        </span>
-                                    </button>
-    
-                                </div>
-    
-                            </div>
-                        </form>
-                        
-                    </div> --}}
                 </div>
             </div>
         </div>

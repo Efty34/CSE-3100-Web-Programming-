@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+
+}
+
+.href-decoration{
+  text-decoration: none;
+}
+.outer-con {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: auto;
+}
+
+.content {
+  max-width: 1090px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .card {
+  background: rgba(117, 117, 117, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+  border: 1px solid rgba(117, 117, 117, 0.5);
+
+  width: calc(30% - 20px);
+  text-align: center;
+  padding: 15px 30px 30px 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
+  margin-bottom: 2rem;
+}
+
+.content .card .top {
+  height: 100px;
+  margin-bottom: 1rem;
+  color: #fff;
+  padding: 12px 0 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+}
+
+.club-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+
+}
+
+.content .card .top .title {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.content .card .details .one {
+  margin-top: 25px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.content .card .details .one::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  background: #ddd;
+  height: 1px;
+  left: 0;
+  top: -12px;
+  border-radius: 25px;
+}
+
+.content .card .details .one i {
+  color: #2db94d;
+}
+
+
+.content .card button {
+  outline: none;
+  border: none;
+  height: 42px;
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-size: 18px;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.content .one .top,
+.content .one button {
+  background: #a3a3a3;
+}
+
+.content button:hover {
+  filter: brightness(90%);
+}
+
+.content .one ::selection {
+  background: #8af5b6;
+}
+
+@media (max-width:1000px) {
+  .content .card {
+    background: rgba(117, 117, 117, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+    border: 1px solid rgba(117, 117, 117, 0.5);
+    width: calc(40% - 20px);
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width:715px) {
+  .content .card {
+    margin-left: 4rem;
+    width: 70%;
+  }
+}
+
+button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3d405b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 15px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.player-img {
+  height: 200px;
+}

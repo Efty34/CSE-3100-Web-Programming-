@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LaLigaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\PlayerController;
@@ -60,4 +61,16 @@ Route::controller(PlayerController::class)->group(function () {
     Route::post('/players/compareaction', [PlayerController::class, 'compareAction'])->name('index.compare-action');
     // Show Player Profile
     Route::get('/players/{player}', [PlayerController::class, 'showPlayer'])->name('index.show-player');
+});
+
+// Navigate to La-Liga Clubs
+Route::controller(LaLigaController::class)->group(function(){
+    // Club Card Page
+    Route::get('/la-liga-clubs', [LaLigaController::class, 'laligaClubCardPage'])->name('laliga.la-liga-clubs');
+    // Show Create Club Form
+    Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club');
+    // Store Create Club
+    Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club');
+    // Show Club Profile
+    Route::get('/la-liga-clubs/{club}', [LaLigaController::class, 'showClub'])->name('laliga.show-club');
 });

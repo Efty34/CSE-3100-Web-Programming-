@@ -6,20 +6,19 @@
         </div>
     </header>
 
-  <main>
+    <main>
 
         <aside class="sidebar" data-sidebar>
 
             <div class="sidebar-info">
 
                 <figure class="avatar-box">
-                    <img src="{{ asset('players_storage/' . $player->{'profile_image'}) }}" alt="" width="80">
+                    <img src="{{ asset('laliga_storage/' . $la_liga_club->{'logo'}) }}" alt="" width="80">
                 </figure>
 
                 <div class="info-content">
-                    <h1 class="name" title="Richard hanrick">{{ $player->first_name . ' ' . $player->last_name }}</h1>
+                    <h1 class="name" title="Richard hanrick">{{ $la_liga_club->club_name }}</h1>
 
-                    <p class="title">{{ $player->position }}</p>
                 </div>
 
                 <button class="info_more-btn" data-sidebar-btn>
@@ -32,6 +31,8 @@
 
             <div class="sidebar-info_more">
 
+                <div class="separator"></div>
+
                 <ul class="contacts-list">
 
                     <li class="contact-item">
@@ -41,9 +42,9 @@
                         </div>
 
                         <div class="contact-info">
-                            <p class="contact-title">Birthday</p>
+                            <p class="contact-title">Founded</p>
 
-                            <time datetime="1982-06-23">{{ $player->birth_date }}</time>
+                            <time datetime="1982-06-23">{{ $la_liga_club->founded_year }}</time>
                         </div>
 
                     </li>
@@ -55,9 +56,9 @@
                         </div>
 
                         <div class="contact-info">
-                            <p class="contact-title">Birth Place</p>
+                            <p class="contact-title">Country</p>
 
-                            <address>{{ $player->birth_place }}</address>
+                            <address>{{ $la_liga_club->country }}</address>
                         </div>
 
                     </li>
@@ -69,10 +70,11 @@
                 <ul class="social-list">
 
                     <li class="social-item">
-                        <a href="{{ $player->social }}" class="social-link">
-                            <ion-icon name="logo-instagram"></ion-icon>
+                        <a href="{{ $la_liga_club->social }}" class="social-link">
+                            <ion-icon name="globe-outline"></ion-icon>
                         </a>
                     </li>
+
                 </ul>
 
             </div>
@@ -85,31 +87,35 @@
 
                 <ul class="navbar-list">
 
+
                     <li class="navbar-item">
                         <button class="navbar-link  active" data-nav-link>About</button>
                     </li>
 
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Timeline</button>
+                        <button class="navbar-link active" data-nav-link>Timeline</button>
                     </li>
 
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Archive</button>
+                        <button class="navbar-link active" data-nav-link>Squad</button>
                     </li>
+
 
                 </ul>
 
             </nav>
 
+
             <article class="about  active" data-page="about">
 
                 <header>
-                    <h2 class="h2 article-title">About Player</h2>
+                    <h2 class="h2 article-title">About Club</h2>
                 </header>
+
 
                 <section class="service">
 
-                    <h3 class="h3 service-title">Personal Details</h3>
+                    <h3 class="h3 service-title">Club Details</h3>
 
                     <ul class="service-list">
 
@@ -121,10 +127,10 @@
                             </div>
 
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title"> Preferred Foot</h4>
+                                <h4 class="h4 service-item-title"> League</h4>
 
                                 <p class="service-item-text">
-                                    {{ $player->preferred_foot }}
+                                    {{ $la_liga_club->league }}
                                 </p>
                             </div>
 
@@ -138,10 +144,10 @@
                             </div>
 
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Height</h4>
+                                <h4 class="h4 service-item-title">World Ranking</h4>
 
                                 <p class="service-item-text">
-                                    {{ $player->height }}
+                                    {{ $la_liga_club->world_ranking }}
                                 </p>
                             </div>
 
@@ -155,27 +161,10 @@
                             </div>
 
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Current Market Value</h4>
+                                <h4 class="h4 service-item-title">Market Value</h4>
 
                                 <p class="service-item-text">
-                                    {{ $player->market_value }}
-                                </p>
-                            </div>
-
-                        </li>
-
-                        <li class="service-item">
-
-                            <div class="service-icon-box">
-                                <img src="{{ asset('playerprofile_assets/info.png') }}" alt="camera icon"
-                                    width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Outfitter</h4>
-
-                                <p class="service-item-text">
-                                    {{ $player->outfitter }}
+                                    {{ $la_liga_club->market_value }}
                                 </p>
                             </div>
 
@@ -185,9 +174,11 @@
 
                 </section>
 
+
+
                 <section class="testimonials">
 
-                    <h3 class="h3 testimonials-title">Achievements</h3>
+                    <h3 class="h3 testimonials-title">Trophies</h3>
 
                     <ul class="testimonials-list has-scrollbar">
 
@@ -199,11 +190,11 @@
                                         width="60" data-testimonials-avatar>
                                 </figure>
 
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Career Goals</h4>
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Champions League</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p>
-                                        {{ $player->career_goals }}
+                                        {{ $la_liga_club->champions_league }}
                                     </p>
                                 </div>
 
@@ -218,87 +209,11 @@
                                         width="60" data-testimonials-avatar>
                                 </figure>
 
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>World Cup</h4>
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Spanish Championshio</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p>
-                                        {{ $player->world_cups }}
-                                    </p>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-
-                                <figure class="testimonials-avatar-box">
-                                    <img src="{{ asset('playerprofile_assets/medal.png') }}" alt="Jessica miller"
-                                        width="60" data-testimonials-avatar>
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Continental Trophy</h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        {{ $player->continental_cups }}
-                                    </p>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-
-                                <figure class="testimonials-avatar-box">
-                                    <img src="{{ asset('playerprofile_assets/medal.png') }}" alt="Emily evans"
-                                        width="60" data-testimonials-avatar>
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Ballon d'OR</h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        {{ $player->ballon_dors }}
-                                    </p>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-
-                                <figure class="testimonials-avatar-box">
-                                    <img src="{{ asset('playerprofile_assets/medal.png') }}" alt="Henry william"
-                                        width="60" data-testimonials-avatar>
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Champions League</h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        {{ $player->champions_league }}
-                                    </p>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-
-                                <figure class="testimonials-avatar-box">
-                                    <img src="{{ asset('playerprofile_assets/medal.png') }}" alt="Henry william"
-                                        width="60" data-testimonials-avatar>
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>League Trophy</h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        {{ $player->league_titles }}
+                                        {{ $la_liga_club->league_trophy }}
                                     </p>
                                 </div>
 
@@ -309,7 +224,6 @@
 
                 </section>
 
-                {{-- Don't Touch this Div --}}
                 <div class="modal-container" data-modal-container>
 
                     <div class="overlay" data-overlay></div>
@@ -368,36 +282,27 @@
                             <ion-icon name="shield-outline"></ion-icon>
                         </div>
 
-                        <h3 class="h3">Club History</h3>
+                        <h3 class="h3">Stadium</h3>
                     </div>
 
                     <ol class="timeline-list">
 
                         <li class="timeline-item">
 
-                            <h4 class="h4 timeline-item-title">Debut</h4>
+                            <h4 class="h4 timeline-item-title">Stadium Name</h4>
 
-                            <span>{{ $player->club_debut }}</span>
-
-                        </li>
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Current Club</h4>
-
-                            <span>{{ $player->current_club }}</span>
-
-
+                            <span>{{ $la_liga_club->stadium_name }}</span>
 
                         </li>
 
                         <li class="timeline-item">
 
-                            <h4 class="h4 timeline-item-title">Previous Clubs</h4>
+                            <h4 class="h4 timeline-item-title">Capacity</h4>
 
-                            <span>{{ $player->previous_clubs }}</span>
+                            <span>{{ $la_liga_club->capacity }}</span>
 
                         </li>
+
 
                     </ol>
 
@@ -407,139 +312,47 @@
 
                     <div class="title-wrapper">
                         <div class="icon-box">
-                            <ion-icon name="flag-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </div>
 
-                        <h3 class="h3">National History</h3>
+                        <h3 class="h3">Staff</h3>
                     </div>
 
                     <ol class="timeline-list">
 
                         <li class="timeline-item">
 
-                            <h4 class="h4 timeline-item-title">Team</h4>
-
-                            <span>{{ $player->national_team }}</span>
-
+                            <h4 class="h4 timeline-item-title">Manager</h4>
+                            <span>{{ $la_liga_club->manager }}</span>
                         </li>
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Debut</h4>
-
-                            <span>{{ $player->national_debut }}</span>
-
-
-                        </li>
-
                     </ol>
 
                 </section>
 
                 <section class="skill">
 
-                    <h3 class="h3 skills-title">Fifa Rating</h3>
+                    <h3 class="h3 skills-title">Home Ground</h3>
 
-                    <ul class="skills-list content-card">
+                    <section class="clients">
 
-                        <li class="skills-item">
+                        <ul class="clients-list has-scrollbar">
 
-                            <div class="title-wrapper">
-                                <h5 class="h5">Overall</h5>
-                                <data value="{{ $player->overall }}">{{ $player->overall }}</data>
-                            </div>
+                            <li class="clients-item">
 
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->overall }}%;"></div>
-                            </div>
+                                <img id="std-img"
+                                    src="{{ asset('laliga_storage/' . $la_liga_club->{'stadium_picture'}) }}"
+                                    alt="client logo">
 
-                        </li>
+                            </li>
 
-                        <li class="skills-item">
+                        </ul>
 
-                            <div class="title-wrapper">
-                                <h5 class="h5">Pace</h5>
-                                <data value="{{ $player->pace }}">{{ $player->pace }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->pace }}%;"></div>
-                            </div>
-
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Shooting</h5>
-                                <data value="{{ $player->shooting }}">{{ $player->shooting }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->shooting }}%;"></div>
-                            </div>
-
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Passing</h5>
-                                <data value="{{ $player->passing }}">{{ $player->passing }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->passing }}%;"></div>
-                            </div>
-
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Dribbling</h5>
-                                <data value="{{ $player->dribbling }}">{{ $player->dribbling }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->dribbling }}%;"></div>
-                            </div>
-
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Defending</h5>
-                                <data value="{{ $player->defending }}">{{ $player->defending }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->defending }}%;"></div>
-                            </div>
-
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Physical</h5>
-                                <data value="{{ $player->physical }}">{{ $player->physical }}</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: {{ $player->physical }}%;"></div>
-                            </div>
-
-                        </li>
-
-                    </ul>
+                    </section>
 
                 </section>
 
             </article>
 
-            {{-- Don't Touch thid article --}}
             <article class="portfolio" data-page="portfolio">
 
                 <header>
@@ -772,39 +585,228 @@
 
             </article>
 
-            <article class="blog" data-page="archive">
+            <article class="blog" data-page="squad">
 
                 <header>
-                    <h2 class="h2 article-title">Archive</h2>
+                    <h2 class="h2 article-title">Squad</h2>
                 </header>
 
                 <section class="blog-posts">
 
                     <section class="clients">
 
-                        <ul class="clients-list has-scrollbar">
 
-                            @for ($i = 1; $i <= 5; $i++)
-                                @if (!empty($player->{'photo' . $i}))
-                                    <li class="clients-item">
-                                        <img src="{{ asset('players_storage/' . $player->{'photo' . $i}) }}"
-                                            alt="Photo {{ $i }}">
-                                    </li>
-                                @endif
-                            @endfor
+                        <section class="service">
 
-                        </ul>
+                            <h3 class="h3 service-title">Starting 11</h3>
+
+                            <ul class="service-list">
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name1 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position1 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name2 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position2 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name3 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position3 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name4 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position4 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name5 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position5 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name6 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position6 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name7 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position7 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name8 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position8 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name9 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position9 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name10 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position10 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+                                <li class="service-item">
+
+                                    <div class="service-icon-box">
+                                        <a href="#"><button><ion-icon style="color: burlywood;"
+                                                    name="star-outline"></ion-icon></button></a>
+                                    </div>
+
+                                    <div class="service-content-box">
+                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name11 }}</h4>
+
+                                        <p class="service-item-text">
+                                            {{ $la_liga_club->position11 }}
+                                        </p>
+                                    </div>
+
+                                </li>
+
+
+                            </ul>
+
+                        </section>
 
                     </section>
+
+
+
 
                 </section>
 
             </article>
 
+
+
         </div>
 
-  </main>
+    </main>
 
-</x-player-profile>  
-
-  
+</x-player-profile>
