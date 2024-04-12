@@ -72,8 +72,8 @@ class LaLigaController extends Controller
         $logoImg = time() . '_logo.' . $request->logo->extension();
         $request->logo->move(public_path('laliga_storage'), $logoImg);
 
-        $stadium_picture = time() . '_stadium_picture.' . $request->stadium_picture->extension();
-        $request->stadium_picture->move(public_path('laliga_storage'), $stadium_picture);
+        $stadiumpic = time() . '_stadium_picture.' . $request->stadium_picture->extension();
+        $request->stadium_picture->move(public_path('laliga_storage'), $stadiumpic);
 
         
 
@@ -90,7 +90,7 @@ class LaLigaController extends Controller
         $la_liga_club->league_trophy = $request->league_trophy;
         $la_liga_club->stadium_name = $request->stadium_name;
         $la_liga_club->capacity = $request->capacity;
-        $la_liga_club->stadium_picture = $request->stadium_picture;
+        $la_liga_club->stadium_picture =  $stadiumpic;
         $la_liga_club->manager = $request->manager;
 
         $la_liga_club->name1 = $request->name1;

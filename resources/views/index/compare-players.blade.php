@@ -25,7 +25,10 @@
                         </option>
                     @endforeach
                 </select>
-                <button type="submit"  class="btn-96"><span>Compare</span></button>
+                <div class="button-borders">
+                    <button class="primary-button"> Compare
+                    </button>
+                  </div>
             </form>
 
         </div>
