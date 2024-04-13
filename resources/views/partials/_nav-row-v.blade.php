@@ -30,7 +30,7 @@
                             </a>
                         </div>
                         <div class="list-item text-center">
-                            <a href="#">
+                            <a href="{{ route('worldcup22.group-stage-point-table') }}">
                                 <img src="{{ asset('homepage_assets/world-cup.png') }}" alt="World Cup 2022">
                                 <h4 class="title">World Cup 2022</h4>
                             </a>

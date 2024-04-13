@@ -7,6 +7,7 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\wc22Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,4 +74,12 @@ Route::controller(LaLigaController::class)->group(function(){
     Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club');
     // Show Club Profile
     Route::get('/la-liga-clubs/{club}', [LaLigaController::class, 'showClub'])->name('laliga.show-club');
+});
+
+// Navigate to World Cup 22
+Route::controller(wc22Controller::class)->group(function(){
+    // Group Stage Point Table
+    Route::get('/wc22-group-stage', [wc22Controller::class, 'wc22GroupStage'])->name('worldcup22.group-stage-point-table');
+    // Result Table
+    Route::get('/wc22-result-table', [wc22Controller::class, 'wc22ResultTable'])->name('worldcup22.result-table');
 });
