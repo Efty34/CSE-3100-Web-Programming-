@@ -56,6 +56,19 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="menu-item-has-children">
+                    <a href="#">Game<i class='bx bx-chevron-down'></i></a>
+                    <div class="sub-menu single-column-menu">
+                        <ul>
+                            <li><a href="{{ route('game.game-page') }}">KickOFF!!!</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="menu-item-has-children">
                     <a href="#">Pages <i class='bx bx-chevron-down'></i></a>
                     <div class="sub-menu single-column-menu">
@@ -67,9 +80,9 @@
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#">Username</a>
-                </li>
+                </li> --}}
 
             </ul>
         </nav>
@@ -77,10 +90,11 @@
 
     <div class="header-item item-right">
 
-        {{-- <h1><i class='bx bx-align-right' >UserName</i></h1> --}}
+        <h2 style="color: whitesmoke">UserName</h2>
 
         <div class="mobile-menu-trigger">
             <span></span>
+            
         </div>
     </div>
 

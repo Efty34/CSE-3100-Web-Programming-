@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\LaLigaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\wc22Controller;
+use App\Http\Controllers\LaLigaController;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\wc22Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,4 +83,11 @@ Route::controller(wc22Controller::class)->group(function(){
     Route::get('/wc22-group-stage', [wc22Controller::class, 'wc22GroupStage'])->name('worldcup22.group-stage-point-table');
     // Result Table
     Route::get('/wc22-result-table', [wc22Controller::class, 'wc22ResultTable'])->name('worldcup22.result-table');
+});
+
+// Navigate to Game Page
+Route::controller(GameController::class)->group(function(){
+    // Game Page
+    Route::get('/kickoff!!!', [GameController::class, 'gamePage'])->name('game.game-page');
+    
 });
