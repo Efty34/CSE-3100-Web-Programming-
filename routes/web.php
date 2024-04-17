@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\wc22Controller;
 use App\Http\Controllers\LaLigaController;
@@ -90,4 +91,10 @@ Route::controller(GameController::class)->group(function(){
     // Game Page
     Route::get('/kickoff!!!', [GameController::class, 'gamePage'])->name('game.game-page');
     
+});
+
+// Authentication Routes
+Route::controller(AuthController::class)->group(function(){
+    // Register Page
+    Route::get('/register', [AuthController::class, 'registerPage'])->name('auth.register-page');
 });

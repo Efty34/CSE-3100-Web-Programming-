@@ -70,14 +70,14 @@
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="#">Pages <i class='bx bx-chevron-down'></i></a>
-                    <div class="sub-menu single-column-menu">
+                    <a href="{{route('auth.register-page')}}">Login</a>
+                    {{-- <div class="sub-menu single-column-menu">
                         <ul>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="{{route('auth.register-page')}}">Login</a></li>
                             <li><a href="#">Register</a></li>
 
                         </ul>
-                    </div>
+                    </div> --}}
                 </li>
 
                 {{-- <li>

@@ -6,6 +6,8 @@
     <title>InFoo</title>
     <script src="{{ asset('game_assets/SAT.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('game_assets/style.css') }}" />
+    <link rel="icon" type="image/png" href=" {{ asset('homepage_assets/favnew.png') }} ">
+
     <style>
         canvas {
             background: url('{{ asset('game_assets/pitch3.png') }}') center;
