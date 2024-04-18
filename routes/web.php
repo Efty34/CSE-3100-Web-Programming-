@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\wc22Controller;
 use App\Http\Controllers\LaLigaController;
 use App\Http\Controllers\LegendController;
@@ -55,9 +56,9 @@ Route::controller(PlayerController::class)->group(function () {
     // Players Card Page
     Route::get('/players', [PlayerController::class, 'playerCardPage'])->name('index.players');
     // Show Create Player Form
-    Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player');
+    Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player')->middleware('auth');
     // Store Created Player
-    Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player');
+    Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player')->middleware('auth');
     // Show Compare Page
     Route::get('/players/compare', [PlayerController::class, 'comparePlayers'])->name('index.compare-players');
     // Compare Action
@@ -71,9 +72,9 @@ Route::controller(LaLigaController::class)->group(function(){
     // Club Card Page
     Route::get('/la-liga-clubs', [LaLigaController::class, 'laligaClubCardPage'])->name('laliga.la-liga-clubs');
     // Show Create Club Form
-    Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club');
+    Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club')->middleware('auth');
     // Store Create Club
-    Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club');
+    Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club')->middleware('auth');
     // Show Club Profile
     Route::get('/la-liga-clubs/{club}', [LaLigaController::class, 'showClub'])->name('laliga.show-club');
 });
@@ -96,5 +97,24 @@ Route::controller(GameController::class)->group(function(){
 // Authentication Routes
 Route::controller(AuthController::class)->group(function(){
     // Register Page
-    Route::get('/register', [AuthController::class, 'registerPage'])->name('auth.register-page');
+    Route::get('/loginsystem', [AuthController::class, 'registerPage'])->name('auth.register-page');
+    // Save Registered User
+    Route::post('/loginsystem/save', [AuthController::class, 'storeUser'])->name('auth.save-user');
+    // Login Page
+    Route::get('/loginsystem', [AuthController::class, 'loginPage'])->name('auth.login-page');
+    // Login Action
+    Route::post('/loginsystem/login', [AuthController::class, 'loginAction'])->name('auth.login-action');
+    // Logout Action
+    Route::get('/logout', 'logout')->middleware('auth')->name('auth.logout-action');
+
+});
+
+// Normal Users Routes List
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+    Route::get('/user-profile', [HomePageController::class, 'userProfilePage'])->name('homepage.user-profile');
+});
+
+// Admin Routes List
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    Route::get('/admin-dashboard', [HomePageController::class, 'adminDashboard'])->name('homepage.admin-dashboard');
 });

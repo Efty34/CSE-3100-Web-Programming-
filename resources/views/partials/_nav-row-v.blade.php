@@ -63,39 +63,41 @@
                         <ul>
                             <li><a href="{{ route('game.game-page') }}">KickOFF!!!</a>
                             </li>
-                            
-                            
+
+
                         </ul>
                     </div>
                 </li>
 
-                <li class="menu-item-has-children">
-                    <a href="{{route('auth.register-page')}}">Login</a>
-                    {{-- <div class="sub-menu single-column-menu">
-                        <ul>
-                            <li><a href="{{route('auth.register-page')}}">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                @guest
+                    <li class="menu-item-has-children">
+                        <a href="{{ route('auth.login-page') }}">Login</a>
 
-                        </ul>
-                    </div> --}}
-                </li>
-
-                {{-- <li>
-                    <a href="#">Username</a>
-                </li> --}}
+                    </li>
+                @endguest
 
             </ul>
         </nav>
     </div>
 
+
     <div class="header-item item-right">
-
-        <h2 style="color: whitesmoke">UserName</h2>
-
+        @auth
+            @if (auth()->user()->type == 'admin')
+                <a href="{{ route('homepage.admin-dashboard') }}">
+                    <h2 style="color: whitesmoke">{{ Auth::user()->name }}</h2>
+                </a>
+            @else
+                <a href="{{ route('homepage.user-profile') }}">
+                    <h2 style="color: whitesmoke">{{ Auth::user()->name }}</h2>
+                </a>
+            @endif
+        @endauth
         <div class="mobile-menu-trigger">
             <span></span>
-            
         </div>
     </div>
+
+
 
 </div>
