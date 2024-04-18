@@ -16,6 +16,67 @@
 
 <body>
 
+  <section class="sidebar">
+    <a href="#" class="logo">
+      <i class="fab fa-info-circle"></i>
+      <span class="text">Admin Panel</span>
+    </a>
+
+    <ul class="side-menu top">
+      <li class="active">
+        <a href="{{route('index.landing-page')}}" class="nav-link">
+          <i class="fas fa-home"></i>
+          <span class="text">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#player" class="nav-link">
+          <i class="fas fa-people-group"></i>
+          <span class="text">Players</span>
+        </a>
+      </li>
+      <li>
+        <a href="#epl" class="nav-link">
+          <i class="fas fa-shield"></i>
+          <span class="text">EPL Clubs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#laliga" class="nav-link">
+          <i class="fas fa-shield"></i>
+          <span class="text">La-Liga Clubs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#bpl" class="nav-link">
+          <i class="fas fa-shield"></i>
+          <span class="text">Bundes Liga Clubs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <i class="fas fa-people-group"></i>
+          <span class="text">Team</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="side-menu">
+      <li>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <span class="text">Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="/logout" class="logout">
+          <i class="fas fa-right-from-bracket"></i>
+          <span class="text">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
     {{$slot}}
 
 

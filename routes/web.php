@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
@@ -56,9 +57,15 @@ Route::controller(PlayerController::class)->group(function () {
     // Players Card Page
     Route::get('/players', [PlayerController::class, 'playerCardPage'])->name('index.players');
     // Show Create Player Form
-    Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player')->middleware('auth');
+    Route::get('/players/create', [PlayerController::class, 'createPlayer'])->name('index.create-player')->middleware(['auth', 'user-access:admin']);
     // Store Created Player
-    Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player')->middleware('auth');
+    Route::post('/players/store', [PlayerController::class, 'storePlayer'])->name('index.store-player')->middleware(['auth','user-access:admin']);
+    // Show Edit Player Form
+    Route::get('/players/{id}/edit', [PlayerController::class, 'updatePlayer'])->name('index.update-player')->middleware(['auth','user-access:admin']);
+    // Update Player and Save
+    Route::put('/players/{id}/update', [PlayerController::class, 'saveUpdatPlayer'])->name('index.save-player')->middleware(['auth','user-access:admin']);
+    // Delete Player
+    Route::delete('/players/{id}/delete', [PlayerController::class, 'deletePlayer'])->name('index.delete-player')->middleware(['auth','user-access:admin']);
     // Show Compare Page
     Route::get('/players/compare', [PlayerController::class, 'comparePlayers'])->name('index.compare-players');
     // Compare Action
@@ -72,9 +79,9 @@ Route::controller(LaLigaController::class)->group(function(){
     // Club Card Page
     Route::get('/la-liga-clubs', [LaLigaController::class, 'laligaClubCardPage'])->name('laliga.la-liga-clubs');
     // Show Create Club Form
-    Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club')->middleware('auth');
+    Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club')->middleware(['auth','user-access:admin']);
     // Store Create Club
-    Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club')->middleware('auth');
+    Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club')->middleware(['auth','user-access:admin']);
     // Show Club Profile
     Route::get('/la-liga-clubs/{club}', [LaLigaController::class, 'showClub'])->name('laliga.show-club');
 });
@@ -117,4 +124,5 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 // Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin-dashboard', [HomePageController::class, 'adminDashboard'])->name('homepage.admin-dashboard');
+    
 });

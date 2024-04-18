@@ -663,3 +663,8 @@ button {
   fill: black;
   transform: rotate(180deg);
 }
+
+.no-design{
+  text-decoration: none;
+  color: white;
+}

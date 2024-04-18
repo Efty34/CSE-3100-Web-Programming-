@@ -2,6 +2,8 @@
     <div class="header-item item-left">
         <div class="logo">
             <a href="{{ route('index.landing-page') }}">InFoo</a>
+            {{-- <a href="{{ route('index.landing-page') }}"><img src="{{ asset('homepage_assets/favnew.png') }}" width="40"></a> --}}
+
         </div>
     </div>
     <div class="header-item item-center">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Players;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -15,6 +16,8 @@ class HomePageController extends Controller
         return view('homepage.user-profile');
     }
     public function adminDashboard(){
-        return view('homepage.admin-dashboard');
+        return view('homepage.admin-dashboard',[
+            'players' => Players::all()
+        ]);
     }
 }
