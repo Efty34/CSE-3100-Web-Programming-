@@ -12,6 +12,7 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,3 +127,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin-dashboard', [HomePageController::class, 'adminDashboard'])->name('homepage.admin-dashboard');
     
 });
+
+// News Website
+Route::get('/news', [NewsController::class, 'newsPage'])->name('index.news-page');

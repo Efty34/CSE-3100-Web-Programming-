@@ -105,7 +105,6 @@
 
             </nav>
 
-
             <article class="about  active" data-page="about">
 
                 <header>
@@ -602,12 +601,33 @@
 
                             <ul class="service-list">
 
-                                <li class="service-item">
+                                @foreach (range(1, 11) as $index)
+                                    <li class="service-item">
+                                        @auth
+                                            <div class="service-icon-box">
+                                                <a href="#"><button><ion-icon style="color: burlywood;"
+                                                            name="star-outline"></ion-icon></button></a>
+                                            </div>
+                                        @endauth
 
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
+                                        <div class="service-content-box">
+                                            <h4 class="h4 service-item-title">{{ $la_liga_club->{'name' . $index} }}
+                                            </h4>
+                                            <p class="service-item-text">
+                                                {{ $la_liga_club->{'position' . $index} }}
+                                            </p>
+                                        </div>
+                                    </li>
+                                @endforeach
+
+                                {{-- <li class="service-item">
+
+                                    @auth
+                                        <div class="service-icon-box">
+                                            <a href="#"><button><ion-icon style="color: burlywood;"
+                                                        name="star-outline"></ion-icon></button></a>
+                                        </div>
+                                    @endauth
 
                                     <div class="service-content-box">
                                         <h4 class="h4 service-item-title">{{ $la_liga_club->name1 }}</h4>
@@ -617,178 +637,7 @@
                                         </p>
                                     </div>
 
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name2 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position2 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name3 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position3 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name4 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position4 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name5 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position5 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name6 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position6 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name7 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position7 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name8 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position8 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name9 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position9 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name10 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position10 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
-                                <li class="service-item">
-
-                                    <div class="service-icon-box">
-                                        <a href="#"><button><ion-icon style="color: burlywood;"
-                                                    name="star-outline"></ion-icon></button></a>
-                                    </div>
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name11 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position11 }}
-                                        </p>
-                                    </div>
-
-                                </li>
-
+                                </li> --}}
 
                             </ul>
 
@@ -796,14 +645,9 @@
 
                     </section>
 
-
-
-
                 </section>
 
             </article>
-
-
 
         </div>
 

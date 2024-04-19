@@ -17,19 +17,19 @@
 <body>
 
   <section class="sidebar">
-    <a href="#" class="logo">
-      <i class="fab fa-info-circle"></i>
-      <span class="text">Admin Panel</span>
+    <a href="{{route('index.landing-page')}}" class="logo">
+      
+      <span id="infoo-logo">InFoo</span>
     </a>
 
     <ul class="side-menu top">
-      <li class="active">
+      {{-- <li class="active">
         <a href="{{route('index.landing-page')}}" class="nav-link">
           <i class="fas fa-home"></i>
           <span class="text">Home</span>
         </a>
-      </li>
-      <li>
+      </li> --}}
+      <li class="active">
         <a href="#player" class="nav-link">
           <i class="fas fa-people-group"></i>
           <span class="text">Players</span>

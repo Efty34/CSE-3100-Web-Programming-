@@ -3,6 +3,19 @@
 /* Google Fonts(Poppins & Lato) */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
 
+@font-face {
+	font-family: myfont;
+	src: url(myfont.otf);
+}
+
+#infoo-logo{
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-family: myfont;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;

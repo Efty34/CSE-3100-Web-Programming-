@@ -27,7 +27,7 @@ body {
   }
 
 .register {
-	background: -webkit-linear-gradient(left, #0F2027, #203A43, #2C5364);
+	background: -webkit-linear-gradient(left, #0F2027, #203A43,#2C5364);
 	margin-top: 2%;
 	padding: 3%;
 }

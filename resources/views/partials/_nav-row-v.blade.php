@@ -51,9 +51,8 @@
                     <a href="#">Up-to-Date<i class='bx bx-chevron-down'></i></a>
                     <div class="sub-menu single-column-menu">
                         <ul>
-                            <li><a href="{{ route('index.league-list-page-prev') }}">Previous League Seasons</a>
-                            </li>
-                            <li><a href="#">News 2</a></li>
+                            <li><a href="{{ route('index.news-page') }}">Latest Gossips</a></li>
+                            <li><a href="{{ route('index.league-list-page-prev') }}">Previous League Seasons</a></li>
                             <li><a href="{{ route('index.compare-players') }}">Comapre Players</a></li>
                         </ul>
                     </div>
