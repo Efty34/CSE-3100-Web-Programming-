@@ -195,6 +195,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     // Remove Player from Dream11
     Route::delete('/player/remove', [HomePageController::class, 'removePlayer'])->name('player.remove');
 
+
 });
 
 // Admin Routes List
@@ -210,19 +211,19 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 Route::get('/news', [NewsController::class, 'newsPage'])->name('index.news-page');
 
 // Products
-Route::controller(ProductsController::class)->group(function () {
+Route::controller(ProductsController::class)->group(function(){
     // Products Page
     Route::get('/products', [ProductsController::class, 'productsPage'])->name('products.products-page');
     // Show Create Product Form
-    Route::get('/products/create', [ProductsController::class, 'createProduct'])->name('products.create-product')->middleware(['auth', 'user-access:admin']);
+    Route::get('/products/create', [ProductsController::class, 'createProduct'])->name('products.create-product')->middleware(['auth','user-access:admin']);
     // Store Created Product
-    Route::post('/products/store', [ProductsController::class, 'storeProduct'])->name('products.store-product')->middleware(['auth', 'user-access:admin']);
+    Route::post('/products/store', [ProductsController::class, 'storeProduct'])->name('products.store-product')->middleware(['auth','user-access:admin']);
     // Show Edit Product Form
-    Route::get('/products/{id}/edit', [ProductsController::class, 'updateProduct'])->name('products.update-product')->middleware(['auth', 'user-access:admin']);
+    Route::get('/products/{id}/edit', [ProductsController::class, 'updateProduct'])->name('products.update-product')->middleware(['auth','user-access:admin']);
     // Update Product and Save
-    Route::put('/products/{id}/update', [ProductsController::class, 'saveUpdateProduct'])->name('products.save-product')->middleware(['auth', 'user-access:admin']);
+    Route::put('/products/{id}/update', [ProductsController::class, 'saveUpdateProduct'])->name('products.save-product')->middleware(['auth','user-access:admin']);
     // Delete Product
-    Route::delete('/products/{id}/delete', [ProductsController::class, 'deleteProduct'])->name('products.delete-product')->middleware(['auth', 'user-access:admin']);
+    Route::delete('/products/{id}/delete', [ProductsController::class, 'deleteProduct'])->name('products.delete-product')->middleware(['auth','user-access:admin']);
     // Show Product Profile
     Route::get('/products/{product}', [ProductsController::class, 'showProduct'])->name('products.show-product');
 });
