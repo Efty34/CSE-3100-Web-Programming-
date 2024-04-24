@@ -605,39 +605,27 @@
                                     <li class="service-item">
                                         @auth
                                             <div class="service-icon-box">
-                                                <a href="#"><button><ion-icon style="color: burlywood;"
-                                                            name="star-outline"></ion-icon></button></a>
+                                                <form action="{{ route('add.player.to.profile') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="player_name"
+                                                        value="{{ $epl_club->{'name' . $index} }}">
+                                                    <input type="hidden" name="player_position"
+                                                        value="{{ $epl_club->{'position' . $index} }}">
+                                                    <input type="hidden" name="club_type" value="la_liga">
+                                                    <button type="submit"><ion-icon style="color: burlywood;"
+                                                            name="star-outline"></ion-icon></button>
+                                                </form>
                                             </div>
                                         @endauth
-
+                                        <!-- Display player info -->
                                         <div class="service-content-box">
                                             <h4 class="h4 service-item-title">{{ $epl_club->{'name' . $index} }}
                                             </h4>
-                                            <p class="service-item-text">
-                                                {{ $epl_club->{'position' . $index} }}
+                                            <p class="service-item-text">{{ $epl_club->{'position' . $index} }}
                                             </p>
                                         </div>
                                     </li>
                                 @endforeach
-
-                                {{-- <li class="service-item">
-
-                                    @auth
-                                        <div class="service-icon-box">
-                                            <a href="#"><button><ion-icon style="color: burlywood;"
-                                                        name="star-outline"></ion-icon></button></a>
-                                        </div>
-                                    @endauth
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $epl_club->name1 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $epl_club->position1 }}
-                                        </p>
-                                    </div>
-
-                                </li> --}}
 
                             </ul>
 

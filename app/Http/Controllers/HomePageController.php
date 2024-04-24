@@ -6,11 +6,15 @@ use App\Models\Message;
 use App\Models\Players;
 use App\Models\EplClubs;
 use App\Models\Products;
+use App\Models\UserPlayer;
 use App\Models\LaLigaClubs;
 use App\Models\SeriaAClubs;
+
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Models\BundesLigaClubs;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomePageController extends Controller
 {
@@ -18,11 +22,45 @@ class HomePageController extends Controller
     {
         $this->middleware('auth');
     }
+
+    // public function showProfile()
+    // {
+    // $user = Auth::user();
+
+    // // Check if $user is not null and is a model instance
+    // if ($user && $user instanceof \Illuminate\Database\Eloquent\Model) {
+    //     $user->load('players');  // Eager load the 'players' relationship
+
+    //     return view('homepage.user-profile', ['user' => $user]);
+    // } else {
+    //     // Handle cases where $user is null or not a model instance
+    //     return redirect()->route('login')->with('error', 'You need to be logged in to view the profile.');
+    // }
+    // $user = Auth::user(); // Ensure this is fetching the user
+
+    // if (!$user) {
+    //     return redirect()->route('login')->with('error', 'You must be logged in to view this page.');
+    // }
+
+    // $user->load('players'); // Load relations, if necessary
+
+    // return view('homepage.user-profile', compact('user'));
+    // }
+
     public function userProfilePage()
     {
+        $user = Auth::user(); // Ensure this is fetching the user
+
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'You must be logged in to view this page.');
+        }
+
+        $user->load('players');
+
         $products = Products::all();
-        return view('homepage.user-profile',[
-            'products' => $products
+        return view('homepage.user-profile', [
+            'products' => $products,
+            'user' => $user
         ]);
     }
     public function orderProducts(Request $request)
@@ -48,7 +86,8 @@ class HomePageController extends Controller
         OrderProduct::destroy($id);
         return redirect()->route('homepage.admin-dashboard')->with('message', 'Order Delivered SUccessfully');
     }
-    public function sendMessage(Request $request){
+    public function sendMessage(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -64,12 +103,12 @@ class HomePageController extends Controller
 
         $message->save();
         return redirect()->back()->with('message', 'Message sent successfully');
-
     }
 
 
 
-    public function adminDashboard(){
+    public function adminDashboard()
+    {
         $players = Players::all();
         $la_liga_clubs = LaLigaClubs::all();
         $epl_clubs = EplClubs::all();
@@ -78,7 +117,7 @@ class HomePageController extends Controller
         $products = Products::all();
         $orderproducts = OrderProduct::all();
         $messages = Message::all();
-        
+
         return view('homepage.admin-dashboard', [
             'players' => $players,
             'la_liga_clubs' => $la_liga_clubs,
@@ -91,8 +130,49 @@ class HomePageController extends Controller
         ]);
     }
 
-    public function deleteMessage($id){
+    public function deleteMessage($id)
+    {
         Message::destroy($id);
         return redirect()->route('homepage.admin-dashboard')->with('message', 'Message deleted successfully');
+    }
+
+    public function addPlayerToProfile(Request $request)
+    {
+        $request->validate([
+            'player_name' => 'required|string',
+            'player_position' => 'required|string',
+            'club_type' => 'required|string',
+        ]);
+
+        $user = Auth::user();
+        UserPlayer::create([
+            'user_id' => $user->id,
+            'player_name' => $request->player_name,
+            'player_position' => $request->player_position,
+            'club_type' => $request->club_type
+        ]);
+
+        return back()->with('success', 'Player added to your Dream11 team!');
+    }
+
+    public function removePlayer(Request $request)
+    {
+        $request->validate([
+            'player_name' => 'required|string',
+            'player_position' => 'required|string',
+        ]);
+
+        $user = Auth::user();
+        $player = $user->players()->where([
+            ['player_name', '=', $request->player_name],
+            ['player_position', '=', $request->player_position],
+        ])->first();
+
+        if ($player) {
+            $player->delete();
+            return back()->with('success', 'Player removed successfully.');
+        }
+
+        return back()->with('error', 'Player not found.');
     }
 }

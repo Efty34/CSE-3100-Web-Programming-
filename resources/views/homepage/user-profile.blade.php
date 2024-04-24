@@ -69,21 +69,46 @@
 
                     <ul class="grid-list">
 
-                        <li>
-                            <div class="card top-seller-card">
+                        @foreach ($user->players as $player)
+                            <li>
+                                <div class="card top-seller-card">
+                                    <form
+                                        action="{{ route('player.remove', ['player_name' => $player->player_name, 'player_position' => $player->player_position]) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="delete-button" type="submit">X</button>
+                                    </form>
 
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
+                                    <div class="top-seller-card2">
+                                        <h3 class="card-title">
+                                            {{ $player->player_name }}
+                                        </h3>
+                                        <data>{{ $player->player_position }}</data>
+                                    </div>
                                 </div>
+                            </li>
+                        @endforeach
 
-                            </div>
-                        </li>
+
+                        {{-- @foreach ($dream11Players as $dream11Player)
+                            <li>
+                                <div class="card top-seller-card">
+
+                                    <button class="delete-button" type="submit">X</button>
+
+                                    <div class="top-seller-card2">
+                                        <h3 class="card-title">
+                                            {{$dream11Player->player_name}}
+                                        </h3>
+
+                                        <data>{{$dream11Player->player_position}}</data>
+                                    </div>
+
+                                </div>
+                            </li>
+                        @endforeach --}}
+
 
                     </ul>
 
@@ -210,15 +235,18 @@
                                 @csrf
                                 <div class="input-group">
                                     <label for="username">Your Name</label>
-                                    <input type="text" name="name" id="name" required="" value="{{ old('name') }}">
+                                    <input type="text" name="name" id="name" required=""
+                                        value="{{ old('name') }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="username">Email</label>
-                                    <input type="email" name="email" id="email" required="" value="{{ old('email') }}">
+                                    <input type="email" name="email" id="email" required=""
+                                        value="{{ old('email') }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="password">Subject</label>
-                                    <input type="text" name="subject" id="product" required="" value="{{ old('subject') }}">
+                                    <input type="text" name="subject" id="product" required=""
+                                        value="{{ old('subject') }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="password">Message</label>

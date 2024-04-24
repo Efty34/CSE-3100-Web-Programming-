@@ -208,7 +208,7 @@
                                         width="60" data-testimonials-avatar>
                                 </figure>
 
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Spanish Championship</h4>
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Spanish Championshi</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p>
@@ -599,7 +599,7 @@
 
                             <h3 class="h3 service-title">Starting 11</h3>
 
-                            <ul class="service-list">
+                            {{-- <ul class="service-list">
 
                                 @foreach (range(1, 11) as $index)
                                     <li class="service-item">
@@ -620,26 +620,41 @@
                                     </li>
                                 @endforeach
 
-                                {{-- <li class="service-item">
 
-                                    @auth
-                                        <div class="service-icon-box">
-                                            <a href="#"><button><ion-icon style="color: burlywood;"
-                                                        name="star-outline"></ion-icon></button></a>
+                            </ul> --}}
+
+                            <ul class="service-list">
+
+                                @foreach (range(1, 11) as $index)
+                                    <li class="service-item">
+                                        @auth
+                                            <div class="service-icon-box">
+                                                <form action="{{ route('add.player.to.profile') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="player_name"
+                                                        value="{{ $la_liga_club->{'name' . $index} }}">
+                                                    <input type="hidden" name="player_position"
+                                                        value="{{ $la_liga_club->{'position' . $index} }}">
+                                                    <input type="hidden" name="club_type" value="la_liga">
+                                                    <button type="submit"><ion-icon style="color: burlywood;"
+                                                            name="star-outline"></ion-icon></button>
+                                                </form>
+                                            </div>
+                                        @endauth
+                                        <!-- Display player info -->
+                                        <div class="service-content-box">
+                                            <h4 class="h4 service-item-title">{{ $la_liga_club->{'name' . $index} }}
+                                            </h4>
+                                            <p class="service-item-text">{{ $la_liga_club->{'position' . $index} }}
+                                            </p>
                                         </div>
-                                    @endauth
-
-                                    <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name1 }}</h4>
-
-                                        <p class="service-item-text">
-                                            {{ $la_liga_club->position1 }}
-                                        </p>
-                                    </div>
-
-                                </li> --}}
+                                    </li>
+                                @endforeach
 
                             </ul>
+
+
+
 
                         </section>
 
