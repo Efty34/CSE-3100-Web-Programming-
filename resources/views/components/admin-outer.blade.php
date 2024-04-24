@@ -54,9 +54,9 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link">
-          <i class="fas fa-people-group"></i>
-          <span class="text">Team</span>
+        <a href="#ipl" class="nav-link">
+          <i class="fas fa-shield"></i>
+          <span class="text">Seria A Clubs</span>
         </a>
       </li>
     </ul>

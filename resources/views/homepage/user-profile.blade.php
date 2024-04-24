@@ -22,11 +22,11 @@
                 <ul class="navbar-list">
 
                     <li>
-                        <a href="#explore" class="navbar-link" data-navlink>Products</a>
+                        <a href="#dream11" class="navbar-link" data-navlink>Dream 11</a>
                     </li>
 
                     <li>
-                        <a href="#dream11" class="navbar-link" data-navlink>Dream 11</a>
+                        <a href="#explore" class="navbar-link" data-navlink>Products</a>
                     </li>
 
                     <li>
@@ -59,188 +59,6 @@
 
     <main>
         <article>
-
-            <section class="section explore" id="explore">
-                <div class="container">
-
-                    <p class="section-subtitle">Products</p>
-
-                    <div class="title-wrapper">
-                        <h2 class="h2 section-title">Explore</h2>
-                    </div>
-
-                    <ul class="grid-list">
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                    </ul>
-
-
-                    <p class="section-subtitle">Order Section</p>
-
-                    <div class="center">
-                        <div class="login-box">
-                            <p>Order</p>
-                            <form>
-                                <div class="user-box">
-                                    <input required="" name="" type="text">
-                                    <label>Your Name</label>
-                                </div>
-                                <div class="user-box">
-                                    <input required="" name="" type="password">
-                                    <label>Product Id</label>
-                                </div>
-                                <div class="user-box">
-                                    <input required="" name="" type="password">
-                                    <label>Quantity</label>
-                                </div>
-                                <a href="#">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    Submit
-                                </a>
-                            </form>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-            </section>
-
 
             <section class="section top-seller" id="dream11">
                 <div class="container">
@@ -434,7 +252,186 @@
                 </div>
             </section>
 
+            <section class="section explore" id="explore">
+                <div class="container">
 
+                    <p class="section-subtitle">Products</p>
+
+                    <div class="title-wrapper">
+                        <h2 class="h2 section-title">Explore</h2>
+                    </div>
+
+                    <ul class="grid-list">
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="card explore-card">
+
+                                <figure class="card-banner">
+                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
+                                        class="img-cover">
+                                    </a>
+                                </figure>
+
+                                <h3 class="h3 card-title">
+                                    Adidas air x11
+                                </h3>
+
+                                <div class="wrapper">
+                                    <data class="wrapper-item" value="1.5">Product Id</data>
+
+                                    <span class="wrapper-item">#01</span>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                    <p class="section-subtitle">Order Section</p>
+
+                    <div class="center">
+                        <div class="login-box">
+                            <p>Order</p>
+                            <form>
+                                <div class="user-box">
+                                    <input required="" name="" type="text">
+                                    <label>Your Name</label>
+                                </div>
+                                <div class="user-box">
+                                    <input required="" name="" type="password">
+                                    <label>Product Id</label>
+                                </div>
+                                <div class="user-box">
+                                    <input required="" name="" type="password">
+                                    <label>Quantity</label>
+                                </div>
+                                <a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Submit
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
 
         </article>
     </main>

@@ -27,7 +27,7 @@
         </div>
         <div class="card red">
             <img src="{{ asset('leaguelistpage_assets/seriea.png') }}" alt="" width="50">
-            <a href="">
+            <a href="{{ route('seriaa.la-liga-clubs') }}">
                 <p class="tip">Seria A</p>
             </a>
         </div>

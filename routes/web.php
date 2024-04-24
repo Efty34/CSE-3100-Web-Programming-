@@ -15,6 +15,7 @@ use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SeriaAController;
 use App\Models\BundesLigaClubs;
 
 /*
@@ -130,6 +131,24 @@ Route::controller(BundesLigaController::class)->group(function(){
     Route::delete('/bundes-liga-clubs/{id}/delete', [BundesLigaController::class, 'deleteClub'])->name('bundesliga.delete-club')->middleware(['auth','user-access:admin']);
     // Show Club Profile
     Route::get('/bundes-liga-clubs/{club}', [BundesLigaController::class, 'showClub'])->name('bundesliga.show-club');
+});
+
+// Navigate to Seria A Clubs
+Route::controller(SeriaAController::class)->group(function(){
+    // Club Card Page
+    Route::get('/seria-a-clubs', [SeriaAController::class, 'seriaAClubCardPage'])->name('seriaa.la-liga-clubs');
+    // Show Create Club Form
+    Route::get('/seria-a-clubs/create', [SeriaAController::class, 'createClub'])->name('seriaa.create-club')->middleware(['auth','user-access:admin']);
+    // Store Create Club
+    Route::post('/seria-a-clubs/store', [SeriaAController::class, 'storeClub'])->name('seriaa.store-club')->middleware(['auth','user-access:admin']);
+    // Show Edit Club Form
+    Route::get('/seria-a-clubs/{id}/edit', [SeriaAController::class, 'updateClub'])->name('seriaa.update-club')->middleware(['auth','user-access:admin']);
+    // Update Club and Save
+    Route::put('/seria-a-clubs/{id}/update', [SeriaAController::class, 'saveUpdatClub'])->name('seriaa.save-club')->middleware(['auth','user-access:admin']);
+    // Delete Player
+    Route::delete('/seria-a-clubs/{id}/delete', [SeriaAController::class, 'deleteClub'])->name('seriaa.delete-club')->middleware(['auth','user-access:admin']);
+    // Show Club Profile
+    Route::get('/seria-a-clubs/{club}', [SeriaAController::class, 'showClub'])->name('seriaa.show-club');
 });
 
 
