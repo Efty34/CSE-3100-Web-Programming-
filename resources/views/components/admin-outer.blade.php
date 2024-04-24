@@ -63,6 +63,30 @@
 
     <ul class="side-menu">
       <li>
+        <a href="#product" class="nav-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="text">Products</span>
+        </a>
+      </li>
+      <li>
+        <a href="#order" class="nav-link">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="text">Ordered Products</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="side-menu">
+      <li>
+        <a href="#message" class="nav-link">
+          <i class="fa-solid fa-message"></i>
+          <span class="text">Messages</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="side-menu">
+      <li>
         <a href="#">
           <i class="fas fa-cog"></i>
           <span class="text">Settings</span>

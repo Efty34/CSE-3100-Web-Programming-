@@ -1,22 +1,23 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Models\BundesLigaClubs;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BundesLigaController;
 use App\Http\Controllers\EplController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
-use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\wc22Controller;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LaLigaController;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\SeriaAController;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\BundesLigaController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\SeriaAController;
-use App\Models\BundesLigaClubs;
 
 /*
 |--------------------------------------------------------------------------
@@ -186,13 +187,39 @@ Route::controller(AuthController::class)->group(function(){
 // Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/user-profile', [HomePageController::class, 'userProfilePage'])->name('homepage.user-profile');
+    // Oder Products
+    Route::post('/user-profile/order-products', [HomePageController::class, 'orderProducts'])->name('homepage.order-products');
+    // Send Message to Admin
+    Route::post('/user-profile/send-message', [HomePageController::class, 'sendMessage'])->name('homepage.send-message');
 });
 
 // Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin-dashboard', [HomePageController::class, 'adminDashboard'])->name('homepage.admin-dashboard');
+    // Delete Order
+    Route::delete('/order/{id}/delete', [HomePageController::class, 'deleteOrder'])->name('homepage.delete-order');
+    // Delete Message
+    Route::delete('/message/{id}/delete', [HomePageController::class, 'deleteMessage'])->name('homepage.delete-message');
     
 });
 
 // News Website
 Route::get('/news', [NewsController::class, 'newsPage'])->name('index.news-page');
+
+// Products
+Route::controller(ProductsController::class)->group(function(){
+    // Products Page
+    Route::get('/products', [ProductsController::class, 'productsPage'])->name('products.products-page');
+    // Show Create Product Form
+    Route::get('/products/create', [ProductsController::class, 'createProduct'])->name('products.create-product')->middleware(['auth','user-access:admin']);
+    // Store Created Product
+    Route::post('/products/store', [ProductsController::class, 'storeProduct'])->name('products.store-product')->middleware(['auth','user-access:admin']);
+    // Show Edit Product Form
+    Route::get('/products/{id}/edit', [ProductsController::class, 'updateProduct'])->name('products.update-product')->middleware(['auth','user-access:admin']);
+    // Update Product and Save
+    Route::put('/products/{id}/update', [ProductsController::class, 'saveUpdateProduct'])->name('products.save-product')->middleware(['auth','user-access:admin']);
+    // Delete Product
+    Route::delete('/products/{id}/delete', [ProductsController::class, 'deleteProduct'])->name('products.delete-product')->middleware(['auth','user-access:admin']);
+    // Show Product Profile
+    Route::get('/products/{product}', [ProductsController::class, 'showProduct'])->name('products.show-product');
+});

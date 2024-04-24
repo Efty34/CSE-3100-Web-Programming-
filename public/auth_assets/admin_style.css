@@ -498,6 +498,7 @@ body.dark {
 
 .content main .table-data .order table td {
   padding: 16px 0;
+  
 }
 
 .content main .table-data .order table td:first-child {
@@ -508,8 +509,8 @@ body.dark {
 }
 
 .content main .table-data .order table td img {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 10%;
   object-fit: cover;
 }
@@ -680,4 +681,9 @@ button {
 .no-design{
   text-decoration: none;
   color: white;
+}
+
+#product_img{
+	height: 100px;
+	width: 100px;
 }

@@ -85,168 +85,6 @@
                             </div>
                         </li>
 
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card top-seller-card">
-
-                                <button class="delete-button" type="submit">X</button>
-
-                                <div class="top-seller-card2">
-                                    <h3 class="card-title">
-                                        Luka Modric
-                                    </h3>
-
-                                    <data>Mid Fielder</data>
-                                </div>
-
-                            </div>
-                        </li>
-
-
-
                     </ul>
 
                 </div>
@@ -262,138 +100,36 @@
                     </div>
 
                     <ul class="grid-list">
+                        @foreach ($products as $product)
+                            <li>
+                                <div class="card explore-card">
 
-                        <li>
-                            <div class="card explore-card">
+                                    <figure class="card-banner">
+                                        <img src="products_storage/{{ $product->product_image }}" width="600"
+                                            height="600" loading="lazy" class="img-cover">
+                                        </a>
+                                    </figure>
 
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
+                                    <h3 class="h3 card-title">
+                                        {{ $product->product_name }}
+                                    </h3>
 
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
+                                    <div class="wrapper">
+                                        <data class="wrapper-item" value="1.5">Product Id</data>
 
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
+                                        <span class="wrapper-item">{{ $product->product_id }}</span>
+                                    </div>
 
-                                    <span class="wrapper-item">#01</span>
+                                    <div class="wrapper">
+                                        <data class="wrapper-item" value="1.5">Price</data>
+
+                                        <span class="wrapper-item">{{ $product->product_price }}$</span>
+                                    </div>
+
                                 </div>
+                            </li>
+                        @endforeach
 
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="card explore-card">
-
-                                <figure class="card-banner">
-                                    <img src="./assets/images/boot.jpg" width="600" height="600" loading="lazy"
-                                        class="img-cover">
-                                    </a>
-                                </figure>
-
-                                <h3 class="h3 card-title">
-                                    Adidas air x11
-                                </h3>
-
-                                <div class="wrapper">
-                                    <data class="wrapper-item" value="1.5">Product Id</data>
-
-                                    <span class="wrapper-item">#01</span>
-                                </div>
-
-                            </div>
-                        </li>
 
                     </ul>
 
@@ -403,25 +139,46 @@
                     <div class="center">
                         <div class="login-box">
                             <p>Order</p>
-                            <form>
+                            <form method="POST" action="/user-profile/order-products">
+                                @csrf
                                 <div class="user-box">
-                                    <input required="" name="" type="text">
+                                    <input required="" name="name" type="text" value="{{ old('name') }}">
                                     <label>Your Name</label>
+                                    @if ($errors->has('name'))
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
+                                    @endif
                                 </div>
                                 <div class="user-box">
-                                    <input required="" name="" type="password">
+                                    <input required="" name="product_id" type="text"
+                                        value="{{ old('product_id') }}">
                                     <label>Product Id</label>
+                                    @if ($errors->has('product_id'))
+                                        <span class="text-danger">{{ $errors->first('product_id') }}</span>
+                                    @endif
                                 </div>
                                 <div class="user-box">
-                                    <input required="" name="" type="password">
+                                    <input required="" name="product_quantity" type="number"
+                                        value="{{ old('product_quantity') }}">
                                     <label>Quantity</label>
+                                    @if ($errors->has('product_quantity'))
+                                        <span class="text-danger">{{ $errors->first('product_quantity') }}</span>
+                                    @endif
                                 </div>
-                                <a href="#">
+                                <div class="user-box">
+                                    <input required="" name="product_total_price" type="number"
+                                        value="{{ old('product_total_price') }}">
+                                    <label>Total Price</label>
+                                    @if ($errors->has('product_total_price'))
+                                        <span class="text-danger">{{ $errors->first('product_total_price') }}</span>
+                                    @endif
+                                </div>
+
+                                <a>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    Submit
+                                    <button type="submit" style="color: rgb(68, 8, 189)">Submit</button>
                                 </a>
                             </form>
                         </div>
@@ -449,18 +206,23 @@
                     <div class="center">
                         <div class="form-container">
                             <p class="title">Contact</p>
-                            <form class="form">
+                            <form class="form" method="POST" action="/user-profile/send-message">
+                                @csrf
                                 <div class="input-group">
                                     <label for="username">Your Name</label>
-                                    <input type="text" name="name" id="name" placeholder="">
+                                    <input type="text" name="name" id="name" required="" value="{{ old('name') }}">
+                                </div>
+                                <div class="input-group">
+                                    <label for="username">Email</label>
+                                    <input type="email" name="email" id="email" required="" value="{{ old('email') }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="password">Subject</label>
-                                    <input type="text" name="product" id="product" placeholder="">
+                                    <input type="text" name="subject" id="product" required="" value="{{ old('subject') }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="password">Message</label>
-                                    <textarea name="message" cols="30" rows="10"></textarea>
+                                    <textarea required="" name="message" cols="30" rows="10">{{ old('message') }}</textarea>
                                 </div>
                                 <button class="sign">Send</button>
                             </form>
