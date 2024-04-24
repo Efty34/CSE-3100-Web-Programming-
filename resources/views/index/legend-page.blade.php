@@ -53,6 +53,19 @@
 
                 </div>
             </div>
+            <div class="item">
+                <img src="https://images6.alphacoders.com/117/1178846.jpg">
+                <div class="content">
+                    <div class="topic">Iker Casillas</div>
+                    <div class="des">
+                        Iker Casillas, a Spanish football legend, was a stalwart goalkeeper known for his shot-stopping
+                        abilities and leadership on the field. He won numerous titles with Real Madrid and the Spanish
+                        national team, including the FIFA World Cup and UEFA European Championship. Casillas' legacy as
+                        one of the greatest goalkeepers of all time is etched in football history.
+                    </div>
+
+                </div>
+            </div>
         </div>
         <!-- list thumnail -->
         <div class="thumbnail">
@@ -69,6 +82,9 @@
             </div>
             <div class="item">
                 <img src="https://wallpaperaccess.com/full/1134575.jpg">
+            </div>
+            <div class="item">
+                <img src="https://images6.alphacoders.com/117/1178846.jpg">
             </div>
         </div>
         <!-- next prev -->

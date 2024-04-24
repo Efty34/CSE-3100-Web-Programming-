@@ -22,8 +22,8 @@ class AuthController extends Controller
     public function storeUser(Request $request)
     {
         Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
+            'name' => 'required|unique:users,name',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6|confirmed'
         ])->validate();
 
@@ -33,15 +33,15 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'type' => "0"
         ]);
-        
-        return redirect()->route('auth.login-page')->with('success', 'User created successfully');
 
+        return redirect()->route('auth.register-page')->with('success', 'User created successfully');
     }
     public function loginPage()
     {
         return view('auth.login-page');
     }
-    public function loginAction(Request $request){
+    public function loginAction(Request $request)
+    {
         Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required'
@@ -60,7 +60,6 @@ class AuthController extends Controller
         } else {
             return redirect()->route('homepage.user-profile');
         }
-
     }
 
     public function logout(Request $request)

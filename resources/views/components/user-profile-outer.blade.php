@@ -14,6 +14,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:wght@600;900&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+    <style>
+      .footer-bottom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .del-user{
+        color: white;
+        text-decoration: underline;
+      }
+    </style>
 </head>
 
 <body id="top">

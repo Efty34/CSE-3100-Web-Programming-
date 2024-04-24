@@ -13,11 +13,11 @@
             <div class="sidebar-info">
 
                 <figure class="avatar-box">
-                    <img src="{{ asset('laliga_storage/' . $la_liga_club->{'logo'}) }}" alt="" width="80">
+                    <img src="{{ asset('laliga_storage/' . $epl_club->{'logo'}) }}" alt="" width="80">
                 </figure>
 
                 <div class="info-content">
-                    <h1 class="name" title="Richard hanrick">{{ $la_liga_club->club_name }}</h1>
+                    <h1 class="name" title="Richard hanrick">{{ $epl_club->club_name }}</h1>
 
                 </div>
 
@@ -44,7 +44,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Founded</p>
 
-                            <time datetime="1982-06-23">{{ $la_liga_club->founded_year }}</time>
+                            <time datetime="1982-06-23">{{ $epl_club->founded_year }}</time>
                         </div>
 
                     </li>
@@ -58,7 +58,7 @@
                         <div class="contact-info">
                             <p class="contact-title">Country</p>
 
-                            <address>{{ $la_liga_club->country }}</address>
+                            <address>{{ $epl_club->country }}</address>
                         </div>
 
                     </li>
@@ -70,7 +70,7 @@
                 <ul class="social-list">
 
                     <li class="social-item">
-                        <a href="{{ $la_liga_club->social }}" class="social-link">
+                        <a href="{{ $epl_club->social }}" class="social-link">
                             <ion-icon name="globe-outline"></ion-icon>
                         </a>
                     </li>
@@ -129,7 +129,7 @@
                                 <h4 class="h4 service-item-title"> League</h4>
 
                                 <p class="service-item-text">
-                                    {{ $la_liga_club->league }}
+                                    {{ $epl_club->league }}
                                 </p>
                             </div>
 
@@ -146,7 +146,7 @@
                                 <h4 class="h4 service-item-title">World Ranking</h4>
 
                                 <p class="service-item-text">
-                                    {{ $la_liga_club->world_ranking }}
+                                    {{ $epl_club->world_ranking }}
                                 </p>
                             </div>
 
@@ -163,7 +163,7 @@
                                 <h4 class="h4 service-item-title">Market Value</h4>
 
                                 <p class="service-item-text">
-                                    {{ $la_liga_club->market_value }}
+                                    {{ $epl_club->market_value }}
                                 </p>
                             </div>
 
@@ -193,7 +193,7 @@
 
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p>
-                                        {{ $la_liga_club->champions_league }}
+                                        {{ $epl_club->champions_league }}
                                     </p>
                                 </div>
 
@@ -208,11 +208,11 @@
                                         width="60" data-testimonials-avatar>
                                 </figure>
 
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Spanish Championship</h4>
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>English Championship</h4>
 
                                 <div class="testimonials-text" data-testimonials-text>
                                     <p>
-                                        {{ $la_liga_club->league_trophy }}
+                                        {{ $epl_club->league_trophy }}
                                     </p>
                                 </div>
 
@@ -290,7 +290,7 @@
 
                             <h4 class="h4 timeline-item-title">Stadium Name</h4>
 
-                            <span>{{ $la_liga_club->stadium_name }}</span>
+                            <span>{{ $epl_club->stadium_name }}</span>
 
                         </li>
 
@@ -298,7 +298,7 @@
 
                             <h4 class="h4 timeline-item-title">Capacity</h4>
 
-                            <span>{{ $la_liga_club->capacity }}</span>
+                            <span>{{ $epl_club->capacity }}</span>
 
                         </li>
 
@@ -322,7 +322,7 @@
                         <li class="timeline-item">
 
                             <h4 class="h4 timeline-item-title">Manager</h4>
-                            <span>{{ $la_liga_club->manager }}</span>
+                            <span>{{ $epl_club->manager }}</span>
                         </li>
                     </ol>
 
@@ -339,7 +339,7 @@
                             <li class="clients-item">
 
                                 <img id="std-img"
-                                    src="{{ asset('laliga_storage/' . $la_liga_club->{'stadium_picture'}) }}"
+                                    src="{{ asset('laliga_storage/' . $epl_club->{'stadium_picture'}) }}"
                                     alt="client logo">
 
                             </li>
@@ -611,10 +611,10 @@
                                         @endauth
 
                                         <div class="service-content-box">
-                                            <h4 class="h4 service-item-title">{{ $la_liga_club->{'name' . $index} }}
+                                            <h4 class="h4 service-item-title">{{ $epl_club->{'name' . $index} }}
                                             </h4>
                                             <p class="service-item-text">
-                                                {{ $la_liga_club->{'position' . $index} }}
+                                                {{ $epl_club->{'position' . $index} }}
                                             </p>
                                         </div>
                                     </li>
@@ -630,10 +630,10 @@
                                     @endauth
 
                                     <div class="service-content-box">
-                                        <h4 class="h4 service-item-title">{{ $la_liga_club->name1 }}</h4>
+                                        <h4 class="h4 service-item-title">{{ $epl_club->name1 }}</h4>
 
                                         <p class="service-item-text">
-                                            {{ $la_liga_club->position1 }}
+                                            {{ $epl_club->position1 }}
                                         </p>
                                     </div>
 

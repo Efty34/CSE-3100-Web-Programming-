@@ -24,7 +24,7 @@
 
                     <div class="tab-pane fade show active" id="club" role="tabpanel" aria-labelledby="profile-tab">
                         <h3 class="register-heading">Add Club</h3>
-                        <form action="/la-liga-clubs/store" method="POST" enctype="multipart/form-data">
+                        <form action="/bundes-liga-clubs/store" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row register-form">
 

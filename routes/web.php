@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BundesLigaController;
+use App\Http\Controllers\EplController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\wc22Controller;
@@ -13,6 +15,7 @@ use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsController;
+use App\Models\BundesLigaClubs;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,9 +86,53 @@ Route::controller(LaLigaController::class)->group(function(){
     Route::get('/la-liga-clubs/create', [LaLigaController::class, 'createClub'])->name('laliga.create-club')->middleware(['auth','user-access:admin']);
     // Store Create Club
     Route::post('/la-liga-clubs/store', [LaLigaController::class, 'storeClub'])->name('laliga.store-club')->middleware(['auth','user-access:admin']);
+    // Show Edit Club Form
+    Route::get('/la-liga-clubs/{id}/edit', [LaLigaController::class, 'updateClub'])->name('laliga.update-club')->middleware(['auth','user-access:admin']);
+    // Update Club and Save
+    Route::put('/la-liga-clubs/{id}/update', [LaLigaController::class, 'saveUpdatClub'])->name('laliga.save-club')->middleware(['auth','user-access:admin']);
+    // Delete Player
+    Route::delete('/la-liga-clubs/{id}/delete', [LaLigaController::class, 'deleteClub'])->name('la-liga.delete-club')->middleware(['auth','user-access:admin']);
     // Show Club Profile
     Route::get('/la-liga-clubs/{club}', [LaLigaController::class, 'showClub'])->name('laliga.show-club');
 });
+
+// Navigate to EPL Clubs
+Route::controller(EplController::class)->group(function(){
+    // Club Card Page
+    Route::get('/epl-clubs', [EplController::class, 'eplClubCardPage'])->name('epl.la-liga-clubs');
+    // Show Create Club Form
+    Route::get('/epl-clubs/create', [EplController::class, 'createClub'])->name('epl.create-club')->middleware(['auth','user-access:admin']);
+    // Store Create Club
+    Route::post('/epl-clubs/store', [EplController::class, 'storeClub'])->name('epl.store-club')->middleware(['auth','user-access:admin']);
+    // Show Edit Club Form
+    Route::get('/epl-clubs/{id}/edit', [EplController::class, 'updateClub'])->name('epl.update-club')->middleware(['auth','user-access:admin']);
+    // Update Club and Save
+    Route::put('/epl-clubs/{id}/update', [EplController::class, 'saveUpdatClub'])->name('epl.save-club')->middleware(['auth','user-access:admin']);
+    // Delete Player
+    Route::delete('/epl-clubs/{id}/delete', [EplController::class, 'deleteClub'])->name('epl.delete-club')->middleware(['auth','user-access:admin']);
+    // Show Club Profile
+    Route::get('/epl-clubs/{club}', [EplController::class, 'showClub'])->name('epl.show-club');
+});
+
+// Navigate to Bundes Liga Clubs
+Route::controller(BundesLigaController::class)->group(function(){
+    // Club Card Page
+    Route::get('/bundes-liga-clubs', [BundesLigaController::class, 'bundesligaClubCardPage'])->name('bundesliga.la-liga-clubs');
+    // Show Create Club Form
+    Route::get('/bundes-liga-clubs/create', [BundesLigaController::class, 'createClub'])->name('bundesliga.create-club')->middleware(['auth','user-access:admin']);
+    // Store Create Club
+    Route::post('/bundes-liga-clubs/store', [BundesLigaController::class, 'storeClub'])->name('bundesliga.store-club')->middleware(['auth','user-access:admin']);
+    // Show Edit Club Form
+    Route::get('/bundes-liga-clubs/{id}/edit', [BundesLigaController::class, 'updateClub'])->name('bundesliga.update-club')->middleware(['auth','user-access:admin']);
+    // Update Club and Save
+    Route::put('/bundes-liga-clubs/{id}/update', [BundesLigaController::class, 'saveUpdatClub'])->name('bundesliga.save-club')->middleware(['auth','user-access:admin']);
+    // Delete Player
+    Route::delete('/bundes-liga-clubs/{id}/delete', [BundesLigaController::class, 'deleteClub'])->name('bundesliga.delete-club')->middleware(['auth','user-access:admin']);
+    // Show Club Profile
+    Route::get('/bundes-liga-clubs/{club}', [BundesLigaController::class, 'showClub'])->name('bundesliga.show-club');
+});
+
+
 
 // Navigate to World Cup 22
 Route::controller(wc22Controller::class)->group(function(){

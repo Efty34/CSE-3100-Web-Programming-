@@ -23,7 +23,7 @@
                         <div class="input-field">
                             <i class="fas fa-user"></i>
                             <input name="email" type="email" placeholder="Email" required=""
-                                value="{{ old('email') }}" />
+                                value="" />
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input name="password_confirmation" type="confirm-password" placeholder="Confirm Password"
+                            <input name="password_confirmation" type="password" placeholder="Confirm Password"
                                 required="" />
                             @error('password_confirmation')
                                 <div class="error-message">
@@ -78,6 +78,7 @@
                         <input type="submit" value="Sign Up" class="btn solid" />
 
                     </form>
+                    
                 </div>
             </div>
             <div class="panels-container">

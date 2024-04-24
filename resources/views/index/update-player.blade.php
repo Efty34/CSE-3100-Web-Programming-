@@ -23,7 +23,7 @@
                 <div class="tab-content" id="myTabContent">
 
                     <div class="tab-pane fade show active" id="player" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Add Player</h3>
+                        <h3 class="register-heading">Update Player</h3>
                         <form action="/players/{{ $player->id}}/update" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
