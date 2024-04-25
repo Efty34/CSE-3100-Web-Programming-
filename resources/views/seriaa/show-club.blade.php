@@ -608,9 +608,9 @@
                                                 <form action="{{ route('add.player.to.profile') }}" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="player_name"
-                                                        value="{{ $seria_a_club_club->{'name' . $index} }}">
+                                                        value="{{ $seria_a_club->{'name' . $index} }}">
                                                     <input type="hidden" name="player_position"
-                                                        value="{{ $seria_a_club_club->{'position' . $index} }}">
+                                                        value="{{ $seria_a_club->{'position' . $index} }}">
                                                     <input type="hidden" name="club_type" value="la_liga">
                                                     <button type="submit"><ion-icon style="color: burlywood;"
                                                             name="star-outline"></ion-icon></button>
@@ -619,9 +619,9 @@
                                         @endauth
                                         <!-- Display player info -->
                                         <div class="service-content-box">
-                                            <h4 class="h4 service-item-title">{{ $seria_a_club_club->{'name' . $index} }}
+                                            <h4 class="h4 service-item-title">{{ $seria_a_club->{'name' . $index} }}
                                             </h4>
-                                            <p class="service-item-text">{{ $seria_a_club_club->{'position' . $index} }}
+                                            <p class="service-item-text">{{ $seria_a_club->{'position' . $index} }}
                                             </p>
                                         </div>
                                     </li>

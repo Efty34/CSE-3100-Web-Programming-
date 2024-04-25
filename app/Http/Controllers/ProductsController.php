@@ -37,7 +37,7 @@ class ProductsController extends Controller
         $products->product_price = $request->product_price;
 
         $products->save();
-        return redirect()->route('homepage.admin-dashboard')->with('success', 'Product added successfully');
+        return redirect()->route('homepage.admin-dashboard')->with('message', 'Product added successfully');
     }
 
     public function updateProduct($id)
@@ -69,13 +69,13 @@ class ProductsController extends Controller
         $product->product_price = $request->product_price;
 
         $product->save();
-        return redirect()->route('homepage.admin-dashboard')->with('success', 'Product updated successfully');
+        return redirect()->route('homepage.admin-dashboard')->with('message', 'Product updated successfully');
     }
 
     public function deleteProduct($id)
     {
         $product = Products::where('id', $id)->first();
         $product->delete();
-        return redirect()->route('homepage.admin-dashboard')->with('success', 'Product deleted successfully');
+        return redirect()->route('homepage.admin-dashboard')->with('message', 'Product deleted successfully');
     }
 }

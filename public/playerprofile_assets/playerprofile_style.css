@@ -342,6 +342,19 @@ body{
   }
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ced4da;
+
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #272829, #61677A00);
+}
+
 
 
 
@@ -1242,8 +1255,6 @@ body{
   }
 
   .clients-item { min-width: calc(33.33% - 35px); }
-
-
 
   /**
    * #RESUME

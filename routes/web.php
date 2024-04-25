@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\BundesLigaClubs;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EplController;
 use App\Http\Controllers\AuthController;

@@ -31,7 +31,19 @@
 
     {{$slot}}
 
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var flashMessage = document.getElementById('flash-message');
+          if (flashMessage) {
+              setTimeout(function() {
+                  flashMessage.style.opacity = '0'; // First, fade out by setting opacity to 0
+                  setTimeout(function() {
+                      flashMessage.style.display = 'none'; // Then, set display to none after the fade
+                  }, 1000); // Delay the display none to allow for fade effect
+              }, 4000);
+          }
+      });
+      </script>
     <script src="{{ asset('userprofile_assets/userprofile_script.js') }}"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

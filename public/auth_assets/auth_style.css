@@ -11,6 +11,8 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+
+
 .container {
   position: relative;
   width: 100%;
@@ -449,4 +451,17 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
+}
+
+main::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #ced4da;
+
+}
+
+main::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #272829, #61677A00);
 }

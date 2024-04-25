@@ -9,6 +9,14 @@
 
         </nav>
 
+        @if (session('message'))
+            <div class="floating-alert">
+                <div class="alert alert-success" id="flash-message" role="alert">
+                    {{ session('message') }}
+                </div>
+            </div>
+        @endif
+
         <main>
 
             <div class="table-data">
@@ -358,16 +366,16 @@
                                     <td>
                                         <button type="submit">
                                             <a class="no-design"
-                                                href="/products/{{$product->id}}/edit"><span>Update</span></a>
+                                                href="/products/{{ $product->id }}/edit"><span>Update</span></a>
                                         </button>
-                                        <form action="/products/{{$product->id}}/delete" method="POST">
+                                        <form action="/products/{{ $product->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
-                                        
+
                                     </td>
 
                                 </tr>
@@ -411,7 +419,7 @@
                                     </td>
 
                                     <td>
-    
+
                                         <form action="/order/{{ $orderproduct->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -419,7 +427,7 @@
                                                 <span>Delete</span>
                                             </button>
                                         </form>
-                                        
+
                                     </td>
 
                                 </tr>
@@ -461,20 +469,21 @@
                                     </td>
                                     <td>
                                         <p>{{ $message1->message }}</p>
-                                    </td><td>
+                                    </td>
+                                    <td>
                                         <p>{{ $message1->created_at }}</p>
                                     </td>
 
                                     <td>
-    
-                                        <form action="/message/{{$message1->id}}/delete" method="POST">
+
+                                        <form action="/message/{{ $message1->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
-                                        
+
                                     </td>
 
                                 </tr>

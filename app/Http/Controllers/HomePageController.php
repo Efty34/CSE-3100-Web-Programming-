@@ -52,9 +52,10 @@ class HomePageController extends Controller
         $user = Auth::user(); // Ensure this is fetching the user
 
         if (!$user) {
-            return redirect()->route('login')->with('error', 'You must be logged in to view this page.');
+            return redirect()->route('login')->with('message', 'You must be logged in to view this page.');
         }
 
+        // Ignore this, code will code
         $user->load('players');
 
         $products = Products::all();
@@ -152,7 +153,7 @@ class HomePageController extends Controller
             'club_type' => $request->club_type
         ]);
 
-        return back()->with('success', 'Player added to your Dream11 team!');
+        return redirect()->route('homepage.user-profile')->with('message', 'Player added to your Dream11 team!');
     }
 
     public function removePlayer(Request $request)
@@ -163,6 +164,7 @@ class HomePageController extends Controller
         ]);
 
         $user = Auth::user();
+        // Ignore this, code will code
         $player = $user->players()->where([
             ['player_name', '=', $request->player_name],
             ['player_position', '=', $request->player_position],
@@ -170,7 +172,7 @@ class HomePageController extends Controller
 
         if ($player) {
             $player->delete();
-            return back()->with('success', 'Player removed successfully.');
+            return back()->with('message', 'Player removed from your Dream11 !!!');
         }
 
         return back()->with('error', 'Player not found.');

@@ -4,6 +4,19 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ced4da;
+
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #272829, #61677A00);
+}
+
 @keyframes move {
   0% {
     background-position: 0 0;

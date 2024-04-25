@@ -55,3 +55,16 @@ window.addEventListener("resize", () => {
 if (window.innerWidth < 768) {
   sideBar.classList.add("hide");
 }
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var flashMessage = document.getElementById('flash-message');
+//   if (flashMessage) {
+//       setTimeout(function() {
+//           flashMessage.style.display = 'none';
+//       }, 4000);
+//   }
+// });
+
+
