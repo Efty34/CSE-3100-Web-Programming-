@@ -10,7 +10,7 @@
                     </div>
                     <div class="details">
                         <img class="club-img" src="laliga_storage/{{ $seria_a_club->logo }}" alt="">
-                        <a class="href-decoration" href="/la-liga-clubs/{{ $seria_a_club->id }}"><button>Explore</button></a>
+                        <a class="href-decoration" href="/seria-a-clubs/{{ $seria_a_club->id }}"><button>Explore</button></a>
                     </div>
                 </div>
             @endforeach

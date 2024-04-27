@@ -864,14 +864,7 @@ textarea {
   border-color: rgb(34, 19, 79);
 }
 
-.forgot {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175, 1);
-  margin: 8px 0 14px 0;
-}
+
 
 .forgot a,
 .signup a {
@@ -880,7 +873,11 @@ textarea {
   font-size: 14px;
 }
 
-.forgot a:hover,
+.total-h4{
+  font-size: 1.75rem;
+  font-weight: 200;
+  color: #90d7fb;
+}
 .signup a:hover {
   text-decoration: underline rgba(167, 139, 250, 1);
 }
@@ -941,6 +938,18 @@ textarea {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
+}
+
+.login-box .user-box select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #90d7fb;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color:var(--eerie-black-1);
 }
 
 .login-box .user-box label {

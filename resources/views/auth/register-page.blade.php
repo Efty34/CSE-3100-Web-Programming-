@@ -4,6 +4,14 @@
             <div class="forms-container">
                 <div class="signin-signup">
 
+                    @if (session('message'))
+                        <div class="floating-alert">
+                            <div class="alert alert-success" id="flash-message" role="alert">
+                                {{ session('message') }}
+                            </div>
+                        </div>
+                    @endif
+
                     <form action="/loginsystem/login" method="POST" class="sign-in-form">
 
                         @csrf
@@ -22,8 +30,7 @@
                         @endif
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input name="email" type="email" placeholder="Email" required=""
-                                value="" />
+                            <input name="email" type="email" placeholder="Email" required="" value="" />
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
@@ -78,7 +85,7 @@
                         <input type="submit" value="Sign Up" class="btn solid" />
 
                     </form>
-                    
+
                 </div>
             </div>
             <div class="panels-container">

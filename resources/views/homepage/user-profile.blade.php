@@ -30,6 +30,10 @@
                     </li>
 
                     <li>
+                        <a href="#order" class="navbar-link" data-navlink>Order</a>
+                    </li>
+
+                    <li>
                         <a href="#contact" class="navbar-link" data-navlink>Contact</a>
                     </li>
 
@@ -176,13 +180,16 @@
                             </li>
                         @endforeach
 
-
                     </ul>
-
+                </div>
+            </section>  
+            
+            <section class="section explore" id="order">
+                <div class="container">
 
                     <p class="section-subtitle">Order Section</p>
 
-                    <div class="center">
+                    <div class="center" >
                         <div class="login-box">
                             <p>Order</p>
                             <form method="POST" action="/user-profile/order-products">
@@ -195,30 +202,31 @@
                                     @endif
                                 </div>
                                 <div class="user-box">
-                                    <input required="" name="product_id" type="text"
-                                        value="{{ old('product_id') }}">
-                                    <label>Product Id</label>
-                                    @if ($errors->has('product_id'))
-                                        <span class="text-danger">{{ $errors->first('product_id') }}</span>
-                                    @endif
+                                    <select id="product-select">
+                                        <option value="">Select a product</option>
+                                        @foreach ($products as $product)
+                                            <option value="{{ $product->product_id }}" data-price="{{ $product->product_price }}">
+                                                {{ $product->product_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="user-box">
-                                    <input required="" name="product_quantity" type="number"
-                                        value="{{ old('product_quantity') }}">
+                                    <input required="" name="product_quantity" id="product_quantity" type="number" value="{{ old('product_quantity') }}">
                                     <label>Quantity</label>
                                     @if ($errors->has('product_quantity'))
                                         <span class="text-danger">{{ $errors->first('product_quantity') }}</span>
                                     @endif
                                 </div>
+                                <h4 class="total-h4">Total Price($):</h4>
                                 <div class="user-box">
-                                    <input required="" name="product_total_price" type="number"
-                                        value="{{ old('product_total_price') }}">
-                                    <label>Total Price</label>
+                                    <input required="" name="product_total_price" id="product_total_price" type="number" value="{{ old('product_total_price') }}" readonly>
                                     @if ($errors->has('product_total_price'))
                                         <span class="text-danger">{{ $errors->first('product_total_price') }}</span>
                                     @endif
                                 </div>
-
+                                <input type="hidden" id="product_price" name="product_price">
+                                <input type="hidden" id="product_id" name="product_id">
                                 <a>
                                     <span></span>
                                     <span></span>
@@ -226,15 +234,43 @@
                                     <span></span>
                                     <button type="submit" style="color: rgb(68, 8, 189)">Submit</button>
                                 </a>
+
                             </form>
                         </div>
+                        
+                        <script>
+                            document.getElementById('product-select').addEventListener('change', function() {
+                                var selectedOption = this.options[this.selectedIndex];
+                                var productId = selectedOption.value;
+                                var productPrice = selectedOption.getAttribute('data-price');
+                        
+                                document.getElementById('product_id').value = productId;
+                                document.getElementById('product_price').value = productPrice;
+                                calculateTotalPrice();
+                            });
+                        
+                            document.getElementById('product_quantity').addEventListener('input', calculateTotalPrice);
+                        
+                            function calculateTotalPrice() {
+                                var quantity = document.getElementById('product_quantity').value;
+                                var price = parseFloat(document.getElementById('product_price').value);
+                        
+                                var totalPrice = quantity * price;
+                                document.getElementById('product_total_price').value = totalPrice;
+                            }
+                        </script>
+                        
                     </div>
-
-
-
 
                 </div>
             </section>
+
+                    
+
+
+
+
+                
 
         </article>
     </main>

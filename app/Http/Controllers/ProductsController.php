@@ -10,8 +10,7 @@ class ProductsController extends Controller
     public function productsPage()
     {
         return view('products.', [
-            // 'players' => Players::oldest()->paginate(1)
-            'products' => Products::all()
+            'products' => Products::all(),
         ]);
     }
     public function createProduct()
@@ -61,7 +60,6 @@ class ProductsController extends Controller
             $productImg = time() . '_Newproduct.' . $request->product_image->extension();
             $request->product_image->move(public_path('products_storage'), $productImg);
             $product->product_image = $productImg;
-
         }
 
         $product->product_name = $request->product_name;

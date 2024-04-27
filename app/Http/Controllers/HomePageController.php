@@ -85,7 +85,7 @@ class HomePageController extends Controller
     public function deleteOrder($id)
     {
         OrderProduct::destroy($id);
-        return redirect()->route('homepage.admin-dashboard')->with('message', 'Order Delivered SUccessfully');
+        return redirect()->route('homepage.admin-dashboard')->with('message', 'Order Delivered Successfully');
     }
     public function sendMessage(Request $request)
     {
