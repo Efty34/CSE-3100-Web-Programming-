@@ -53,9 +53,26 @@
                         <ul>
                             <li><a href="{{ route('index.news-page') }}">Latest Gossips</a></li>
                             <li><a href="{{ route('index.league-list-page-prev') }}">Previous League Seasons</a></li>
-                            <li><a href="{{ route('index.compare-players') }}">Comapre Players</a></li>
+                            
                         </ul>
                     </div>
+                </li>
+
+                <li class="menu-item-has-children">
+                    <a href="#">VS<i class='bx bx-chevron-down'></i></a>
+                    <div class="sub-menu single-column-menu">
+                        <ul>
+                            <li><a href="{{ route('index.compare-players') }}">Player VS Player</a></li>
+                            <li><a href="{{ route('laliga.compare-clubs') }}">Club VS Club</a></li>
+
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-item-has-children">
+                    <a href="{{ route('products.products-page') }}">Merchandise</a>
+
                 </li>
 
                 <li class="menu-item-has-children">
@@ -68,11 +85,6 @@
 
                         </ul>
                     </div>
-                </li>
-
-                <li class="menu-item-has-children">
-                    <a href="{{ route('products.products-page') }}">Merchandise</a>
-
                 </li>
 
                 @guest

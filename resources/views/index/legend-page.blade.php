@@ -66,6 +66,32 @@
 
                 </div>
             </div>
+            <div class="item">
+                <img src="https://images4.alphacoders.com/117/thumb-1920-1178913.jpg">
+                <div class="content">
+                    <div class="topic">Mesut Ozil</div>
+                    <div class="des">
+                        Mesut Ozil, a German football legend, was known for his vision, passing, and creativity on the
+                        field. He played for top clubs like Real Madrid and Arsenal, showcasing his playmaking abilities
+                        and technical skills. Ozil's style of play and footballing intelligence made him a fan favorite
+                        around the world.
+                    </div>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images5.alphacoders.com/312/thumb-1920-312324.jpg">
+                <div class="content">
+                    <div class="topic">Zlatan Ibrahimović</div>
+                    <div class="des">
+                        Zlatan Ibrahimović, a Swedish football legend, was known for his physicality, skill, and
+                        goal-scoring prowess on the field. He played for top clubs in Europe, winning numerous titles and
+                        individual awards. Ibrahimović's confidence, charisma, and unique playing style made him one of
+                        the most iconic figures in modern football.
+                    </div>
+
+                </div>
+            </div>
         </div>
         <!-- list thumnail -->
         <div class="thumbnail">
@@ -85,6 +111,12 @@
             </div>
             <div class="item">
                 <img src="https://images6.alphacoders.com/117/1178846.jpg">
+            </div>
+            <div class="item">
+                <img src="https://images4.alphacoders.com/117/thumb-1920-1178913.jpg">
+            </div>
+            <div class="item">
+                <img src="https://images5.alphacoders.com/312/thumb-1920-312324.jpg">
             </div>
         </div>
         <!-- next prev -->

@@ -10,7 +10,7 @@
             <form action="/players/compareaction" method="POST">
                 @csrf
                 <select name="player1" id="player1" class="form-select">
-                    <option selected>Player 1</option>
+                    <option selected>Select Player 1</option>
 
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}">{{ $player->first_name . ' ' . $player->last_name }}
@@ -21,7 +21,7 @@
                     VS
                 </button>
                 <select name="player2" id="player2" class="form-select">
-                    <option selected>Player 2</option>
+                    <option selected>Select Player 2</option>
 
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}">{{ $player->first_name . ' ' . $player->last_name }}
@@ -186,7 +186,7 @@
                         <td class="text-white">27. Physical</td>
                         <td class="text-white">{{ $player2->physical }}</td>
                     </tr>
-
+                    
                 </tbody>
 
             </table>
