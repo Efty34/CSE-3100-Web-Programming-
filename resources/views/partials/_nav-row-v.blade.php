@@ -70,13 +70,18 @@
                     </div>
                 </li>
 
+                <li class="menu-item-has-children">
+                    <a href="{{ route('products.products-page') }}">Merchandise</a>
+
+                </li>
+
                 @guest
                     <li class="menu-item-has-children">
                         <a href="{{ route('auth.login-page') }}">Login</a>
 
                     </li>
                 @endguest
-
+               
             </ul>
         </nav>
     </div>

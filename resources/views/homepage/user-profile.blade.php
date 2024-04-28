@@ -164,11 +164,11 @@
                                         {{ $product->product_name }}
                                     </h3>
 
-                                    <div class="wrapper">
+                                    {{-- <div class="wrapper">
                                         <data class="wrapper-item" value="1.5">Product Id</data>
 
                                         <span class="wrapper-item">{{ $product->product_id }}</span>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="wrapper">
                                         <data class="wrapper-item" value="1.5">Price</data>
@@ -264,14 +264,7 @@
 
                 </div>
             </section>
-
-                    
-
-
-
-
-                
-
+                   
         </article>
     </main>
 

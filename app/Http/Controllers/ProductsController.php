@@ -9,7 +9,7 @@ class ProductsController extends Controller
 {
     public function productsPage()
     {
-        return view('products.', [
+        return view('products.products-page', [
             'products' => Products::all(),
         ]);
     }
