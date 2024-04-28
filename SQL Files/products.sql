@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 05:33 PM
+-- Generation Time: Apr 28, 2024 at 08:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,8 +45,11 @@ INSERT INTO `products` (`id`, `product_name`, `product_image`, `product_id`, `pr
 (1, 'Adidas X12', '1713960382_product.jpg', 'Ads B#x12', 100, '2024-04-24 06:06:22', '2024-04-24 06:41:46'),
 (3, 'Nike Phantom', '1713962336_product.jpg', 'NP B#12', 110, '2024-04-24 06:38:56', '2024-04-24 06:41:53'),
 (4, 'Adidas Predator', '1713962417_product.jpg', 'Ads B#21', 150, '2024-04-24 06:40:17', '2024-04-24 06:42:00'),
-(5, 'Adidas ACC Football', '1713962497_product.jpg', 'Ads FB#25', 50, '2024-04-24 06:41:37', '2024-04-24 06:42:07'),
-(6, 'Wilson Elite', '1713962565_product.jpg', 'Wis FB#wi89', 45, '2024-04-24 06:42:45', '2024-04-24 06:42:45');
+(5, 'Adidas AFB', '1713962497_product.jpg', 'Ads FB#25', 50, '2024-04-24 06:41:37', '2024-04-28 00:00:24'),
+(6, 'Wilson Elite', '1713962565_product.jpg', 'Wis FB#wi89', 45, '2024-04-24 06:42:45', '2024-04-24 15:58:36'),
+(7, 'Adidas Prime', '1714284790_product.jpg', 'Ads B#45f', 200, '2024-04-28 00:13:10', '2024-04-28 00:13:10'),
+(8, 'Nike Air', '1714284826_product.jpg', 'Nik B#rf3', 180, '2024-04-28 00:13:46', '2024-04-28 00:13:46'),
+(9, 'NB Light', '1714284855_product.jpg', 'NB #9I0', 170, '2024-04-28 00:14:15', '2024-04-28 00:14:15');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +69,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
