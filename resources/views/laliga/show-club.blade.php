@@ -278,6 +278,27 @@
 
                     <div class="title-wrapper">
                         <div class="icon-box">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </div>
+
+                        <h3 class="h3">Staff</h3>
+                    </div>
+
+                    <ol class="timeline-list">
+
+                        <li class="timeline-item">
+
+                            <h4 class="h4 timeline-item-title">Manager</h4>
+                            <span>{{ $la_liga_club->manager }}</span>
+                        </li>
+                    </ol>
+
+                </section>
+
+                <section class="timeline">
+
+                    <div class="title-wrapper">
+                        <div class="icon-box">
                             <ion-icon name="shield-outline"></ion-icon>
                         </div>
 
@@ -303,27 +324,6 @@
                         </li>
 
 
-                    </ol>
-
-                </section>
-
-                <section class="timeline">
-
-                    <div class="title-wrapper">
-                        <div class="icon-box">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </div>
-
-                        <h3 class="h3">Staff</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Manager</h4>
-                            <span>{{ $la_liga_club->manager }}</span>
-                        </li>
                     </ol>
 
                 </section>
@@ -636,7 +636,7 @@
                                                     <input type="hidden" name="player_position"
                                                         value="{{ $la_liga_club->{'position' . $index} }}">
                                                     <input type="hidden" name="club_type" value="la_liga">
-                                                    <button type="submit"><ion-icon style="color: burlywood;"
+                                                    <button class="star-btn" type="submit"><ion-icon style="color: burlywood;"
                                                             name="star-outline"></ion-icon></button>
                                                 </form>
                                             </div>

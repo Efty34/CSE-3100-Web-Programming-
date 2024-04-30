@@ -87,7 +87,7 @@
 
         <ul class="side-menu">
             <li>
-                <a href="#">
+                <a href="#settings">
                     <i class="fas fa-cog"></i>
                     <span class="text">Settings</span>
                 </a>

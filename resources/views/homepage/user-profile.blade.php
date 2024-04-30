@@ -195,7 +195,7 @@
                             <form method="POST" action="/user-profile/order-products">
                                 @csrf
                                 <div class="user-box">
-                                    <input required="" name="name" type="text" value="{{ old('name') }}">
+                                    <input required="" name="name" type="text" value="{{ Auth::user()->name }}">
                                     <label>Your Name</label>
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -232,7 +232,7 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <button type="submit" style="color: rgb(68, 8, 189)">Submit</button>
+                                    <button type="submit" style="color: rgb(68, 8, 189)">Order</button>
                                 </a>
 
                             </form>
@@ -286,12 +286,12 @@
                                 <div class="input-group">
                                     <label for="username">Your Name</label>
                                     <input type="text" name="name" id="name" required=""
-                                        value="{{ old('name') }}">
+                                        value="{{ Auth::user()->name }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="username">Email</label>
                                     <input type="email" name="email" id="email" required=""
-                                        value="{{ old('email') }}">
+                                        value="{{ Auth::user()->email }}">
                                 </div>
                                 <div class="input-group">
                                     <label for="password">Subject</label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 05:32 PM
+-- Generation Time: Apr 30, 2024 at 08:50 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -74,8 +74,9 @@ CREATE TABLE `epl_clubs` (
 --
 
 INSERT INTO `epl_clubs` (`id`, `club_name`, `logo`, `founded_year`, `country`, `social`, `league`, `world_ranking`, `market_value`, `champions_league`, `league_trophy`, `stadium_name`, `capacity`, `stadium_picture`, `manager`, `name1`, `position1`, `name2`, `position2`, `name3`, `position3`, `name4`, `position4`, `name5`, `position5`, `name6`, `position6`, `name7`, `position7`, `name8`, `position8`, `name9`, `position9`, `name10`, `position10`, `name11`, `position11`, `created_at`, `updated_at`) VALUES
-(2, 'Manchester United', '1713943169_logo.png', '1878', 'England', 'https://www.manutd.com/', 'English Premier League', '18', '€734.25m', 3, 62, 'Old Trafford', 75000, '1713943169_stadium_picture.jpg', 'Erik ten Hag', 'André Onana', 'Goalkeeper', 'R. Varane', 'Defender', 'Harry Maguire', 'Defender', 'Luke Shaw', 'Defender', 'Lisandro Martínez', 'Defender', 'Bruno Fernandes', 'Midfielder', 'Casemiro', 'Midfielder', 'Mason Mount', 'Midfielder', 'M. Rashford', 'Striker', 'A. Garnacho', 'Striker', 'A. Martial', 'Striker', '2024-04-24 01:19:29', '2024-04-24 01:19:29'),
-(3, 'Liverpool FC', '1713943658_logo.png', '1892', 'England', 'https://www.liverpoolfc.com/', 'English Premier League', '12', '€921.40m', 6, 57, 'Anfield', 60000, '1713943658_stadium_picture.jpg', 'Jürgen Klopp', 'Alisson', 'Goalkeeper', 'V. Van Dijk', 'Defender', 'Alexander-Arnold', 'Defender', 'A. Robertson', 'Defender', 'Joël Matip', 'Defender', 'A. Mac Allister', 'Midfielder', 'Thiago', 'Midfielder', 'Harvey Elliott', 'Midfielder', 'M. Salah', 'Striker', 'Darwin Núñez', 'Striker', 'Luis Díaz', 'Striker', '2024-04-24 01:27:38', '2024-04-24 01:27:38');
+(2, 'Manchester United', '1713943169_logo.png', '1878', 'England', 'https://www.manutd.com/', 'English Premier League', '18', '€734.25m', 3, 62, 'Old Trafford', 75000, '1713943169_stadium_picture.jpg', 'Erik ten Hag', 'André Onana', 'Goalkeeper', 'R. Varane', 'Defender', 'Harry Maguire', 'Defender', 'Luke Shaw', 'Defender', 'Lisandro Martínez', 'Defender', 'Bruno Fernandes', 'Midfielder', 'Casemiro', 'Midfielder', 'Mason Mount', 'Midfielder', 'M. Rashford', 'Forward', 'A. Garnacho', 'Forward', 'A. Martial', 'Forward', '2024-04-24 01:19:29', '2024-04-30 00:31:23'),
+(3, 'Liverpool FC', '1713943658_logo.png', '1892', 'England', 'https://www.liverpoolfc.com/', 'English Premier League', '12', '€921.40m', 6, 57, 'Anfield', 60000, '1713943658_stadium_picture.jpg', 'Jürgen Klopp', 'Alisson', 'Goalkeeper', 'V. Van Dijk', 'Defender', 'Alexander-Arnold', 'Defender', 'A. Robertson', 'Defender', 'Joël Matip', 'Defender', 'A. Mac Allister', 'Midfielder', 'Thiago', 'Midfielder', 'Harvey Elliott', 'Midfielder', 'M. Salah', 'Forward', 'Darwin Núñez', 'Forward', 'Luis Díaz', 'Forward', '2024-04-24 01:27:38', '2024-04-30 00:31:33'),
+(4, 'Arsenal FC', '1714459788_logo.png', 'Oct 1, 1886', 'England', 'https://www.arsenal.com/', 'English Premier League', '8', '€1.10B', 0, 54, 'Emirates Stadium', 60000, '1714459788_stadium_picture.jpg', 'Mikel Arteta', 'Aaron Ramsdale', 'Goalkeeper', 'William Saliba', 'Defender', 'Gabriel', 'Defender', 'Takehiro Tomiyasu', 'Defender', 'Oleksandr Zinchenko', 'Defender', 'Martin Ødegaard', 'Midfielder', 'Thomas Partey', 'Midfielder', 'Declan Rice', 'Midfielder', 'Gabriel Martinelli', 'Forward', 'Bukayo Saka', 'Forward', 'Leandro Trossard', 'Forward', '2024-04-30 00:49:48', '2024-04-30 00:50:19');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +96,7 @@ ALTER TABLE `epl_clubs`
 -- AUTO_INCREMENT for table `epl_clubs`
 --
 ALTER TABLE `epl_clubs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

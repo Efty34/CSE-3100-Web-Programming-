@@ -3,6 +3,15 @@
         <div class="container">
             <div class="forms-container">
                 <div class="signin-signup">
+
+                    @if (session('message'))
+                        <div class="floating-alert">
+                            <div class="alert alert-success" id="flash-message" role="alert">
+                                {{ session('message') }}
+                            </div>
+                        </div>
+                    @endif
+
                     <form action="/loginsystem/login" method="POST" class="sign-in-form">
                         @csrf
                         <h2 class="title">Sign In</h2>
@@ -27,7 +36,7 @@
                         <div class="input-field">
                             <i class="fas fa-user"></i>
                             <input name="email" type="email" placeholder="Email" required=""
-                                value="" />
+                                value="{{old('email')}}" />
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>

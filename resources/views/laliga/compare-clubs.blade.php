@@ -91,6 +91,77 @@
                     <td class="text-white">10. Manager</td>
                     <td class="text-white">{{ $club2['manager'] }}</td>
                 </tr>
+                <tr class="text-white">
+                    <td class="text-white"></td>
+                    <td class="text-white">11. Squad</td>
+                    <td class="text-white"></td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name1'] }}</td>
+                    <td class="text-white">12. {{$club1['position1']}}</td>
+                    <td class="text-white">{{ $club2['name1'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name2'] }}</td>
+                    <td class="text-white">13. {{$club1['position2']}}</td>
+                    <td class="text-white">{{ $club2['name2'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name3'] }}</td>
+                    <td class="text-white">14. {{$club1['position3']}}</td>
+                    <td class="text-white">{{ $club2['name3'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name4'] }}</td>
+                    <td class="text-white">15. {{$club1['position4']}}</td>
+                    <td class="text-white">{{ $club2['name4'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name5'] }}</td>
+                    <td class="text-white">16. {{$club1['position5']}}</td>
+                    <td class="text-white">{{ $club2['name5'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name6'] }}</td>
+                    <td class="text-white">17. {{$club1['position6']}}</td>
+                    <td class="text-white">{{ $club2['name6'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name7'] }}</td>
+                    <td class="text-white">18. {{$club1['position7']}}</td>
+                    <td class="text-white">{{ $club2['name7'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name8'] }}</td>
+                    <td class="text-white">19. {{$club1['position8']}}</td>
+                    <td class="text-white">{{ $club2['name8'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name9'] }}</td>
+                    <td class="text-white">20. {{$club1['position9']}}</td>
+                    <td class="text-white">{{ $club2['name9'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name10'] }}</td>
+                    <td class="text-white">21. {{$club1['position10']}}</td>
+                    <td class="text-white">{{ $club2['name10'] }}</td>
+                </tr>
+
+                <tr class="text-white">
+                    <td class="text-white">{{ $club1['name11'] }}</td>
+                    <td class="text-white">22. {{$club1['position11']}}</td>
+                    <td class="text-white">{{ $club2['name11'] }}</td>
+                </tr>
                     
 
                 </tbody>

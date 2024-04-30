@@ -35,6 +35,7 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('auth.login-page')->with('success', 'User created successfully');
+
     }
     public function loginPage()
     {

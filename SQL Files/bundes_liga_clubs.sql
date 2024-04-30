@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 05:32 PM
+-- Generation Time: Apr 30, 2024 at 08:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -74,7 +74,8 @@ CREATE TABLE `bundes_liga_clubs` (
 --
 
 INSERT INTO `bundes_liga_clubs` (`id`, `club_name`, `logo`, `founded_year`, `country`, `social`, `league`, `world_ranking`, `market_value`, `champions_league`, `league_trophy`, `stadium_name`, `capacity`, `stadium_picture`, `manager`, `name1`, `position1`, `name2`, `position2`, `name3`, `position3`, `name4`, `position4`, `name5`, `position5`, `name6`, `position6`, `name7`, `position7`, `name8`, `position8`, `name9`, `position9`, `name10`, `position10`, `name11`, `position11`, `created_at`, `updated_at`) VALUES
-(2, 'Bayern Munich', '1713948337_logo.png', '1900', 'Germany', 'https://fcbayern.com/en', 'Bundes Liga', '5', '€929.45m', 6, 73, 'Allianz Arena', 750000, '1713948337_stadium_picture.jpg', 'Thomas Tuchel', 'M. Neuer', 'Goalkeeper', 'Matthijs De Ligt', 'Defender', 'A. Davies', 'Defender', 'Eric Dier', 'Defender', 'R. Guerreiro', 'Defender', 'J. Kimmich', 'Midfielder', 'Jamal Musiala', 'Midfielder', 'Thomas Müller', 'Midfielder', 'Harry Kane', 'Striker', 'Leroy Sané', 'Striker', 'S. Gnabry', 'Striker', '2024-04-24 02:45:37', '2024-04-24 02:45:37');
+(2, 'Bayern Munich', '1713948337_logo.png', '1900', 'Germany', 'https://fcbayern.com/en', 'Bundes Liga', '5', '€929.45m', 6, 73, 'Allianz Arena', 750000, '1713948337_stadium_picture.jpg', 'Thomas Tuchel', 'M. Neuer', 'Goalkeeper', 'Matthijs De Ligt', 'Defender', 'A. Davies', 'Defender', 'Eric Dier', 'Defender', 'R. Guerreiro', 'Defender', 'J. Kimmich', 'Midfielder', 'Jamal Musiala', 'Midfielder', 'Thomas Müller', 'Midfielder', 'Harry Kane', 'Forward', 'Leroy Sané', 'Forward', 'S. Gnabry', 'Forward', '2024-04-24 02:45:37', '2024-04-30 00:31:54'),
+(3, 'Borussia Dortmund', '1714408712_logo.png', 'Dec 19, 1909', 'Germany', 'https://www.bvb.de/eng', 'Bundes Liga', '12', '€466.60m', 1, 23, 'Signal Iduna Park', 82000, '1714408712_stadium_picture.jpg', 'Edin Terzic', 'Gregor Kobel', 'Goalkeeper', 'Nico Schlotterbeck', 'Defender', 'Niklas Süle', 'Defender', 'Mats Hummels', 'Defender', 'Antonios Papadopoulos', 'Defender', 'Emre Can', 'Midfielder', 'Salih Özcan', 'Midfielder', 'Marco Reus', 'Midfielder', 'Karim Adeyemi', 'Forward', 'Sébastien Haller', 'Forward', 'Jadon Sancho', 'Forward', '2024-04-29 10:38:32', '2024-04-30 00:32:02');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +95,7 @@ ALTER TABLE `bundes_liga_clubs`
 -- AUTO_INCREMENT for table `bundes_liga_clubs`
 --
 ALTER TABLE `bundes_liga_clubs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

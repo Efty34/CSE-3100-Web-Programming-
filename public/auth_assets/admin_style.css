@@ -113,7 +113,8 @@ body.dark {
 
 .sidebar .side-menu {
   width: 100%;
-  margin-top: 48px;
+  margin-top: 30px;
+  margin-bottom: 2rem;
 }
 
 .sidebar .side-menu li {
@@ -469,10 +470,30 @@ body.dark {
   margin-bottom: 24px;
 }
 
-.content main .table-data .head h3 {
+/* .content main .table-data .head h3 {
   margin-right: auto;
   font-size: 24px;
   font-weight: 600;
+  color: #F6F5F2;
+} */
+@keyframes animate8345 {
+  0%,100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.content main .table-data .head .loader {
+  color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #76ABAE, #EEEEEE);
+  font-size: 30px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate8345 9s linear infinite;
+  font-weight: bold;
 }
 
 .content main .table-data .head i {

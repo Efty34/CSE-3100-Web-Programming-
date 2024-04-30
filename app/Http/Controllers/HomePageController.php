@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Message;
 use App\Models\Players;
 use App\Models\EplClubs;
 use App\Models\Products;
 use App\Models\UserPlayer;
 use App\Models\LaLigaClubs;
-use App\Models\SeriaAClubs;
 
+use App\Models\SeriaAClubs;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Models\BundesLigaClubs;
@@ -118,6 +119,7 @@ class HomePageController extends Controller
         $products = Products::all();
         $orderproducts = OrderProduct::all();
         $messages = Message::all();
+        $users = User::all();
 
         return view('homepage.admin-dashboard', [
             'players' => $players,
@@ -127,7 +129,8 @@ class HomePageController extends Controller
             'seria_a_clubs' => $seria_a_clubs,
             'products' => $products,
             'orderproducts' => $orderproducts,
-            'messages' => $messages
+            'messages' => $messages,
+            'users' => $users
         ]);
     }
 
@@ -137,6 +140,7 @@ class HomePageController extends Controller
         return redirect()->route('homepage.admin-dashboard')->with('message', 'Message deleted successfully');
     }
 
+    
     public function addPlayerToProfile(Request $request)
     {
         $request->validate([

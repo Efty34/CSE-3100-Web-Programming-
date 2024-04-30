@@ -278,6 +278,27 @@
 
                     <div class="title-wrapper">
                         <div class="icon-box">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </div>
+
+                        <h3 class="h3">Staff</h3>
+                    </div>
+
+                    <ol class="timeline-list">
+
+                        <li class="timeline-item">
+
+                            <h4 class="h4 timeline-item-title">Manager</h4>
+                            <span>{{ $epl_club->manager }}</span>
+                        </li>
+                    </ol>
+
+                </section>
+
+                <section class="timeline">
+
+                    <div class="title-wrapper">
+                        <div class="icon-box">
                             <ion-icon name="shield-outline"></ion-icon>
                         </div>
 
@@ -307,27 +328,7 @@
 
                 </section>
 
-                <section class="timeline">
-
-                    <div class="title-wrapper">
-                        <div class="icon-box">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </div>
-
-                        <h3 class="h3">Staff</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Manager</h4>
-                            <span>{{ $epl_club->manager }}</span>
-                        </li>
-                    </ol>
-
-                </section>
-
+                
                 <section class="skill">
 
                     <h3 class="h3 skills-title">Home Ground</h3>

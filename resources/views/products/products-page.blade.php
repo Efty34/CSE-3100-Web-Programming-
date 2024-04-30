@@ -11,7 +11,7 @@
                         <div class="overlay1">
                            @auth
                                
-                           <a href="{{route('homepage.user-profile')}}"><button class="add-to-cart1">Add to Cart</button></a>
+                           <a href="/user-profile#order"><button class="add-to-cart1">Add to Cart</button></a>
                            @else
                            <a href="{{route('auth.login-page')}}"><button class="add-to-cart1">Add to Cart</button></a>
                            @endauth

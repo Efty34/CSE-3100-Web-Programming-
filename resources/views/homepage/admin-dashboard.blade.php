@@ -22,7 +22,8 @@
             <div class="table-data">
                 <div id="player" class="order">
                     <div class="head">
-                        <h3>Add Players</h3>
+                        <div class="loader">Add Players</div>
+
                     </div>
 
                     <div class="head">
@@ -81,7 +82,9 @@
             <div class="table-data">
                 <div id="epl" class="order">
                     <div class="head">
-                        <h3>Add Epl Clubs</h3>
+
+                        <div class="loader">Add Epl Clubs</div>
+
                     </div>
 
                     <div class="head">
@@ -140,7 +143,7 @@
             <div class="table-data">
                 <div id="laliga" class="order">
                     <div class="head">
-                        <h3>Add La Liga Clubs</h3>
+                        <div class="loader">Add La Liga Clubs</div>
                     </div>
 
                     <div class="head">
@@ -199,7 +202,9 @@
             <div class="table-data">
                 <div id="bpl" class="order">
                     <div class="head">
-                        <h3>Add Bundes Liga Clubs</h3>
+
+                        <div class="loader">Add Bundes Liga Clubs</div>
+
                     </div>
 
                     <div class="head">
@@ -259,7 +264,7 @@
             <div class="table-data">
                 <div id="ipl" class="order">
                     <div class="head">
-                        <h3>Add Seria A Clubs</h3>
+                        <div class="loader">Add Seria A Clubs</div>
                     </div>
 
                     <div class="head">
@@ -318,7 +323,7 @@
             <div class="table-data">
                 <div id="product" class="order">
                     <div class="head">
-                        <h3>Add Products</h3>
+                        <div class="loader">Add Products</div>
                     </div>
 
                     <div class="head">
@@ -389,7 +394,7 @@
             <div class="table-data">
                 <div id="order" class="order">
                     <div class="head">
-                        <h3>Ordered Products</h3>
+                        <div class="loader">Ordered Products</div>
                     </div>
 
                     <table>
@@ -441,7 +446,7 @@
             <div class="table-data">
                 <div id="message" class="order">
                     <div class="head">
-                        <h3>Message from Users</h3>
+                        <div class="loader">Message from Users</div>
                     </div>
 
                     <table>
@@ -493,6 +498,55 @@
                     </table>
                 </div>
             </div>
+
+            <div class="table-data">
+                <div id="settings" class="order">
+                    <div class="head">
+                        <div class="loader">Users</div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>
+                                        <p>{{ $user->name }}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ $user->email }}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ $user->type }}</p>
+                                    </td>
+                                    @if (auth()->user()->type != 'admin')
+                                        <td>
+                                            <form action="/users/{{ $user->id }}/delete" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit">
+                                                    <span>Delete</span>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    @endif
+
+
+                                </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
 
         </main>
     </section>
