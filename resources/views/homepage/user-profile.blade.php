@@ -72,6 +72,56 @@
     <main>
         <article>
 
+            <section class="hero" id="home">
+
+                <div class="container">
+
+                    <p class="section-subtitle">InFoo</p>
+
+                    <h2 class="h1 hero-title">Kick Off Your Passion: Explore Everything Football</h2>
+
+                    <p class="hero-text">
+                        Explore on the world's best footbal website. Create your dream 11 team and order your favourite.
+                    </p>
+
+                    <div class="btn-group">
+
+                        <button class="btn">
+                            <ion-icon name="rocket-outline" aria-hidden="true"></ion-icon>
+
+                            <a href="#explore"><span>Explore</span></a>
+                        </button>
+
+                        <button class="btn">
+                            <ion-icon name="create-outline" aria-hidden="true"></ion-icon>
+
+                            <a href="#dream11"><span>Create</span></a>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <svg class="hero-bg-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 465" version="1.1">
+                    <defs>
+                        <linearGradient x1="49.7965246%" y1="28.2355058%" x2="49.7778147%" y2="98.4657689%"
+                            id="linearGradient-1">
+                            <stop stop-color="rgba(69,40,220, 0.15)" offset="0%"></stop>
+                            <stop stop-color="rgba(87,4,138, 0.15)" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polygon points="" fill="url(#linearGradient-1)">
+                            <animate id="graph-animation" xmlns="http://www.w3.org/2000/svg" dur="2s"
+                                repeatCount="" attributeName="points"
+                                values="0,464 0,464 111.6,464 282.5,464 457.4,464 613.4,464 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,323.3 282.5,373 457.4,423.8 613.4,464 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,336.6 457.4,363.5 613.4,414.4 762.3,464 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,323.3 613.4,340 762.3,425.6 912.3,464 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,290.4 762.3,368 912.3,446.4 1068.2,464 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,329.6 912.3,420 1068.2,427.6 1191.2,464 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,402.4 1068.2,373 1191.2,412 1328.1,464 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,336.6 1191.2,334 1328.1,404 1440.1,464 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,282 1328.1,314 1440.1,372.8 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,254 1440.1,236 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,164 1440.1,144.79999999999998 1440.1,464 0,464; 0,464 0,367 111.6,263 282.5,282 457.4,263 613.4,216 762.3,272 912.3,376 1068.2,282 1191.2,204 1328.1,164 1440.1,8 1440.1,464 0,464;"
+                                fill="freeze"></animate>
+                        </polygon>
+                    </g>
+                </svg>
+
+            </section>
+
             <section class="section top-seller" id="dream11">
                 <div class="container">
 
@@ -103,7 +153,7 @@
                                     </form>
 
 
-                                    <div class="top-seller-card2">
+                                    <div>
                                         <h3 class="card-title">
                                             {{ $player->player_name }}
                                         </h3>
@@ -182,20 +232,21 @@
 
                     </ul>
                 </div>
-            </section>  
-            
+            </section>
+
             <section class="section explore" id="order">
                 <div class="container">
 
                     <p class="section-subtitle">Order Section</p>
 
-                    <div class="center" >
+                    <div class="center">
                         <div class="login-box">
                             <p>Order</p>
                             <form method="POST" action="/user-profile/order-products">
                                 @csrf
                                 <div class="user-box">
-                                    <input required="" name="name" type="text" value="{{ Auth::user()->name }}">
+                                    <input required="" name="name" type="text"
+                                        value="{{ Auth::user()->name }}">
                                     <label>Your Name</label>
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -205,14 +256,16 @@
                                     <select id="product-select">
                                         <option value="">Select a product</option>
                                         @foreach ($products as $product)
-                                            <option value="{{ $product->product_id }}" data-price="{{ $product->product_price }}">
+                                            <option value="{{ $product->product_id }}"
+                                                data-price="{{ $product->product_price }}">
                                                 {{ $product->product_name }}
                                             </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="user-box">
-                                    <input required="" name="product_quantity" id="product_quantity" type="number" value="{{ old('product_quantity') }}">
+                                    <input required="" name="product_quantity" id="product_quantity"
+                                        type="number" value="{{ old('product_quantity') }}">
                                     <label>Quantity</label>
                                     @if ($errors->has('product_quantity'))
                                         <span class="text-danger">{{ $errors->first('product_quantity') }}</span>
@@ -220,7 +273,8 @@
                                 </div>
                                 <h4 class="total-h4">Total Price($):</h4>
                                 <div class="user-box">
-                                    <input required="" name="product_total_price" id="product_total_price" type="number" value="{{ old('product_total_price') }}" readonly>
+                                    <input required="" name="product_total_price" id="product_total_price"
+                                        type="number" value="{{ old('product_total_price') }}" readonly>
                                     @if ($errors->has('product_total_price'))
                                         <span class="text-danger">{{ $errors->first('product_total_price') }}</span>
                                     @endif
@@ -237,34 +291,34 @@
 
                             </form>
                         </div>
-                        
+
                         <script>
                             document.getElementById('product-select').addEventListener('change', function() {
                                 var selectedOption = this.options[this.selectedIndex];
                                 var productId = selectedOption.value;
                                 var productPrice = selectedOption.getAttribute('data-price');
-                        
+
                                 document.getElementById('product_id').value = productId;
                                 document.getElementById('product_price').value = productPrice;
                                 calculateTotalPrice();
                             });
-                        
+
                             document.getElementById('product_quantity').addEventListener('input', calculateTotalPrice);
-                        
+
                             function calculateTotalPrice() {
                                 var quantity = document.getElementById('product_quantity').value;
                                 var price = parseFloat(document.getElementById('product_price').value);
-                        
+
                                 var totalPrice = quantity * price;
                                 document.getElementById('product_total_price').value = totalPrice;
                             }
                         </script>
-                        
+
                     </div>
 
                 </div>
             </section>
-                   
+
         </article>
     </main>
 

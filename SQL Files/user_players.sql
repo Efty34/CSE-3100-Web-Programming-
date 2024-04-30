@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 11:32 PM
+-- Generation Time: Apr 30, 2024 at 12:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,17 +42,17 @@ CREATE TABLE `user_players` (
 --
 
 INSERT INTO `user_players` (`id`, `user_id`, `player_name`, `player_position`, `club_type`, `created_at`, `updated_at`) VALUES
-(5, 1, 'Alisson', 'Goalkeeper', 'la_liga', '2024-04-24 15:29:39', '2024-04-24 15:29:39'),
-(6, 1, 'V. Van Dijk', 'Defender', 'la_liga', '2024-04-24 15:29:54', '2024-04-24 15:29:54'),
-(7, 1, 'Casemiro', 'Midfielder', 'la_liga', '2024-04-24 15:30:12', '2024-04-24 15:30:12'),
-(8, 1, 'J. Kimmich', 'Midfielder', 'la_liga', '2024-04-24 15:30:29', '2024-04-24 15:30:29'),
-(9, 1, 'Jamal Musiala', 'Midfielder', 'la_liga', '2024-04-24 15:30:34', '2024-04-24 15:30:34'),
-(10, 1, 'Toni Kroos', 'Attacking Midfielder | CM', 'la_liga', '2024-04-24 15:31:01', '2024-04-24 15:31:01'),
-(11, 1, 'Jude Bellingham', 'Central Midfielder | CAM', 'la_liga', '2024-04-24 15:31:05', '2024-04-24 15:31:05'),
-(12, 1, 'Luka Modric', 'Attack - Left Winger', 'la_liga', '2024-04-24 15:31:09', '2024-04-24 15:31:09'),
-(13, 1, 'Joao Cancelo', 'Defender', 'la_liga', '2024-04-24 15:31:27', '2024-04-24 15:31:27'),
-(14, 1, 'Raphinha', 'Forward', 'la_liga', '2024-04-24 15:31:30', '2024-04-24 15:31:30'),
-(15, 1, 'A. Davies', 'Defender', 'la_liga', '2024-04-24 15:31:44', '2024-04-24 15:31:44');
+(32, 1, 'Alisson', 'Goalkeeper', 'la_liga', '2024-04-30 00:56:37', '2024-04-30 00:56:37'),
+(33, 1, 'V. Van Dijk', 'Defender', 'la_liga', '2024-04-30 00:56:53', '2024-04-30 00:56:53'),
+(34, 1, 'William Saliba', 'Defender', 'la_liga', '2024-04-30 00:57:09', '2024-04-30 00:57:09'),
+(35, 1, 'Antonio Rüdiger', 'Defender', 'la_liga', '2024-04-30 00:57:22', '2024-04-30 00:57:22'),
+(36, 1, 'Matthijs De Ligt', 'Defender', 'la_liga', '2024-04-30 00:57:32', '2024-04-30 00:57:32'),
+(37, 1, 'Toni Kroos', 'Midfielder', 'la_liga', '2024-04-30 00:57:55', '2024-04-30 00:57:55'),
+(38, 1, 'Martin Ødegaard', 'Midfielder', 'la_liga', '2024-04-30 00:58:08', '2024-04-30 00:58:08'),
+(39, 1, 'Jamal Musiala', 'Midfielder', 'la_liga', '2024-04-30 00:58:29', '2024-04-30 00:58:29'),
+(40, 1, 'Bukayo Saka', 'Forward', 'la_liga', '2024-04-30 00:58:47', '2024-04-30 00:58:47'),
+(41, 1, 'Vinícius Júnior', 'Forward', 'la_liga', '2024-04-30 00:58:59', '2024-04-30 00:58:59'),
+(42, 1, 'Harry Kane', 'Forward', 'la_liga', '2024-04-30 00:59:10', '2024-04-30 00:59:10');
 
 --
 -- Indexes for dumped tables
@@ -73,7 +73,7 @@ ALTER TABLE `user_players`
 -- AUTO_INCREMENT for table `user_players`
 --
 ALTER TABLE `user_players`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
