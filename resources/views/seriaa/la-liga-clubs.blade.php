@@ -17,6 +17,10 @@
 
         </div>
 
+        <nav aria-label="Page navigation" class="pagination-container">
+            {{ $seria_a_clubs->links() }}
+        </nav>
+
     </div>
 
 </x-outer-template>

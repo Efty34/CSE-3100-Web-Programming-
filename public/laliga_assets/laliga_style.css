@@ -16,10 +16,14 @@ body {
   text-decoration: none;
 }
 .outer-con {
-  margin-top: 2rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
+  gap: 5rem;
   width: auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
 }
 
 .content {
@@ -64,7 +68,7 @@ body {
 }
 
 .content .card .top .title {
-  font-size: 27px;
+  font-size: 22px;
   font-weight: 600;
 }
 
@@ -136,7 +140,6 @@ body {
 
 @media (max-width:715px) {
   .content .card {
-    margin-left: 4rem;
     width: 70%;
   }
 }
@@ -183,4 +186,36 @@ button:hover span:after {
 
 .player-img {
   height: 200px;
+}
+
+/* Styling for Pagination */
+.pagination-container {
+  margin-top: 20px;
+}
+
+ul.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  color: white;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+ul.pagination li {
+  margin: 0 10px;
+}
+
+ul.pagination li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+ul.pagination li.active a,
+ul.pagination li a:hover {
+  background-color: #343032;
+  color: #fff;
 }

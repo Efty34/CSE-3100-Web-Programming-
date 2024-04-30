@@ -16,7 +16,11 @@
             @endforeach
 
         </div>
-
+        
+        <nav aria-label="Page navigation" class="pagination-container">
+            {{ $la_liga_clubs->links() }}
+        </nav>
     </div>
+    
 
 </x-outer-template>

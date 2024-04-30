@@ -10,7 +10,11 @@ class LaLigaController extends Controller
     public function laligaClubCardPage()
     {
         return view('laliga.la-liga-clubs', [
-            'la_liga_clubs' => LaLigaClubs::all()
+            'la_liga_clubs' => LaLigaClubs::oldest()->paginate(1)
+
+            // 'la_liga_clubs' => LaLigaClubs::all()
+            
+
         ]);
     }
 

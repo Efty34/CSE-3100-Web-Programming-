@@ -11,7 +11,8 @@ class BundesLigaController extends Controller
     public function bundesligaClubCardPage()
     {
         return view('bundesliga.la-liga-clubs', [
-            'bundes_liga_clubs' => BundesLigaClubs::all()
+            'bundes_liga_clubs' => BundesLigaClubs::oldest()->paginate(1)
+            // 'bundes_liga_clubs' => BundesLigaClubs::all()
         ]);
     }
 

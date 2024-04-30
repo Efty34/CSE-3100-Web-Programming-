@@ -1,5 +1,5 @@
 <x-outer-template>
-    
+
 
     <div class="containerPC">
         <div class="card__container">
@@ -15,8 +15,11 @@
                 </article>
             @endforeach
         </div>
-        
-        {{-- {{ $players->links() }} --}}
+
+        <nav aria-label="Page navigation" class="pagination-container">
+            {{ $players->links() }}
+        </nav>
+
     </div>
 
 </x-outer-template>

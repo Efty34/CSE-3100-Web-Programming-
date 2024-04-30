@@ -296,3 +296,35 @@ button {
   }
 }
 
+
+/* Styling for Pagination */
+.pagination-container {
+  margin-top: 20px;
+}
+
+ul.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  color: white;
+  font-size: 13px;
+  font-weight:bold;
+}
+
+ul.pagination li {
+  margin: 0 10px;
+}
+
+ul.pagination li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+ul.pagination li.active a,
+ul.pagination li a:hover {
+  background-color: #343032;
+  color: #fff;
+}

@@ -10,8 +10,8 @@ class PlayerController extends Controller
     public function playerCardPage()
     {
         return view('index.players', [
-            // 'players' => Players::oldest()->paginate(1)
-            'players' => Players::all()
+            'players' => Players::oldest()->paginate(2)
+            // 'players' => Players::all()
         ]);
     }
 

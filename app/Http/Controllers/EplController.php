@@ -10,7 +10,9 @@ class EplController extends Controller
     public function eplClubCardPage()
     {
         return view('epl.la-liga-clubs', [
-            'epl_clubs' => EplClubs::all()
+            'epl_clubs' => EplClubs::oldest()->paginate(1)
+
+            // 'epl_clubs' => EplClubs::all()
         ]);
     }
 

@@ -10,7 +10,8 @@ class SeriaAController extends Controller
     public function seriaAClubCardPage()
     {
         return view('seriaa.la-liga-clubs', [
-            'seria_a_clubs' => SeriaAClubs::all()
+            'seria_a_clubs' => SeriaAClubs::oldest()->paginate(1)
+            // 'seria_a_clubs' => SeriaAClubs::all()
         ]);
     }
 
