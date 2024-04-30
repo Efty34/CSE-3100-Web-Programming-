@@ -110,7 +110,7 @@ function startAnimation() {
     
     if(iteration >= h1Element.dataset.value.length){ 
       clearInterval(interval);
-      setTimeout(startAnimation, 1000); // 2000 milliseconds delay before restarting animation
+      setTimeout(startAnimation, 3800);
     }
     iteration += 1/5;
   }, 100);

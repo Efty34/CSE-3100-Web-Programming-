@@ -5,19 +5,19 @@
     <title>InFoo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	{{-- ------------- Custom CSS ------------- --}}
+    {{-- ------------- Custom CSS ------------- --}}
     @include('partials._custom-css')
 
-	{{-- ------------- Imported CSS ------------- --}}
+    {{-- ------------- Imported CSS ------------- --}}
     @include('partials._imported-css')
 
     {{-- ------------- Icons ------------- --}}
     @include('partials._icons')
 
-	{{-- ------------------ Custom JS ------------------ --}}
+    {{-- ------------------ Custom JS ------------------ --}}
     @include('partials._custom-js')
 
-	{{-- ------------------ Imported JS ------------------ --}}
+    {{-- ------------------ Imported JS ------------------ --}}
     @include('partials._imported-js')
 
 </head>

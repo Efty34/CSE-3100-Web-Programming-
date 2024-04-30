@@ -227,26 +227,18 @@ i {
 	filter: blur(5px);
 }
 
-.animated-text {
-	font-family: myfont;
-	font-size: clamp(15rem, 25vw, 25rem);
-	color: rgb(255, 255, 255);
-	text-transform: uppercase;
-}
-
 .wrapper {
 	position: absolute;
+	/* height: 15rem; */
+	width: 20rem;
 	top: 50%;
-	left: 50%;
+	left: 30%;
 	transform: translate(-50%, -50%);
 	font-size: 15rem;
-	/* color: #222831; */
 	font-family: myfont;
 	text-transform: uppercase;
 	-webkit-text-stroke: 1px #526D82;
 	color: #222831;
-
-
 }
 
 /* h1:hover {
@@ -390,7 +382,7 @@ i {
 	.header .menu .mobile-menu-head .current-menu-title {
 		font-size: 15px;
 		font-weight: 500;
-		color: #000000;
+		color: #ffffff;
 	}
 
 	.header .menu .mobile-menu-head .mobile-menu-close {
@@ -503,11 +495,13 @@ i {
 	}
 
 	.wrapper {
+		display: flex;
 		font-size: 7rem;
-		padding-right: 13rem;
+		/* padding-right: 2rem; */
 		writing-mode: vertical-lr;
 		text-orientation: upright;
 		letter-spacing: 1rem;
+		margin-left: 10%;
 	}
 
 	.banner-section {
