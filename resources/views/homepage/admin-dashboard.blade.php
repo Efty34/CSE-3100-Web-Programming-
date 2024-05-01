@@ -43,15 +43,20 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($players as $player)
+                            @foreach ($players as $index => $player)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <img src="players_storage/{{ $player->profile_image }}" alt="" />
+                                    </td>
+                                    <td>                                       
                                         <a class="no-design" href="/players/{{ $player->id }}">
                                             <p>{{ $player->first_name . ' ' . $player->last_name }}</p>
                                         </a>
@@ -104,15 +109,21 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Club Logo</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($epl_clubs as $epl_club)
+                            @foreach ($epl_clubs as $index => $epl_club)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $epl_club->logo }}" alt="" />
+
+                                    </td>
+                                    <td>
                                         <a class="no-design" href="/epl-clubs/{{ $epl_club->id }}">
                                             <p>{{ $epl_club->club_name }}</p>
                                         </a>
@@ -163,15 +174,21 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Club Logo</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($la_liga_clubs as $la_liga_club)
+                            @foreach ($la_liga_clubs as $index => $la_liga_club)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $la_liga_club->logo }}" alt="" />
+
+                                    </td>
+                                    <td>
                                         <a class="no-design" href="/la-liga-clubs/{{ $la_liga_club->id }}">
                                             <p>{{ $la_liga_club->club_name }}</p>
                                         </a>
@@ -224,15 +241,20 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Club Logo</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($bundes_liga_clubs as $bundes_liga_club)
+                            @foreach ($bundes_liga_clubs as $index => $bundes_liga_club)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $bundes_liga_club->logo }}" alt="" />
+                                    </td>
+                                    <td>
                                         <a class="no-design" href="/bundes-liga-clubs/{{ $bundes_liga_club->id }}">
                                             <p>{{ $bundes_liga_club->club_name }}</p>
                                         </a>
@@ -284,15 +306,20 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Club Logo</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($seria_a_clubs as $seria_a_club)
+                            @foreach ($seria_a_clubs as $index => $seria_a_club)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $seria_a_club->logo }}" alt="" />
+                                    </td>
+                                    <td>
                                         <a class="no-design" href="/seria-a-clubs/{{ $seria_a_club->id }}">
                                             <p>{{ $seria_a_club->club_name }}</p>
                                         </a>
@@ -343,16 +370,23 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
+                                <th>Product Image</th>
                                 <th>Product Name</th>
                                 <th>Product Id</th>
                                 <th>Price</th>
-                                <th>Product Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($products as $index => $product)
                                 <tr>
+                                    <td>{{$index+1}}</td>
+                                    <td>
+                                        <img id="product_img" src="products_storage/{{ $product->product_image }}"
+                                            alt="" />
+
+                                    </td>
                                     <td>
                                         <p>{{ $product->product_name }}</p>
                                     </td>
@@ -361,12 +395,6 @@
                                     </td>
                                     <td>
                                         <p>{{ $product->product_price }}$</p>
-                                    </td>
-
-                                    <td>
-                                        <img id="product_img" src="products_storage/{{ $product->product_image }}"
-                                            alt="" />
-
                                     </td>
                                     <td>
                                         <button type="submit">
@@ -400,6 +428,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
                                 <th>Customer Name</th>
                                 <th>Product Id</th>
                                 <th>Product Quantity</th>
@@ -408,8 +437,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($orderproducts as $orderproduct)
+                            @foreach ($orderproducts as $index => $orderproduct)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <p>{{ $orderproduct->name }}</p>
                                     </td>
@@ -452,6 +482,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Si No</th>
                                 <th>User Name</th>
                                 <th>Email</th>
                                 <th>Subject</th>
@@ -461,8 +492,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($messages as $message1)
+                            @foreach ($messages as $index => $message1)
                                 <tr>
+                                    <td>{{$index+1}}</td>
                                     <td>
                                         <p>{{ $message1->name }}</p>
                                     </td>

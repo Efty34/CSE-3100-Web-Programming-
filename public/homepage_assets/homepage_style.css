@@ -523,3 +523,12 @@ i {
 		height: 90vh;
 	}
 } */
+
+.username{
+	color: #B5C0D0;
+	transition: transform 0.3s ease-in-out;
+}
+.username:hover{
+	transform: scale(1.1);
+	color: whitesmoke;
+}

@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>InFoo</title>
-    <link rel="icon" type="image/png" href=" {{ asset('homepage_assets/new.png') }} ">
+    <title>InFoo | Update</title>
+    <link rel="icon" type="image/png" href=" {{ asset('homepage_assets/favnew.png') }} ">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('createplayer_assets/createplayer_style.css') }}">
 </head>

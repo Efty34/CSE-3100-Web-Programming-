@@ -397,9 +397,15 @@ body::-webkit-scrollbar-thumb {
 
 .navbar-link1 {
   font-family: myfont;
-  font-size: 3rem;
-  color: white;
+  font-size: 4rem;
   font-weight: bold;
+  color: var(--han-purple);
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-link1:is(:hover, :focus) {
+  color:white ;
+  transform: scale(1.1);
 }
 
 .navbar-link:is(:hover, :focus) {

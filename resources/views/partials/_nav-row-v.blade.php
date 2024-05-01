@@ -103,11 +103,11 @@
         @auth
             @if (auth()->user()->type == 'admin')
                 <a href="{{ route('homepage.admin-dashboard') }}">
-                    <h2 style="color: whitesmoke">{{ Auth::user()->name }}</h2>
+                    <h2 class="username">{{ Auth::user()->name }}</h2>
                 </a>
             @else
                 <a href="{{ route('homepage.user-profile') }}">
-                    <h2 style="color: whitesmoke">{{ Auth::user()->name }}</h2>
+                    <h2 class="username">{{ Auth::user()->name }}</h2>
                 </a>
             @endif
         @endauth

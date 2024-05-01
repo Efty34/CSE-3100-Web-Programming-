@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>InFoo</title>
+    <title>InFoo | Creation</title>
     <link rel="icon" type="image/png" href=" {{ asset('homepage_assets/favnew.png') }} ">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('createplayer_assets/createplayer_style.css') }}">
@@ -277,7 +277,7 @@
                                 <div class="col-md-6 mt-4">
                                     <h4 id="title">Archive</h4>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <input type="file" name="photo1" class="form-control"
                                             placeholder="Upload Image" value="{{ old('photo1') }}" />
                                         @if ($errors->has('photo1'))
@@ -311,7 +311,22 @@
                                         @if ($errors->has('photo5'))
                                             <span class="text-danger">{{ $errors->first('photo5') }}</span>
                                         @endif
-                                    </div>
+                                    </div> --}}
+                                    @php
+                                        $photoInputs = ['photo1', 'photo2', 'photo3', 'photo4', 'photo5'];
+                                    @endphp
+
+                                    @foreach ($photoInputs as $photoInput)
+                                        <div class="form-group">
+                                            <input type="file" name="{{ $photoInput }}" class="form-control"
+                                                placeholder="Upload Image" value="{{ old($photoInput) }}" />
+                                            @if ($errors->has($photoInput))
+                                                <span class="text-danger">{{ $errors->first($photoInput) }}</span>
+                                            @endif
+                                        </div>
+                                    @endforeach
+
+
 
                                 </div>
                                 <button type="submit">
