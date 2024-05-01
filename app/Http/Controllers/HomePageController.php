@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
 use App\Models\User;
+use App\Models\League;
 use App\Models\Message;
 use App\Models\Players;
 use App\Models\EplClubs;
 use App\Models\Products;
+
 use App\Models\UserPlayer;
 use App\Models\LaLigaClubs;
-
 use App\Models\SeriaAClubs;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
@@ -120,6 +122,8 @@ class HomePageController extends Controller
         $orderproducts = OrderProduct::all();
         $messages = Message::all();
         $users = User::all();
+        $leagues = League::with('clubs')->get();
+        // $clubs = Club::all();
 
         return view('homepage.admin-dashboard', [
             'players' => $players,
@@ -130,10 +134,14 @@ class HomePageController extends Controller
             'products' => $products,
             'orderproducts' => $orderproducts,
             'messages' => $messages,
-            'users' => $users
+            'users' => $users,
+            'leagues' => $leagues
+            // 'clubs' => $clubs
+            
         ]);
     }
 
+    
     public function deleteMessage($id)
     {
         Message::destroy($id);

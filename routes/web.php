@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EplController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClubController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\wc22Controller;
 use App\Http\Controllers\LaLigaController;
+use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\LegendController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\SeriaAController;
@@ -38,7 +40,7 @@ Route::controller(LeagueListController::class)->group(function () {
     // For synopsis League List
     Route::get('/league-list', 'leagueListPage')->name('index.league-list-page');
     // For Previous Seasons League List
-    Route::get('/league-list-prev','leagueListPagePrev')->name('index.league-list-page-prev');
+    Route::get('/league-list-prev', 'leagueListPagePrev')->name('index.league-list-page-prev');
 });
 
 
@@ -61,7 +63,7 @@ Route::controller(PlayerController::class)->group(function () {
     // Players Card Page
     Route::get('/players', 'playerCardPage')->name('index.players');
     // Show Create Player Form
-    Route::get('/players/create','createPlayer')->name('index.create-player')->middleware(['auth', 'user-access:admin']);
+    Route::get('/players/create', 'createPlayer')->name('index.create-player')->middleware(['auth', 'user-access:admin']);
     // Store Created Player
     Route::post('/players/store', 'storePlayer')->name('index.store-player')->middleware(['auth', 'user-access:admin']);
     // Show Edit Player Form
@@ -75,7 +77,7 @@ Route::controller(PlayerController::class)->group(function () {
     // Compare Action
     Route::post('/players/compareaction', 'compareAction')->name('index.compare-action');
     // Show Player Profile
-    Route::get('/players/{player}','showPlayer')->name('index.show-player');
+    Route::get('/players/{player}', 'showPlayer')->name('index.show-player');
 });
 
 // Navigate to La-Liga Clubs
@@ -89,18 +91,22 @@ Route::controller(LaLigaController::class)->group(function () {
     // Show Edit Club Form
     Route::get('/la-liga-clubs/{id}/edit', 'updateClub')->name('laliga.update-club')->middleware(['auth', 'user-access:admin']);
     // Update Club and Save
-    Route::put('/la-liga-clubs/{id}/update','saveUpdatClub')->name('laliga.save-club')->middleware(['auth', 'user-access:admin']);
+    Route::put('/la-liga-clubs/{id}/update', 'saveUpdatClub')->name('laliga.save-club')->middleware(['auth', 'user-access:admin']);
     // Delete Player
     Route::delete('/la-liga-clubs/{id}/delete', 'deleteClub')->name('la-liga.delete-club')->middleware(['auth', 'user-access:admin']);
-    
+
     // Compare Clubs
     Route::get('/clubs/compare', [LeagueListController::class, 'compareClubs'])->name('laliga.compare-clubs');
     // Compare Action
     Route::post('/clubs/compareaction', [LeagueListController::class, 'compareClubAction'])->name('laliga.compare-action');
-    
-    
+
     // Show Club Profile
     Route::get('/la-liga-clubs/{club}', 'showClub')->name('laliga.show-club');
+
+    // Show Club Cards
+    Route::get('/leagues/{league}/clubs', [ClubController::class, 'index'])->name('clubs.club-cards');
+    // Show Club Profile
+    Route::get('/clubs/{club}', [ClubController::class, 'show'])->name('clubs.show');
 });
 
 // Navigate to EPL Clubs
@@ -124,11 +130,11 @@ Route::controller(EplController::class)->group(function () {
 // Navigate to Bundes Liga Clubs
 Route::controller(BundesLigaController::class)->group(function () {
     // Club Card Page
-    Route::get('/bundes-liga-clubs','bundesligaClubCardPage')->name('bundesliga.la-liga-clubs');
+    Route::get('/bundes-liga-clubs', 'bundesligaClubCardPage')->name('bundesliga.la-liga-clubs');
     // Show Create Club Form
-    Route::get('/bundes-liga-clubs/create','createClub')->name('bundesliga.create-club')->middleware(['auth', 'user-access:admin']);
+    Route::get('/bundes-liga-clubs/create', 'createClub')->name('bundesliga.create-club')->middleware(['auth', 'user-access:admin']);
     // Store Create Club
-    Route::post('/bundes-liga-clubs/store','storeClub')->name('bundesliga.store-club')->middleware(['auth', 'user-access:admin']);
+    Route::post('/bundes-liga-clubs/store', 'storeClub')->name('bundesliga.store-club')->middleware(['auth', 'user-access:admin']);
     // Show Edit Club Form
     Route::get('/bundes-liga-clubs/{id}/edit', 'updateClub')->name('bundesliga.update-club')->middleware(['auth', 'user-access:admin']);
     // Update Club and Save
@@ -136,7 +142,7 @@ Route::controller(BundesLigaController::class)->group(function () {
     // Delete Player
     Route::delete('/bundes-liga-clubs/{id}/delete', 'deleteClub')->name('bundesliga.delete-club')->middleware(['auth', 'user-access:admin']);
     // Show Club Profile
-    Route::get('/bundes-liga-clubs/{club}','showClub')->name('bundesliga.show-club');
+    Route::get('/bundes-liga-clubs/{club}', 'showClub')->name('bundesliga.show-club');
 });
 
 // Navigate to Seria A Clubs
@@ -152,7 +158,7 @@ Route::controller(SeriaAController::class)->group(function () {
     // Update Club and Save
     Route::put('/seria-a-clubs/{id}/update', 'saveUpdatClub')->name('seriaa.save-club')->middleware(['auth', 'user-access:admin']);
     // Delete Player
-    Route::delete('/seria-a-clubs/{id}/delete','deleteClub')->name('seriaa.delete-club')->middleware(['auth', 'user-access:admin']);
+    Route::delete('/seria-a-clubs/{id}/delete', 'deleteClub')->name('seriaa.delete-club')->middleware(['auth', 'user-access:admin']);
     // Show Club Profile
     Route::get('/seria-a-clubs/{club}', 'showClub')->name('seriaa.show-club');
 });
@@ -178,11 +184,11 @@ Route::controller(AuthController::class)->group(function () {
     // Register Page
     Route::get('/loginsystem', 'registerPage')->name('auth.register-page');
     // Save Registered User
-    Route::post('/loginsystem/save','storeUser')->name('auth.save-user');
+    Route::post('/loginsystem/save', 'storeUser')->name('auth.save-user');
     // Login Page
-    Route::get('/loginsystem','loginPage')->name('auth.login-page');
+    Route::get('/loginsystem', 'loginPage')->name('auth.login-page');
     // Login Action
-    Route::post('/loginsystem/login','loginAction')->name('auth.login-action');
+    Route::post('/loginsystem/login', 'loginAction')->name('auth.login-action');
     // Logout Action
     Route::get('/logout', 'logout')->middleware('auth')->name('auth.logout-action');
 });
@@ -211,6 +217,32 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::delete('/message/{id}/delete', [HomePageController::class, 'deleteMessage'])->name('homepage.delete-message');
     // Delete Users
     Route::delete('/users/{id}/delete', [HomePageController::class, 'deleteUsers'])->name('homepage.delete-users');
+    // Display form to create a league
+    Route::get('/leagues/create', [LeagueController::class, 'create'])->name('leagues.create');
+    // Handle the post request to store the league
+    Route::post('/leagues/store', [LeagueController::class, 'store'])->name('leagues.store');
+    // Display form to create a club of the league
+    Route::get('/leagues/{league}/clubs/create', [ClubController::class, 'create'])->name('clubs.create');
+    // Handle the post request to store the club
+    Route::post('/leagues/{league}/clubs', [ClubController::class, 'store'])->name('clubs.store');
+
+    // Display form to edit a league
+    Route::get('/leagues/{league}/edit', [LeagueController::class, 'edit'])->name('leagues.edit');
+
+    // Handle the post request to update the league
+    Route::put('/leagues/{league}', [LeagueController::class, 'update'])->name('leagues.update');
+
+    // Handle the request to delete the league
+    Route::delete('/leagues/{league}', [LeagueController::class, 'destroy'])->name('leagues.destroy');
+
+    // Display form to edit a club
+    Route::get('/leagues/{league}/clubs/{club}/edit', [ClubController::class, 'edit'])->name('clubs.edit');
+
+    // Handle the post request to update the club
+    Route::put('/leagues/{league}/clubs/{club}', [ClubController::class, 'update'])->name('clubs.update');
+
+    // Handle the request to delete the club
+    Route::delete('/leagues/{league}/clubs/{club}', [ClubController::class, 'destroy'])->name('clubs.destroy');
 });
 
 // News Website
@@ -223,9 +255,9 @@ Route::controller(ProductsController::class)->group(function () {
     // Show Create Product Form
     Route::get('/products/create', 'createProduct')->name('products.create-product')->middleware(['auth', 'user-access:admin']);
     // Store Created Product
-    Route::post('/products/store','storeProduct')->name('products.store-product')->middleware(['auth', 'user-access:admin']);
+    Route::post('/products/store', 'storeProduct')->name('products.store-product')->middleware(['auth', 'user-access:admin']);
     // Show Edit Product Form
-    Route::get('/products/{id}/edit','updateProduct')->name('products.update-product')->middleware(['auth', 'user-access:admin']);
+    Route::get('/products/{id}/edit', 'updateProduct')->name('products.update-product')->middleware(['auth', 'user-access:admin']);
     // Update Product and Save
     Route::put('/products/{id}/update', 'saveUpdateProduct')->name('products.save-product')->middleware(['auth', 'user-access:admin']);
     // Delete Product

@@ -1,6 +1,118 @@
 <x-admin-outer>
 
+    @if (session('message'))
+        <div class="floating-alert">
+            <div class="alert alert-success" id="flash-message" role="alert">
+                {{ session('message') }}
+            </div>
+        </div>
+    @endif
+
+    <section class="sidebar">
+        <a href="{{ route('index.landing-page') }}" class="logo">
+
+            <span id="infoo-logo">InFoo</span>
+        </a>
+
+        <ul class="side-menu top">
+            {{-- <li class="active">
+        <a href="{{route('index.landing-page')}}" class="nav-link">
+          <i class="fas fa-home"></i>
+          <span class="text">Home</span>
+        </a>
+      </li> --}}
+            <li class="active">
+                <a href="#player" class="nav-link">
+                    <i class="fas fa-people-group"></i>
+                    <span class="text">Players</span>
+                </a>
+            </li>
+            <li>
+                <a href="#leagues" class="nav-link">
+                    <i class="fas fa-trophy"></i>
+                    <span class="text">Leagues</span>
+                </a>
+            </li>
+            <li>
+                <a href="#epl" class="nav-link">
+                    <i class="fas fa-shield"></i>
+                    <span class="text">EPL Clubs</span>
+                </a>
+            </li>
+            <li>
+                <a href="#laliga" class="nav-link">
+                    <i class="fas fa-shield"></i>
+                    <span class="text">La-Liga Clubs</span>
+                </a>
+            </li>
+            <li>
+                <a href="#bpl" class="nav-link">
+                    <i class="fas fa-shield"></i>
+                    <span class="text">Bundes Liga Clubs</span>
+                </a>
+            </li>
+            <li>
+                <a href="#ipl" class="nav-link">
+                    <i class="fas fa-shield"></i>
+                    <span class="text">Seria A Clubs</span>
+                </a>
+            </li>
+
+            @foreach ($leagues as $league)
+                <li>
+                    <a href="#{{ $league->name }}" class="nav-link">
+                        <i class="fas fa-shield"></i>
+                        <span class="text">{{ $league->name }}</span>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+
+
+
+        <ul class="side-menu">
+            <li>
+                <a href="#product" class="nav-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="#order" class="nav-link">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="text">Ordered Products</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="side-menu">
+            <li>
+                <a href="#message" class="nav-link">
+                    <i class="fa-solid fa-message"></i>
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="side-menu">
+            <li>
+                <a href="#settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="/logout" class="logout">
+                    <i class="fas fa-right-from-bracket"></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
     <section class="content">
+
+
         <nav>
             <i class="fas fa-bars menu-btn"></i>
 
@@ -9,13 +121,6 @@
 
         </nav>
 
-        @if (session('message'))
-            <div class="floating-alert">
-                <div class="alert alert-success" id="flash-message" role="alert">
-                    {{ session('message') }}
-                </div>
-            </div>
-        @endif
 
         <main>
 
@@ -52,11 +157,11 @@
                         <tbody>
                             @foreach ($players as $index => $player)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img src="players_storage/{{ $player->profile_image }}" alt="" />
                                     </td>
-                                    <td>                                       
+                                    <td>
                                         <a class="no-design" href="/players/{{ $player->id }}">
                                             <p>{{ $player->first_name . ' ' . $player->last_name }}</p>
                                         </a>
@@ -70,6 +175,71 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">
+                                                <span>Delete</span>
+                                            </button>
+                                        </form>
+
+                                    </td>
+
+                                </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-data">
+                <div id="leagues" class="order">
+                    <div class="head">
+                        <div class="loader">Add Leagues</div>
+
+                    </div>
+
+                    <div class="head">
+                        <a href="{{ route('leagues.create') }}">
+                            <div tabindex="0" class="plusButton">
+                                <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                    <g mask="url(#mask0_21_345)">
+                                        <path
+                                            d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Si No</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($leagues as $index => $league)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>
+                                        <img src="league_storage/{{ $league->league_logo }}" alt="" />
+                                    </td>
+                                    <td>
+                                        <a class="no-design">
+                                            <p>{{ $league->name }}</p>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button type="submit">
+                                            <a class="no-design"
+                                                href="{{ route('leagues.edit', $league->id) }}"><span>Update</span></a>
+                                        </button>
+                                        <form action="{{ route('leagues.destroy', $league->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -118,7 +288,7 @@
                         <tbody>
                             @foreach ($epl_clubs as $index => $epl_club)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $epl_club->logo }}" alt="" />
 
@@ -183,7 +353,7 @@
                         <tbody>
                             @foreach ($la_liga_clubs as $index => $la_liga_club)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $la_liga_club->logo }}" alt="" />
 
@@ -250,7 +420,7 @@
                         <tbody>
                             @foreach ($bundes_liga_clubs as $index => $bundes_liga_club)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $bundes_liga_club->logo }}" alt="" />
                                     </td>
@@ -315,7 +485,7 @@
                         <tbody>
                             @foreach ($seria_a_clubs as $index => $seria_a_club)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img src="laliga_storage/{{ $seria_a_club->logo }}" alt="" />
                                     </td>
@@ -346,6 +516,77 @@
                     </table>
                 </div>
             </div>
+
+            @foreach ($leagues as $league)
+                <div class="table-data">
+                    <div id="{{ $league->name }}" class="order">
+                        <div class="head">
+                            <div class="loader">Add {{ $league->name }} Clubs</div>
+                        </div>
+
+                        <div class="head">
+                            <a href="/leagues/{{ $league->id }}/clubs/create">
+                                <div tabindex="0" class="plusButton">
+                                    <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                        <g mask="url(#mask0_21_345)">
+                                            <path
+                                                d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Si No</th>
+                                    <th>Club Logo</th>
+                                    <th>Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($league->clubs as $index => $club)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>
+                                            <img src="{{ asset('club_storage/' . $club->logo) }}" alt=""
+                                                 />
+                                        </td>
+                                        <td>
+                                            <a class="no-design" href="{{ route('clubs.show', $club->id) }}">
+                                                <p>{{ $club->club_name }}</p>
+                                            </a>
+                                        </td>
+                                        {{-- Uncomment and modify as needed for action buttons --}}
+                                        <td>
+                                            <button type="submit">
+                                                <a class="no-design"
+                                                    href="/leagues/{{$league->id}}/clubs/{{$club->id}}/edit"><span>Update</span></a>
+                                            </button>
+                                            <form action="{{ route('clubs.destroy', ['league' => $league->id, 'club' => $club->id]) }}" method="POST"
+                                                onsubmit="return confirm('Are you sure?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+
+                                    </tr>
+                                @endforeach
+                                @if ($league->clubs->isEmpty())
+                                    <tr>
+                                        <td colspan="3">No clubs found for this league.</td>
+                                    </tr>
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endforeach
+
 
             <div class="table-data">
                 <div id="product" class="order">
@@ -381,7 +622,7 @@
                         <tbody>
                             @foreach ($products as $index => $product)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <img id="product_img" src="products_storage/{{ $product->product_image }}"
                                             alt="" />
@@ -439,7 +680,7 @@
                         <tbody>
                             @foreach ($orderproducts as $index => $orderproduct)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <p>{{ $orderproduct->name }}</p>
                                     </td>
@@ -494,7 +735,7 @@
                         <tbody>
                             @foreach ($messages as $index => $message1)
                                 <tr>
-                                    <td>{{$index+1}}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>
                                         <p>{{ $message1->name }}</p>
                                     </td>

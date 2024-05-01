@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BundesLigaClubs;
+use App\Models\Club;
+use App\Models\League;
 use App\Models\EplClubs;
 use App\Models\LaLigaClubs;
 use App\Models\SeriaAClubs;
 use Illuminate\Http\Request;
+use App\Models\BundesLigaClubs;
 
 class LeagueListController extends Controller
 {
     public function leagueListPage()
     {
-        return view('index.league-list-page');
+        $leagues = League::all();
+        return view('index.league-list-page', compact('leagues'));
     }
 
     public function leagueListPagePrev()
@@ -40,10 +43,15 @@ class LeagueListController extends Controller
             return $club;
         })->toArray();
 
-        // Combine arrays
-        $allClubs = array_merge($laLigaClubs, $eplClubs,$bundesLigaClubs,$seriaAClubs);
+        $otherClubs = Club::all()->map(function ($club) {
+            $club['model_type'] = 'Other'; 
+            return $club;
+        })->toArray();
 
-        return $allClubs; // This is an array of all clubs with model_type included
+        // Combine arrays
+        $allClubs = array_merge($laLigaClubs, $eplClubs,$bundesLigaClubs,$seriaAClubs,$otherClubs);
+
+        return $allClubs; 
     }
 
     public function compareClubs()
@@ -87,6 +95,6 @@ class LeagueListController extends Controller
                 return $club;
             }
         }
-        return null;  // Return null if no club is found
+        return null; 
     }
 }

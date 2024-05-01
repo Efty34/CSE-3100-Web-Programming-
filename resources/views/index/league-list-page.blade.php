@@ -31,6 +31,14 @@
                 <p class="tip">Seria A</p>
             </a>
         </div>
+        @foreach ($leagues as $league)
+            <div class="card red">
+                <img src="league_storage/{{$league->league_logo}}" alt="" width="50">
+                <a href="/leagues/{{$league->id}}/clubs">
+                    <p class="tip">{{$league->name}}</p>
+                </a>
+            </div>
+        @endforeach
     </div>
 
 </x-outer-template>
