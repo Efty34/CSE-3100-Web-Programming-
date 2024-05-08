@@ -16,6 +16,7 @@ use App\Models\SeriaAClubs;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Models\BundesLigaClubs;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -62,9 +63,11 @@ class HomePageController extends Controller
         $user->load('players');
 
         $products = Products::all();
+        $posts = Post::with('user')->latest()->get();
         return view('homepage.user-profile', [
             'products' => $products,
-            'user' => $user
+            'user' => $user,
+            'posts' => $posts
         ]);
     }
     public function orderProducts(Request $request)
@@ -124,6 +127,7 @@ class HomePageController extends Controller
         $users = User::all();
         $leagues = League::with('clubs')->get();
         // $clubs = Club::all();
+        // dd($users);
 
         return view('homepage.admin-dashboard', [
             'players' => $players,

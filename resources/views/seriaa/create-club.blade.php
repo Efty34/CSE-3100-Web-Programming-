@@ -148,162 +148,22 @@
 
                                 <div class="col-md-6 mt-4">
                                     <h4 id="title">Squad</h4>
-
+                                
                                     <div class="form-group">
-                                        <input type="text" name="name1" class="form-control"
-                                            placeholder="PLayer1" value="{{old('name1')}}" />
-                                        @if ($errors->has('name1'))
-                                            <span class="text-danger">{{ $errors->first('name1') }}</span>
-                                        @endif
-                                        <input type="text" name="position1" class="form-control"
-                                            placeholder="Position" value="{{old('position1')}}" />
-                                        @if ($errors->has('position1'))
-                                            <span class="text-danger">{{ $errors->first('position1') }}</span>
-                                        @endif
-                                        
+                                        @for ($i = 1; $i <= 11; $i++)
+                                            <input type="text" name="name{{ $i }}" class="form-control" placeholder="Player{{ $i }}" value="{{ old('name' . $i) }}" />
+                                            @if ($errors->has('name' . $i))
+                                                <span class="text-danger">{{ $errors->first('name' . $i) }}</span>
+                                            @endif
+                                            <input type="text" name="position{{ $i }}" class="form-control" placeholder="Position" value="{{ old('position' . $i) }}" />
+                                            @if ($errors->has('position' . $i))
+                                                <span class="text-danger">{{ $errors->first('position' . $i) }}</span>
+                                            @endif
+                                        @endfor
                                     </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name2" class="form-control"
-                                            placeholder="PLayer2" value="{{old('name2')}}" />
-                                        @if ($errors->has('name2'))
-                                            <span class="text-danger">{{ $errors->first('name2') }}</span>
-                                        @endif
-                                        <input type="text" name="position2" class="form-control"
-                                            placeholder="Position" value="{{old('position2')}}" />
-                                        @if ($errors->has('position2'))
-                                            <span class="text-danger">{{ $errors->first('position2') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name3" class="form-control"
-                                            placeholder="PLayer3" value="{{old('name3')}}" />
-                                        @if ($errors->has('name3'))
-                                            <span class="text-danger">{{ $errors->first('name3') }}</span>
-                                        @endif
-                                        <input type="text" name="position3" class="form-control"
-                                            placeholder="Position" value="{{old('position3')}}" />
-                                        @if ($errors->has('position3'))
-                                            <span class="text-danger">{{ $errors->first('position3') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name4" class="form-control"
-                                            placeholder="PLayer4" value="{{old('name4')}}" />
-                                        @if ($errors->has('name4'))
-                                            <span class="text-danger">{{ $errors->first('name4') }}</span>
-                                        @endif
-                                        <input type="text" name="position4" class="form-control"
-                                            placeholder="Position" value="{{old('position4')}}" />
-                                        @if ($errors->has('position4'))
-                                            <span class="text-danger">{{ $errors->first('position4') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name5" class="form-control"
-                                            placeholder="PLayer5" value="{{old('name5')}}" />
-                                        @if ($errors->has('name5'))
-                                            <span class="text-danger">{{ $errors->first('name5') }}</span>
-                                        @endif
-                                        <input type="text" name="position5" class="form-control"
-                                            placeholder="Position" value="{{old('position5')}}" />
-                                        @if ($errors->has('position5'))
-                                            <span class="text-danger">{{ $errors->first('position5') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name6" class="form-control"
-                                            placeholder="PLayer6" value="{{old('name6')}}" />
-                                        @if ($errors->has('name6'))
-                                            <span class="text-danger">{{ $errors->first('name6') }}</span>
-                                        @endif
-                                        <input type="text" name="position6" class="form-control"
-                                            placeholder="Position" value="{{old('position6')}}" />
-                                        @if ($errors->has('position6'))
-                                            <span class="text-danger">{{ $errors->first('position6') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name7" class="form-control"
-                                            placeholder="PLayer7" value="{{old('name7')}}" />
-                                        @if ($errors->has('name7'))
-                                            <span class="text-danger">{{ $errors->first('name7') }}</span>
-                                        @endif
-                                        <input type="text" name="position7" class="form-control"
-                                            placeholder="Position" value="{{old('position7')}}" />
-                                        @if ($errors->has('position7'))
-                                            <span class="text-danger">{{ $errors->first('position7') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name8" class="form-control"
-                                            placeholder="PLayer8" value="{{old('name8')}}" />
-                                        @if ($errors->has('name8'))
-                                            <span class="text-danger">{{ $errors->first('name8') }}</span>
-                                        @endif
-                                        <input type="text" name="position8" class="form-control"
-                                            placeholder="Position" value="{{old('position8')}}" />
-                                        @if ($errors->has('position8'))
-                                            <span class="text-danger">{{ $errors->first('position8') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name9" class="form-control"
-                                            placeholder="PLayer9" value="{{old('name9')}}" />
-                                        @if ($errors->has('name9'))
-                                            <span class="text-danger">{{ $errors->first('name9') }}</span>
-                                        @endif
-                                        <input type="text" name="position9" class="form-control"
-                                            placeholder="Position" value="{{old('position9')}}" />
-                                        @if ($errors->has('position9'))
-                                            <span class="text-danger">{{ $errors->first('position9') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name10" class="form-control"
-                                            placeholder="PLayer10" value="{{old('name10')}}" />
-                                        @if ($errors->has('name10'))
-                                            <span class="text-danger">{{ $errors->first('name10') }}</span>
-                                        @endif
-                                        <input type="text" name="position10" class="form-control"
-                                            placeholder="Position" value="{{old('position10')}}" />
-                                        @if ($errors->has('position10'))
-                                            <span class="text-danger">{{ $errors->first('position10') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="name11" class="form-control"
-                                            placeholder="PLayer11" value="{{old('name11')}}" />
-                                        @if ($errors->has('name11'))
-                                            <span class="text-danger">{{ $errors->first('name11') }}</span>
-                                        @endif
-                                        <input type="text" name="position11" class="form-control"
-                                            placeholder="Position" value="{{old('position11')}}" />
-                                        @if ($errors->has('position11'))
-                                            <span class="text-danger">{{ $errors->first('position11') }}</span>
-                                        @endif
-                                        
-                                    </div>
-
+                                
                                 </div>
+                                
                                 
                                     <button type="submit" style="height: 50px">
                                         <span>

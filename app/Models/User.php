@@ -62,5 +62,10 @@ class User extends Authenticatable
     {
         return $this->type; // Returns the boolean value of type
     }
+
+    public function posts()
+{
+    return $this->hasMany(Post::class);
+}
     
 }

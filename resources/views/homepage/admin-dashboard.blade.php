@@ -174,7 +174,7 @@
                                         <form action="/players/{{ $player->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -306,7 +306,7 @@
                                         <form action="/epl-clubs/{{ $epl_club->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -371,7 +371,7 @@
                                         <form action="/la-liga-clubs/{{ $la_liga_club->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -438,7 +438,7 @@
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -502,7 +502,7 @@
                                         <form action="/seria-a-clubs/{{ $seria_a_club->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -645,7 +645,7 @@
                                         <form action="/products/{{ $product->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -699,8 +699,8 @@
                                         <form action="/order/{{ $orderproduct->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
-                                                <span>Delete</span>
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
+                                                <span>Deliver</span>
                                             </button>
                                         </form>
 
@@ -757,7 +757,7 @@
                                         <form action="/message/{{ $message1->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">
+                                            <button type="submit" onclick="return confirm('Are you sure?')">
                                                 <span>Delete</span>
                                             </button>
                                         </form>
@@ -789,6 +789,7 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
+                            
                                 <tr>
                                     <td>
                                         <p>{{ $user->name }}</p>
@@ -799,15 +800,20 @@
                                     <td>
                                         <p>{{ $user->type }}</p>
                                     </td>
-                                    @if (auth()->user()->type != 'admin')
+
+                                    @if ($user->type == 'user')
                                         <td>
                                             <form action="/users/{{ $user->id }}/delete" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit">
+                                                <button type="submit" onclick="return confirm('Are you sure?')">
                                                     <span>Delete</span>
                                                 </button>
                                             </form>
+                                        </td>
+                                    @else
+                                        <td>
+                                            Can't peform this action.
                                         </td>
                                     @endif
 

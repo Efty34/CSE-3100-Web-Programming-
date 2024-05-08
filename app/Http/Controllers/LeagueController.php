@@ -26,7 +26,6 @@ class LeagueController extends Controller
         $league->name = $request->name;
         $league->league_logo = $leaguelogo;
 
-        // Save the league to get the ID
         $league->save();
 
         // Now you can access the ID

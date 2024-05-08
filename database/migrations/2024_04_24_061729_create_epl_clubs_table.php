@@ -27,39 +27,11 @@ return new class extends Migration
             $table->integer('capacity');
             $table->string('stadium_picture')->nullable();
             $table->string('manager');
-
-            $table->string('name1');
-            $table->string('position1');
-
-            $table->string('name2');
-            $table->string('position2');
             
-            $table->string('name3');
-            $table->string('position3');
-           
-            $table->string('name4');
-            $table->string('position4');
-           
-            $table->string('name5');
-            $table->string('position5');
-            
-            $table->string('name6');
-            $table->string('position6');
-            
-            $table->string('name7');
-            $table->string('position7');
-            
-            $table->string('name8');
-            $table->string('position8');
-           
-            $table->string('name9');
-            $table->string('position9');
-            
-            $table->string('name10');
-            $table->string('position10');
-            
-            $table->string('name11');
-            $table->string('position11');
+            for ($i = 1; $i <= 11; $i++) {
+                $table->string('name' . $i);
+                $table->string('position' . $i);
+            }
             $table->timestamps();
         });
     }

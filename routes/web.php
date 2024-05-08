@@ -15,6 +15,7 @@ use App\Http\Controllers\SeriaAController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\BundesLigaController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LeagueListController;
 use App\Http\Controllers\PrevSeasonController;
 use App\Http\Controllers\LandingPageController;
@@ -206,6 +207,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/dream11', 'App\Http\Controllers\UserController@showProfile')->name('user.profile');
     // Remove Player from Dream11
     Route::delete('/player/remove', [HomePageController::class, 'removePlayer'])->name('player.remove');
+
+    
 });
 
 // Admin Routes List
@@ -225,22 +228,16 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/leagues/{league}/clubs/create', [ClubController::class, 'create'])->name('clubs.create');
     // Handle the post request to store the club
     Route::post('/leagues/{league}/clubs', [ClubController::class, 'store'])->name('clubs.store');
-
     // Display form to edit a league
     Route::get('/leagues/{league}/edit', [LeagueController::class, 'edit'])->name('leagues.edit');
-
     // Handle the post request to update the league
     Route::put('/leagues/{league}', [LeagueController::class, 'update'])->name('leagues.update');
-
     // Handle the request to delete the league
     Route::delete('/leagues/{league}', [LeagueController::class, 'destroy'])->name('leagues.destroy');
-
     // Display form to edit a club
     Route::get('/leagues/{league}/clubs/{club}/edit', [ClubController::class, 'edit'])->name('clubs.edit');
-
     // Handle the post request to update the club
     Route::put('/leagues/{league}/clubs/{club}', [ClubController::class, 'update'])->name('clubs.update');
-
     // Handle the request to delete the club
     Route::delete('/leagues/{league}/clubs/{club}', [ClubController::class, 'destroy'])->name('clubs.destroy');
 });
@@ -264,4 +261,13 @@ Route::controller(ProductsController::class)->group(function () {
     Route::delete('/products/{id}/delete', 'deleteProduct')->name('products.delete-product')->middleware(['auth', 'user-access:admin']);
     // Show Product Profile
     Route::get('/products/{product}', 'showProduct')->name('products.show-product');
+});
+
+// Forum
+Route::controller(ForumController::class)->group(function () {
+    // Show forum page
+    Route::get('/forum', 'forumPage')->name('forum.forum-page');
+    Route::post('/posts', 'store')->name('forum.posts-store');
+    Route::delete('/posts/{post}', 'destroy')->name('posts.destroy');
+
 });

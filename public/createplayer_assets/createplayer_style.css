@@ -131,10 +131,16 @@ h4{
 
 .padding-right-10 {
 	padding-right: 10px;
+
 }
 
 .max1 .radio:hover {
 	cursor: pointer;
+}
+
+.form-group input{
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 .btnRegister {

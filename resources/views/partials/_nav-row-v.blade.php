@@ -76,6 +76,11 @@
                 </li>
 
                 <li class="menu-item-has-children">
+                    <a href="{{ route('forum.forum-page') }}">Forum</a>
+
+                </li>
+
+                <li class="menu-item-has-children">
                     <a href="#">Game<i class='bx bx-chevron-down'></i></a>
                     <div class="sub-menu single-column-menu">
                         <ul>

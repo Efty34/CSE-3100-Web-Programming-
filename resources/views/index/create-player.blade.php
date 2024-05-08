@@ -277,41 +277,6 @@
                                 <div class="col-md-6 mt-4">
                                     <h4 id="title">Archive</h4>
 
-                                    {{-- <div class="form-group">
-                                        <input type="file" name="photo1" class="form-control"
-                                            placeholder="Upload Image" value="{{ old('photo1') }}" />
-                                        @if ($errors->has('photo1'))
-                                            <span class="text-danger">{{ $errors->first('photo1') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="photo2" class="form-control"
-                                            placeholder="Upload Image" value="{{ old('photo2') }}" />
-                                        @if ($errors->has('photo2'))
-                                            <span class="text-danger">{{ $errors->first('photo2') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="photo3" class="form-control"
-                                            placeholder="Upload Image" value="{{ old('position') }}" />
-                                        @if ($errors->has('photo3'))
-                                            <span class="text-danger">{{ $errors->first('photo3') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="photo4" class="form-control"
-                                            placeholder="Upload Image"  value="{{ old('photo4') }}"/>
-                                        @if ($errors->has('photo4'))
-                                            <span class="text-danger">{{ $errors->first('photo4') }}</span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" name="photo5" class="form-control"
-                                            placeholder="Upload Image" value="{{ old('photo5') }}" />
-                                        @if ($errors->has('photo5'))
-                                            <span class="text-danger">{{ $errors->first('photo5') }}</span>
-                                        @endif
-                                    </div> --}}
                                     @php
                                         $photoInputs = ['photo1', 'photo2', 'photo3', 'photo4', 'photo5'];
                                     @endphp
