@@ -6,7 +6,7 @@
                 <p class="heading2">{{ $item['label'] }}</p>
                 <p class="para2">{{ $item['tagline'] }}</p>
                 <div class="overlay2"></div>
-                <a href="{{ $item['link'] }}" class="card-btn2">Click</a>
+                <a href="{{ $item['link'] }}" target="_blank" class="card-btn2">Click</a>
             </div>
         @endforeach
     </div>

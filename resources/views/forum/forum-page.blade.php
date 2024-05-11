@@ -28,6 +28,8 @@
 
                                     </div>
 
+                                    {{-- <a href="#"><i class='bx bx-reply'></i>Reply</a> --}}
+
                                 </div>
 
                             </li>
@@ -46,9 +48,17 @@
                         @endguest
 
                         @auth
-                            <input type="text" class="message-input" placeholder="Title" name="title" required="">
-                            <input type="text" class="message-input" placeholder="Thread" name="body" required="">
-                            <button class="send-button" type="submit">Send</button>
+                        
+                            @if (auth()->user()->type == 'admin')
+                                No posting allowed
+                            @else
+                                <input type="text" class="message-input" placeholder="Title" name="title"
+                                    required="">
+                                <input type="text" class="message-input" placeholder="Thread" name="body"
+                                    required="">
+                                <button class="send-button message-input" type="submit">Post</button>
+                            @endif
+
                         @endauth
 
 

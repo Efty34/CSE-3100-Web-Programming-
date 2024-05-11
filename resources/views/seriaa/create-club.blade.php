@@ -161,10 +161,7 @@
                                             @endif
                                         @endfor
                                     </div>
-                                
-                                </div>
-                                
-                                
+
                                     <button type="submit" style="height: 50px">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -175,6 +172,7 @@
                                         </span>
                                     </button>
                                 
+                                </div>                                                                                               
                             </div>
                         </form>
 

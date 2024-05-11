@@ -207,8 +207,6 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/dream11', 'App\Http\Controllers\UserController@showProfile')->name('user.profile');
     // Remove Player from Dream11
     Route::delete('/player/remove', [HomePageController::class, 'removePlayer'])->name('player.remove');
-
-    
 });
 
 // Admin Routes List
@@ -269,5 +267,4 @@ Route::controller(ForumController::class)->group(function () {
     Route::get('/forum', 'forumPage')->name('forum.forum-page');
     Route::post('/posts', 'store')->name('forum.posts-store');
     Route::delete('/posts/{post}', 'destroy')->name('posts.destroy');
-
 });
