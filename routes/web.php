@@ -265,6 +265,12 @@ Route::controller(ProductsController::class)->group(function () {
 Route::controller(ForumController::class)->group(function () {
     // Show forum page
     Route::get('/forum', 'forumPage')->name('forum.forum-page');
+    // Store post
     Route::post('/posts', 'store')->name('forum.posts-store');
+    // Delete post
     Route::delete('/posts/{post}', 'destroy')->name('posts.destroy');
+    // Show reply form
+    Route::get('/posts/{post}/reply', 'replyForm')->name('posts.reply-form');
+    // Store reply
+    Route::post('/posts/{post}/reply','storeReply')->name('replies.store')->middleware('auth');
 });

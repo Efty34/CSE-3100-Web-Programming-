@@ -64,6 +64,8 @@ class HomePageController extends Controller
 
         $products = Products::all();
         $posts = Post::with('user')->latest()->get();
+        // $posts = Post::with('user')->latest()->get()->load('replies.user');
+
         return view('homepage.user-profile', [
             'products' => $products,
             'user' => $user,

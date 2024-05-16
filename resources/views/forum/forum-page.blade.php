@@ -27,10 +27,70 @@
                                         </div>
 
                                     </div>
+                                    @auth
+                                        <div class="reply-show">
 
-                                    {{-- <a href="#"><i class='bx bx-reply'></i>Reply</a> --}}
+                                            <a class="reply-link" href="/posts/{{ $post->id }}/reply"><i
+                                                    class='bx bx-reply reply-link'></i>Reply</a>
+
+                                            @if ($post->replies->count() > 0)
+                                                
+                                                @auth
+                                                    
+                                                    <button onclick="toggleReplies('replies-{{ $post->id }}')"
+                                                        class="reply-toggle">
+                                                        <i class='bx bx-down-arrow-alt'></i>
+                                                    </button>
+
+                                                @endauth
+                                            @endif
+                                        </div>
+
+                                    @endauth
+
+                                    @guest
+
+                                        <div class="reply-show">
+
+                                            <a href="{{ route('auth.login-page') }}">
+                                                <i class='bx bx-reply reply-link'></i>Reply
+                                            </a>
+
+                                            @if ($post->replies->count() > 0)
+                                                                                                                                   
+                                                    <button onclick="toggleReplies('replies-{{ $post->id }}')"
+                                                        class="reply-toggle">
+                                                        <i class='bx bx-down-arrow-alt'></i>
+                                                    </button>
+                                                    
+                                            @endif
+
+                                        </div>
+
+                                    @endguest
 
                                 </div>
+
+                                @foreach ($post->replies as $reply)
+                                    <ul id="replies-{{ $post->id }}" class="replies-list" style="display: none;">
+                                        @foreach ($post->replies as $reply)
+                                            <li class="reply-li">
+                                                <div class="message-reply">
+                                                    <div class="message-username">
+                                                        <i class='bx bxs-user-rectangle'></i> {{ $reply->user->name }}
+                                                    </div>
+                                                    <div class="inner-design-reply">
+                                                        <div class="message-time-reply">
+                                                            <i class='bx bx-reply'></i> {{ $reply->body }}
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endforeach
 
                             </li>
                         @endforeach
@@ -48,7 +108,7 @@
                         @endguest
 
                         @auth
-                        
+
                             @if (auth()->user()->type == 'admin')
                                 No posting allowed
                             @else
