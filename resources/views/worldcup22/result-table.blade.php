@@ -38,7 +38,6 @@
             </div>
         @endforeach
     </div>
-    
         <script defer src="{{ asset('worldcup22_assets/result_script.js') }}"></script>
     
     </x-outer-template>

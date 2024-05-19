@@ -129,9 +129,11 @@
             <section class="section top-seller" id="dream11">
                 <div class="container">
 
-                    <p class="section-subtitle">Dream Team</p>
+                    <p class="section-subtitle">Dream 11</p>
 
-                    <h2 class="h2 section-title">Build your squad</h2>
+                    <a href="{{ route('index.league-list-page') }}">
+                        <h2 class="h2 section-title">Build your squad</h2>
+                    </a>
 
                     <ul class="grid-list">
 
@@ -163,9 +165,9 @@
                                         </h3>
                                         <data>{{ $player->player_position }}</data>
                                     </div>
-
-
+                                    
                                 </div>
+                                
                             </li>
                         @endforeach
 
@@ -376,7 +378,7 @@
                         @endforeach
 
                     </ul>
-  
+
                 </div>
             </section>
 

@@ -196,48 +196,60 @@ Route::controller(AuthController::class)->group(function () {
 
 // Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-    Route::get('/user-profile', [HomePageController::class, 'userProfilePage'])->name('homepage.user-profile');
-    // Oder Products
-    Route::post('/user-profile/order-products', [HomePageController::class, 'orderProducts'])->name('homepage.order-products');
-    // Send Message to Admin
-    Route::post('/user-profile/send-message', [HomePageController::class, 'sendMessage'])->name('homepage.send-message');
-    // Add Player to Profile Dream11
-    Route::post('/add-player-to-profile', [HomePageController::class, 'addPlayerToProfile'])->name('add.player.to.profile');
+
+    Route::controller(HomePageController::class)->group(function () {
+        Route::get('/user-profile', 'userProfilePage')->name('homepage.user-profile');
+        // Oder Products
+        Route::post('/user-profile/order-products', 'orderProducts')->name('homepage.order-products');
+        // Send Message to Admin
+        Route::post('/user-profile/send-message', 'sendMessage')->name('homepage.send-message');
+        // Add Player to Profile Dream11
+        Route::post('/add-player-to-profile', 'addPlayerToProfile')->name('add.player.to.profile');
+        // Remove Player from Dream11
+        Route::delete('/player/remove', 'removePlayer')->name('player.remove');
+    });
     // Show Player on User Profile Dream11
     Route::get('/dream11', 'App\Http\Controllers\UserController@showProfile')->name('user.profile');
-    // Remove Player from Dream11
-    Route::delete('/player/remove', [HomePageController::class, 'removePlayer'])->name('player.remove');
 });
 
 // Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-    Route::get('/admin-dashboard', [HomePageController::class, 'adminDashboard'])->name('homepage.admin-dashboard');
-    // Delete Order
-    Route::delete('/order/{id}/delete', [HomePageController::class, 'deleteOrder'])->name('homepage.delete-order');
-    // Delete Message
-    Route::delete('/message/{id}/delete', [HomePageController::class, 'deleteMessage'])->name('homepage.delete-message');
-    // Delete Users
-    Route::delete('/users/{id}/delete', [HomePageController::class, 'deleteUsers'])->name('homepage.delete-users');
-    // Display form to create a league
-    Route::get('/leagues/create', [LeagueController::class, 'create'])->name('leagues.create');
-    // Handle the post request to store the league
-    Route::post('/leagues/store', [LeagueController::class, 'store'])->name('leagues.store');
-    // Display form to create a club of the league
-    Route::get('/leagues/{league}/clubs/create', [ClubController::class, 'create'])->name('clubs.create');
-    // Handle the post request to store the club
-    Route::post('/leagues/{league}/clubs', [ClubController::class, 'store'])->name('clubs.store');
-    // Display form to edit a league
-    Route::get('/leagues/{league}/edit', [LeagueController::class, 'edit'])->name('leagues.edit');
-    // Handle the post request to update the league
-    Route::put('/leagues/{league}', [LeagueController::class, 'update'])->name('leagues.update');
-    // Handle the request to delete the league
-    Route::delete('/leagues/{league}', [LeagueController::class, 'destroy'])->name('leagues.destroy');
-    // Display form to edit a club
-    Route::get('/leagues/{league}/clubs/{club}/edit', [ClubController::class, 'edit'])->name('clubs.edit');
-    // Handle the post request to update the club
-    Route::put('/leagues/{league}/clubs/{club}', [ClubController::class, 'update'])->name('clubs.update');
-    // Handle the request to delete the club
-    Route::delete('/leagues/{league}/clubs/{club}', [ClubController::class, 'destroy'])->name('clubs.destroy');
+
+    Route::controller(HomePageController::class)->group(function () {
+        Route::get('/admin-dashboard', 'adminDashboard')->name('homepage.admin-dashboard');
+        // Delete Order
+        Route::delete('/order/{id}/delete', 'deleteOrder')->name('homepage.delete-order');
+        // Delete Message
+        Route::delete('/message/{id}/delete', 'deleteMessage')->name('homepage.delete-message');
+        // Delete Users
+        Route::delete('/users/{id}/delete', 'deleteUsers')->name('homepage.delete-users');
+    });
+
+    Route::controller(LeagueController::class)->group(function () {
+        // Display form to create a league
+        Route::get('/leagues/create', 'create')->name('leagues.create');
+        // Handle the post request to store the league
+        Route::post('/leagues/store', 'store')->name('leagues.store');
+        // Display form to edit a league
+        Route::get('/leagues/{league}/edit', 'edit')->name('leagues.edit');
+        // Handle the post request to update the league
+        Route::put('/leagues/{league}', 'update')->name('leagues.update');
+        // Handle the request to delete the league
+        Route::delete('/leagues/{league}', 'destroy')->name('leagues.destroy');
+    });
+
+    Route::controller(ClubController::class)->group(function () {
+        // Display form to create a club of the league
+        Route::get('/leagues/{league}/clubs/create', 'create')->name('clubs.create');
+        // Handle the post request to store the club
+        Route::post('/leagues/{league}/clubs', 'store')->name('clubs.store');
+        // Display form to edit a club
+        Route::get('/leagues/{league}/clubs/{club}/edit', 'edit')->name('clubs.edit');
+        // Handle the post request to update the club
+        Route::put('/leagues/{league}/clubs/{club}', 'update')->name('clubs.update');
+        // Handle the request to delete the club
+        Route::delete('/leagues/{league}/clubs/{club}', 'destroy')->name('clubs.destroy');
+    });
 });
 
 // News Website
@@ -272,5 +284,5 @@ Route::controller(ForumController::class)->group(function () {
     // Show reply form
     Route::get('/posts/{post}/reply', 'replyForm')->name('posts.reply-form');
     // Store reply
-    Route::post('/posts/{post}/reply','storeReply')->name('replies.store')->middleware('auth');
+    Route::post('/posts/{post}/reply', 'storeReply')->name('replies.store')->middleware('auth');
 });

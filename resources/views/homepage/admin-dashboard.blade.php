@@ -80,7 +80,7 @@
             <li>
                 <a href="#order" class="nav-link">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="text">Ordered Products</span>
+                    <span class="text">Ordered Products:{{count($orderproducts)}}</span>
                 </a>
             </li>
         </ul>
@@ -89,7 +89,7 @@
             <li>
                 <a href="#message" class="nav-link">
                     <i class="fa-solid fa-message"></i>
-                    <span class="text">Messages</span>
+                    <span class="text">Messages: {{count($messages)}}</span>
                 </a>
             </li>
         </ul>
@@ -663,7 +663,7 @@
             <div class="table-data">
                 <div id="order" class="order">
                     <div class="head">
-                        <div class="loader">Ordered Products</div>
+                        <div class="loader">Ordered Products: {{count($orderproducts)}}</div>
                     </div>
 
                     <table>
@@ -717,7 +717,7 @@
             <div class="table-data">
                 <div id="message" class="order">
                     <div class="head">
-                        <div class="loader">Message from Users</div>
+                        <div class="loader">Message from Users:  {{count($messages)}}</div>
                     </div>
 
                     <table>

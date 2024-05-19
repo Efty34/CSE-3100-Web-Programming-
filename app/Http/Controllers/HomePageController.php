@@ -143,11 +143,11 @@ class HomePageController extends Controller
             'users' => $users,
             'leagues' => $leagues
             // 'clubs' => $clubs
-            
+
         ]);
     }
 
-    
+
     public function deleteMessage($id)
     {
         Message::destroy($id);
@@ -160,10 +160,17 @@ class HomePageController extends Controller
         $request->validate([
             'player_name' => 'required|string',
             'player_position' => 'required|string',
-            'club_type' => 'required|string',
+            'club_type' => 'required|string'
         ]);
 
         $user = Auth::user();
+
+        $playerCount = UserPlayer::where('user_id', $user->id)->count();
+
+        if ($playerCount >= 11) {
+            return redirect('/user-profile#dream11')->with('message', 'You can only add up to 11 players to your Dream11 team.');
+        }
+
         UserPlayer::create([
             'user_id' => $user->id,
             'player_name' => $request->player_name,
@@ -171,8 +178,9 @@ class HomePageController extends Controller
             'club_type' => $request->club_type
         ]);
 
-        return redirect()->route('homepage.user-profile')->with('message', 'Player added to your Dream11 team!');
+        return redirect('/user-profile#dream11')->with('message', 'Player added to your Dream11 team!');
     }
+
 
     public function removePlayer(Request $request)
     {

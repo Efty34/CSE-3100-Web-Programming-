@@ -6,14 +6,15 @@
         </div>
     </header>
 
-  <main>
+    <main>
 
         <aside class="sidebar" data-sidebar>
 
             <div class="sidebar-info">
 
                 <figure class="avatar-box">
-                    <img src="{{ asset('players_storage/' . $player->{'profile_image'}) }}" alt="" width="80">
+                    <img src="{{ asset('players_storage/' . $player->{'profile_image'}) }}" alt=""
+                        width="80">
                 </figure>
 
                 <div class="info-content">
@@ -803,8 +804,6 @@
 
         </div>
 
-  </main>
+    </main>
 
-</x-player-profile>  
-
-  
+</x-player-profile>
