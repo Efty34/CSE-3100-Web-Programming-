@@ -55,7 +55,7 @@ class ForumController extends Controller
 
     public function replyForm(Post $post)
     {
-        $post->load('replies.user');  // Eager load replies and the users who made those replies
+        $post->load('replies.user');  
         return view('forum.reply', [
             'post' => $post
         ]);

@@ -35,7 +35,6 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('auth.login-page')->with('message', 'User created successfully');
-
     }
     public function loginPage()
     {
@@ -43,16 +42,26 @@ class AuthController extends Controller
     }
     public function loginAction(Request $request)
     {
-        Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required'
-        ])->validate();
+        ]);
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $user = User::where('email', $request->input('email'))->first();
+
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed')
+                'email' => [trans('auth.failed')]
             ]);
         }
+
+        auth()->login($user);
 
         $request->session()->regenerate();
 
@@ -65,11 +74,11 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('web')->logout();
+        $request->session()->forget('user');
 
         $request->session()->invalidate();
 
-        // $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
         return redirect()->route('auth.login-page');
     }

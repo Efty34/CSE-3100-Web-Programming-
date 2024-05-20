@@ -28,23 +28,20 @@ class LeagueController extends Controller
 
         $league->save();
 
-        // Now you can access the ID
         return redirect()->route('homepage.admin-dashboard', $league->id)
             ->with('message', 'League created successfully. Now add clubs to the league.');
     }
 
-    // Show the form for editing the specified league
     public function edit(League $league)
     {
         return view('leagues.edit', compact('league'));
     }
 
-    // Update the specified league in storage
     public function update(Request $request, League $league)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'league_logo' => 'nullable|mimes:png,jpg,jpeg|max:10000',  // assuming you have a file upload
+            'league_logo' => 'nullable|mimes:png,jpg,jpeg|max:10000',  
         ]);
 
         if ($request->hasFile('league_logo')) {
@@ -58,7 +55,6 @@ class LeagueController extends Controller
         return redirect()->route('homepage.admin-dashboard')->with('message', 'League updated successfully.');
     }
 
-    // Remove the specified league from storage
     public function destroy(League $league)
     {
         $league->delete();

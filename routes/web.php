@@ -33,7 +33,7 @@ use App\Http\Controllers\LandingPageController;
 // Navigate to Home Page
 Route::get('/', [LandingPageController::class, 'landingPage'])->name('index.landing-page');
 
-// Navigate to Legend Page --> Static Page
+// Navigate to Legend Page
 Route::get('/legend', [LegendController::class, 'legendPage'])->name('index.legend-page');
 
 // Navigate to League List Page

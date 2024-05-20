@@ -137,11 +137,9 @@ class ClubController extends Controller
 
     public function index(League $league)
     {
-        // Load the clubs related to the league
         $clubs = $league->clubs()->get();
         return view('clubs.club-cards', compact('league', 'clubs'));
     }
-    // Display a specific club's details
     public function show(Club $club)
     {
         return view('clubs.show', compact('club'));
@@ -186,7 +184,6 @@ class ClubController extends Controller
             'name11' => 'required', 'position11' => 'required'
         ]);
 
-        // Handle logo upload
         if ($request->hasFile('logo')) {
             $logoImg = time() . '_logoNew.' . $request->logo->extension();
             $request->logo->move(public_path('club_storage'), $logoImg);
@@ -194,7 +191,6 @@ class ClubController extends Controller
             $club->logo = $logoImg;
         }
 
-        // Handle stadium picture upload
         if ($request->hasFile('stadium_picture')) {
             $stadiumpic = time() . '_stadium_picture_New.' . $request->stadium_picture->extension();
             $request->stadium_picture->move(public_path('club_storage'), $stadiumpic);
@@ -202,14 +198,12 @@ class ClubController extends Controller
             $club->stadium_picture = $stadiumpic;
         }
 
-        // Update club details
         $club->update($request->only([
             'club_name', 'founded_year', 'social', 'country', 'world_ranking',
             'market_value', 'champions_league', 'league_trophy', 'stadium_name',
             'capacity', 'manager'
         ]));
 
-        // Update player names and positions
         for ($i = 1; $i <= 11; $i++) {
             $club->{"name$i"} = $request->input("name$i");
             $club->{"position$i"} = $request->input("position$i");

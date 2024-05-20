@@ -9,7 +9,7 @@ class Reply extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['body', 'user_id', 'post_id'];  // Ensure you have user_id and post_id as fillable if you're using mass assignment
+    protected $fillable = ['body', 'user_id', 'post_id'];
 
     /**
      * Get the user who authored the reply.

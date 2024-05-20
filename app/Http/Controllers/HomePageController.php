@@ -53,7 +53,7 @@ class HomePageController extends Controller
 
     public function userProfilePage()
     {
-        $user = Auth::user(); // Ensure this is fetching the user
+        $user = Auth::user();
 
         if (!$user) {
             return redirect()->route('login')->with('message', 'You must be logged in to view this page.');
@@ -190,7 +190,7 @@ class HomePageController extends Controller
         ]);
 
         $user = Auth::user();
-        // Ignore this, code will code
+        // Eager Loading
         $player = $user->players()->where([
             ['player_name', '=', $request->player_name],
             ['player_position', '=', $request->player_position],

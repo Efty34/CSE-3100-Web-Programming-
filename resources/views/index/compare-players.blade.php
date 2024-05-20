@@ -7,11 +7,10 @@
     <div class="dropdown-img">
 
         <div class="form-button">
-            <form action="/players/compareaction" method="POST">
+            <form id="compareForm" action="/players/compareaction" method="POST" onsubmit="return validateForm()">
                 @csrf
-                <select name="player1" id="player1" class="form-select">
-                    <option selected>Select Player 1</option>
-
+                <select name="player1" id="player1" class="form-select" required>
+                    <option value="" selected>Select Player 1</option>
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}">{{ $player->first_name . ' ' . $player->last_name }}
                         </option>
@@ -20,18 +19,35 @@
                 <button>
                     VS
                 </button>
-                <select name="player2" id="player2" class="form-select">
-                    <option selected>Select Player 2</option>
-
+                <select name="player2" id="player2" class="form-select" required>
+                    <option value="" selected>Select Player 2</option>
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}">{{ $player->first_name . ' ' . $player->last_name }}
                         </option>
                     @endforeach
                 </select>
-
             </form>
-
         </div>
+
+        <script>
+            function validateForm() {
+                var player1 = document.getElementById('player1').value;
+                var player2 = document.getElementById('player2').value;
+
+                if (player1 === "" || player2 === "") {
+                    alert("Please select both players.");
+                    return false; 
+                }
+
+                if (player1 === player2) {
+                    alert("Please select different players.");
+                    return false; 
+                }
+
+                return true; 
+            }
+        </script>
+
 
 
 
@@ -186,7 +202,7 @@
                         <td class="text-white">27. Physical</td>
                         <td class="text-white">{{ $player2->physical }}</td>
                     </tr>
-                    
+
                 </tbody>
 
             </table>

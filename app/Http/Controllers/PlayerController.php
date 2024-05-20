@@ -169,14 +169,12 @@ class PlayerController extends Controller
 
         $player = Players::where('id', $id)->first();
 
-        // Check and update the profile image if provided
         if ($request->hasFile('profile_image')) {
             $profileImg = time() . '_profileNew.' . $request->profile_image->extension();
             $request->profile_image->move(public_path('players_storage'), $profileImg);
             $player->profile_image = $profileImg;
         }
 
-        // Check and update additional photos if provided
         for ($i = 1; $i <= 5; $i++) {
             $photoKey = 'photo' . $i;
             if ($request->hasFile($photoKey)) {

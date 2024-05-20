@@ -165,9 +165,9 @@
                                         </h3>
                                         <data>{{ $player->player_position }}</data>
                                     </div>
-                                    
+
                                 </div>
-                                
+
                             </li>
                         @endforeach
 

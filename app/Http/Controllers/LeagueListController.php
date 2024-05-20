@@ -48,7 +48,6 @@ class LeagueListController extends Controller
             return $club;
         })->toArray();
 
-        // Combine arrays
         $allClubs = array_merge($laLigaClubs, $eplClubs,$bundesLigaClubs,$seriaAClubs,$otherClubs);
 
         return $allClubs; 
@@ -64,11 +63,9 @@ class LeagueListController extends Controller
     {
         $alls = $this->getAllClubs();
 
-        // Parse the club identifiers
         $club1Details = explode('-', $request->input('club1'));
         $club2Details = explode('-', $request->input('club2'));
 
-        // Ensure the parsing returns enough parts
         if (count($club1Details) < 2 || count($club2Details) < 2) {
             return back()->withError('Invalid club selection. Please try again.');
         }
